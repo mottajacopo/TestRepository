@@ -21,6 +21,21 @@ namespace es_02
             short n = 1990;
             long o = 123456789123456789;
 
+            Console.WriteLine("ushort a = {0}", a);
+            Console.WriteLine("sbyte b = {0}", b);
+            Console.WriteLine("int c = {0}", c);
+            Console.WriteLine("byte d = {0}", d);
+            Console.WriteLine("short e = {0}", e);
+            Console.WriteLine("ushort f = {0}", f);
+            Console.WriteLine("byte g = {0}", g);
+            Console.WriteLine("long h = {0}", h);
+            Console.WriteLine("byte i = {0}", i);
+            Console.WriteLine("sbyte l = {0}", l);
+            Console.WriteLine("int m = {0}", m);
+            Console.WriteLine("short n = {0}", n);
+            Console.WriteLine("long o = {0}", o);
+           
+
         }
     }
 }
