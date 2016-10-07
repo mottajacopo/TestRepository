@@ -7,26 +7,31 @@ namespace es_10
         static void Main(string[] args)
         {
             Console.WriteLine("inserisci un numero per vedere se e' un numero primo(1<n>100)");
-            double numero = double.Parse(Console.ReadLine());
+            int number = int.Parse(Console.ReadLine());
 
-            if (numero < 0 || numero > 100)
+            while (number < 0 || number > 100)
             {
                 Console.WriteLine("errore : numero non compreso tra 0 e 100");
-                Console.WriteLine("inserisci un numero per vedere se e' un numero primo(1<n>100)");
+                Console.WriteLine("inserisci un numero per vedere se e' un numero primo (1<n>100)");
+                number = int.Parse(Console.ReadLine());
             }
 
-            int k= 1;
-            while (k <= Math.Sqrt(numero))
+            int k= 2;
+            bool condition = true;
+            while (k <= Math.Sqrt(number))
             {
-                if (numero % k == 0)
+                if (number % k == 0)
                 {
-                    Console.WriteLine("non e' un numero primo");
-                    break;
+                    Console.WriteLine("{0} non è un numero primo.", number);
+                    condition = false;
+                    return;
                 }
-
                 k++;
             }
-            
+            if (condition == true)
+            {
+                Console.WriteLine("{0} è primo.", number);
+            }
         }
     }
 }
