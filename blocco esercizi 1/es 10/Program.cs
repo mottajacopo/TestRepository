@@ -6,13 +6,13 @@ namespace es_10
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("inserisci un numero per vedere se e' un numero primo(1<n>100)");
+            Console.WriteLine("Inserisci un numero per vedere se è un numero primo: (1 < n > 100)");
             int number = int.Parse(Console.ReadLine());
 
             while (number < 0 || number > 100)
             {
-                Console.WriteLine("errore : numero non compreso tra 0 e 100");
-                Console.WriteLine("inserisci un numero per vedere se e' un numero primo (1<n>100)");
+                Console.WriteLine("Errore : numero non compreso tra 0 e 100!\n");
+                Console.WriteLine("Inserisci un numero per vedere se é un numero primo: (1 < n > 100)");
                 number = int.Parse(Console.ReadLine());
             }
 
@@ -22,7 +22,7 @@ namespace es_10
             {
                 if (number % k == 0)
                 {
-                    Console.WriteLine("{0} non è un numero primo.", number);
+                    Console.WriteLine("{0} non è un numero primo.\n", number);
                     condition = false;
                     return;
                 }
@@ -30,7 +30,7 @@ namespace es_10
             }
             if (condition == true)
             {
-                Console.WriteLine("{0} è primo.", number);
+                Console.WriteLine("{0} è un numero primo.", number);
             }
         }
     }

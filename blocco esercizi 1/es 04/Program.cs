@@ -6,25 +6,29 @@ namespace es_04
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("inserisci i dati del dipendente");
+            Console.WriteLine("Inserisci i dati del dipendente:");
 
-            Console.WriteLine("nome :");
+            Console.WriteLine("Nome :");
             string firstName = Console.ReadLine();
-            Console.WriteLine("cognome :");
+
+            Console.WriteLine("Cognome :");
             string lastName = Console.ReadLine();
-            Console.WriteLine("genere (uomo = m , donna = f):");
+
+            Console.WriteLine("Genere (uomo = m , donna = f):");
             char gender = Char.Parse(Console.ReadLine());
-            Console.WriteLine("numero identificativo :");
-            int number = int.Parse(Console.ReadLine());
-            Console.WriteLine("eta' :");
+
+            Console.WriteLine("Età :");
             byte age = byte.Parse(Console.ReadLine());
 
-            Console.WriteLine("la scheda anagrafica e' :");
-            Console.WriteLine("nome : {0} ", firstName);
-            Console.WriteLine("cognome : {0} ", lastName);
-            Console.WriteLine("genere: {0} ", gender);
-            Console.WriteLine("numero identificativo : {0} ", number);
-            Console.WriteLine("eta' : {0} ", age);
+            Console.WriteLine("Numero identificativo :");
+            int number = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("La scheda anagrafica è:");
+            Console.WriteLine("Nome : {0} ", firstName);
+            Console.WriteLine("Cognome : {0} ", lastName);
+            Console.WriteLine("Genere: {0} ", gender);
+            Console.WriteLine("Età : {0} ", age);
+            Console.WriteLine("Numero identificativo : {0}\n", number);
         }
     }
 }

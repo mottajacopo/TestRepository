@@ -7,34 +7,40 @@ namespace es_02
     {
         static void Main(string[] args)
         {
-            ushort a = 52130;
-            sbyte b = -115;
-            int c = 4825932;
-            byte d = 97;
-            short e = -10000;
-            ushort f = 20000;
-            byte g = 224;
-            long h = 970700000;
-            byte i = 112;
-            sbyte l = -44;
-            int m = -1000000;
-            short n = 1990;
-            long o = 123456789123456789;
+            sbyte a = 52; // or byte
+            byte b = 130; 
+            sbyte c = -115;
+            int d = 4825932;
+            sbyte e = 97; // or byte
+            short f = -10000;
+            ushort g = 20000; // or ushort
+            byte h = 224;
+            uint i = 970700000;
+            byte j = 112; // or sbyte
+            sbyte k = -44;
+            int l = -1000000;
+            short m = 1990; // or ushort
+            long n = 123456789123456789;
 
-            Console.WriteLine("ushort a = {0}", a);
-            Console.WriteLine("sbyte b = {0}", b);
-            Console.WriteLine("int c = {0}", c);
-            Console.WriteLine("byte d = {0}", d);
-            Console.WriteLine("short e = {0}", e);
-            Console.WriteLine("ushort f = {0}", f);
-            Console.WriteLine("byte g = {0}", g);
-            Console.WriteLine("long h = {0}", h);
-            Console.WriteLine("byte i = {0}", i);
-            Console.WriteLine("sbyte l = {0}", l);
-            Console.WriteLine("int m = {0}", m);
-            Console.WriteLine("short n = {0}", n);
-            Console.WriteLine("long o = {0}", o);
-           
+            Console.WriteLine("sbyte a = {0}", a);
+            Console.WriteLine("byte b = {0}", b);
+            Console.WriteLine("sbyte c = {0}", c);
+            Console.WriteLine("int d = {0}", d);
+            Console.WriteLine("sbyte e = {0}", e);
+            Console.WriteLine("short f = {0}", f);
+            Console.WriteLine("ushort g = {0}", g);
+            Console.WriteLine("byte h = {0}", h);
+            Console.WriteLine("uint i = {0}", i);
+            Console.WriteLine("byte j = {0}", j);
+            Console.WriteLine("sbyte k = {0}", k);
+            Console.WriteLine("int l = {0}", l);
+            Console.WriteLine("short m = {0}", m);
+            Console.WriteLine("long n = {0}", n);
+                              
+
+                               
+
+
 
         }
     }

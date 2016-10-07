@@ -6,30 +6,28 @@ namespace es_08
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("inserisci un numero di 4 cifre");
-            string numero = Console.ReadLine();
+            Console.WriteLine("Inserisci un numero di 4 cifre:");
+            string number = Console.ReadLine();
 
             //somma cifre 
-            int a = (int)Char.GetNumericValue(numero[0]);
-            int b = (int)Char.GetNumericValue(numero[1]);
-            int c = (int)Char.GetNumericValue(numero[2]);
-            int d = (int)Char.GetNumericValue(numero[3]);
-            int somma = a+b+c+d;
-            Console.WriteLine("la somma delle cifre e' : {0}", somma);
+            byte a = (byte)Char.GetNumericValue(number[0]);
+            byte b = (byte)Char.GetNumericValue(number[1]);
+            byte c = (byte)Char.GetNumericValue(number[2]);
+            byte d = (byte)Char.GetNumericValue(number[3]);
+            int sum = a + b + c + d;
+            Console.WriteLine("La somma delle cifre è: {0}", sum);
 
             //inverti numero
-            Console.WriteLine("il numero invertito e':{0}{1}{2}{3}" ,
-               numero[3], numero[2], numero[1], numero[0]);
+            Console.WriteLine("Il numero invertito è: {0}{1}{2}{3}" ,
+               number[3], number[2], number[1], number[0]);
 
             //scambia prima e ultima cifra
-            Console.WriteLine("il numero con la prima e l' ultima cifra scambiate e':{0}{1}{2}{3}", 
-                numero[3], numero[1], numero[2], numero[0]);
+            Console.WriteLine("Il numero con la prima e l' ultima cifra scambiate è: {0}{1}{2}{3}", 
+                number[3], number[1], number[2], number[0]);
 
             //scambia seconda e terza cifra
-            Console.WriteLine("il numero con la seconda e la terza cifra scambiate e':{0}{1}{2}{3}",
-               numero[0], numero[2], numero[1], numero[3]);
-
-
+            Console.WriteLine("il numero con la seconda e la terza cifra scambiate è: {0}{1}{2}{3}\n",
+               number[0], number[2], number[1], number[3]);
         }
     }
 }
