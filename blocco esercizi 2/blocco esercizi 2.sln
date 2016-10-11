@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blocco esercizi 2", "blocco esercizi 2\blocco esercizi 2.csproj", "{9F6F6CD2-36A4-43C6-AD2B-DE6F8BBBF893}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "es 01", "es 01\es 01.csproj", "{EEEEE348-B1BF-45E8-9935-2E2D42135AF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "es 02", "es 02\es 02.csproj", "{5BD1E070-7DD3-49B3-BEEF-527D35E5E032}"
@@ -31,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9F6F6CD2-36A4-43C6-AD2B-DE6F8BBBF893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F6F6CD2-36A4-43C6-AD2B-DE6F8BBBF893}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F6F6CD2-36A4-43C6-AD2B-DE6F8BBBF893}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F6F6CD2-36A4-43C6-AD2B-DE6F8BBBF893}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EEEEE348-B1BF-45E8-9935-2E2D42135AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEEEE348-B1BF-45E8-9935-2E2D42135AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEEEE348-B1BF-45E8-9935-2E2D42135AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
