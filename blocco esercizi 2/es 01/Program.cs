@@ -3,7 +3,7 @@
 
 namespace es_01
 {
-    class Program
+    public class Program
     {
         public static bool greater(int num1, int num2)
         {
