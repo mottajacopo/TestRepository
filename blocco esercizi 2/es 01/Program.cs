@@ -5,31 +5,34 @@ namespace es_01
 {
     public class Program
     {
-        public static bool greater(int num1, int num2)
+        public static bool greater(float num1, float num2)
         {
-            int a = num1;
-            int b = num2;
+            float a = num1;
+            float b = num2;
             bool c = a > b;
             return c;
         }    //restituisce true se a > b
 
-        public static bool smaller(int num1, int num2)
+        public static bool smaller(float num1, float num2)
         {
-            int a = num1;
-            int b = num2;
+            float a = num1;
+            float b = num2;
             bool c = a < b;
             return c;
         }    //restituisce true se a < b
 
-        public static bool isInteger(string stringa)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static bool isfloateger(string stringa)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {                    
-            int i = 0;
+           int i = 0;
 
             for (; i < stringa.Length; i++)
             {
                 if (!Char.IsDigit(stringa[i]))         //se il char non è un numero ritorna falso
                 {
-                    return false;
+                    if (stringa[i] != ',')             //permette l 'inserimento di numeri con la virgola
+                    {
+                        return false;
+                    }
                 }
             }
             return true;
@@ -37,8 +40,8 @@ namespace es_01
 
         static void Main(string[] args)
         {
-            int num1 = 0;
-            int num2 = 0;
+            float num1 = 0;
+            float num2 = 0;
             bool big;
             bool small;
             bool isDigit;
@@ -48,28 +51,29 @@ namespace es_01
 
             Console.WriteLine("numero 1: ");
             input = Console.ReadLine();
-            isDigit = isInteger(input);          //controllo se l 'input inserito è un numero 
+            isDigit = isfloateger(input);          //controllo se l 'input inserito è un numero 
             while (isDigit == false)             //ciclo finchè non viene inserito un numero
             {
                     Console.WriteLine("errore inserisci di nuovo numero 1: ");
                     input = Console.ReadLine();
-                    isDigit = isInteger(input);
+                    isDigit = isfloateger(input);
 
             }
-            num1 = int.Parse(input);
+            num1 = float.Parse(input);
 
             Console.WriteLine("numero 2: ");
             input = Console.ReadLine();
-            isDigit = isInteger(input);          //controllo se l 'input inserito è un numero 
+            isDigit = isfloateger(input);          //controllo se l 'input inserito è un numero 
             while (isDigit == false)             //ciclo finchè non viene inserito un numero
             {
                
                     Console.WriteLine("errore inserisci di nuovo numero 1: ");
                     input = Console.ReadLine();
-                    isDigit = isInteger(input);
+                    isDigit = isfloateger(input);
 
             }
-            num2 = int.Parse(input);
+
+            num2 = float.Parse(input);
 
             big = greater(num1, num2);        //se a > b big = true
             small = smaller(num1, num2);      //se a < b small = false
