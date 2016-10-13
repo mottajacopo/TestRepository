@@ -1,4 +1,5 @@
 ﻿using System;
+using es_01;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestBlocco2
@@ -10,9 +11,9 @@ namespace UnitTestBlocco2
         public void TestGreater()
         {
             bool result;
-            result = es_01.Program.greater(3, 5);
+            result = Program.greater(3, 5);
             Assert.AreEqual(result, false);
-            result = es_01.Program.greater(5, 3);
+            result = Program.greater(5, 3);
             Assert.AreEqual(result, true);
         }
 
@@ -20,9 +21,9 @@ namespace UnitTestBlocco2
         public void TestSmaller()
         {
             bool result;
-            result = es_01.Program.smaller(8, 9);
+            result = Program.smaller(8, 9);
             Assert.AreEqual(result, true);
-            result = es_01.Program.smaller(9, 8);
+            result = Program.smaller(9, 8);
             Assert.AreEqual(result, false);
 
         }
