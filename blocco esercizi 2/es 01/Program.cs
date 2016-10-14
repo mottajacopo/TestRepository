@@ -54,7 +54,7 @@ namespace es_01
             isDigit = isfloateger(input);          //controllo se l 'input inserito è un numero 
             while (isDigit == false)             //ciclo finchè non viene inserito un numero
             {
-                    Console.WriteLine("errore inserisci di nuovo numero 1: ");
+                    Console.WriteLine("errore inserisci di nuovo numero : ");
                     input = Console.ReadLine();
                     isDigit = isfloateger(input);
 
@@ -67,7 +67,7 @@ namespace es_01
             while (isDigit == false)             //ciclo finchè non viene inserito un numero
             {
                
-                    Console.WriteLine("errore inserisci di nuovo numero 1: ");
+                    Console.WriteLine("errore inserisci di nuovo numero : ");
                     input = Console.ReadLine();
                     isDigit = isfloateger(input);
 
