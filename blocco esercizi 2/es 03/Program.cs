@@ -21,8 +21,8 @@ namespace es_03
             }
             if (discriminant > 0)
             {
-                root1 = -b + Math.Sqrt(discriminant);
-                root2 = -b - Math.Sqrt(discriminant);
+                root1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+                root2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
                 return 2;
             }
             return 0;
