@@ -8,7 +8,7 @@ namespace UnitTestBlocco2
     public class Es01Test
     {
         [TestMethod]
-        public void TestGreater()
+        public void TestEs01Greater()
         {
             bool result;
             result = Program.greater(3, 5);
@@ -18,7 +18,7 @@ namespace UnitTestBlocco2
         }
 
         [TestMethod]
-        public void TestSmaller()
+        public void TestEs01Smaller()
         {
             bool result;
             result = Program.smaller(8, 9);
