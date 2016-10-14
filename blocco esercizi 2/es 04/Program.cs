@@ -3,7 +3,7 @@
 
 namespace es_04
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
