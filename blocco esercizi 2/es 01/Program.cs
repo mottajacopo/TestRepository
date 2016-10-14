@@ -27,18 +27,20 @@ namespace es_01
            bool isDigit = false;
 
            while (isDigit == false)
-                for (; i < input.Length; i++)
+                isDigit = true;
+            for (; i < input.Length; i++)
             {
                 if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
                 {
-                    if (input[i] != ',')             //permette l 'inserimento di numeri con la virgola
+                    if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
                     {
                         Console.WriteLine("errore inserisci di nuovo numero : ");
                         input = Console.ReadLine();
                         isDigit = false;
+                        i = 0;
                     }
                 }
-                    isDigit = true;
+                   
             }
             return ;
         }
