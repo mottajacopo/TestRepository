@@ -6,7 +6,7 @@ namespace es_03
     
     public class Program
     {
-        public static int roots(float a, float b ,float c ,ref double root1, ref double root2)
+        public static int roots(float a, float b, float c, ref double root1, ref double root2)
         {
             float discriminant = b*b  - 4 * a * c;
 

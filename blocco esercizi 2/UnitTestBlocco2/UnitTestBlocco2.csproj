@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="es01Test.cs" />
+    <Compile Include="es02Test.cs" />
     <Compile Include="es03Test.cs" />
     <Compile Include="es05Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
