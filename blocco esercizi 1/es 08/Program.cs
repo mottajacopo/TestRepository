@@ -8,13 +8,12 @@ namespace es_08
         {
             Console.WriteLine("Inserisci un numero di 4 cifre:");
             string number = Console.ReadLine();
-            int controll = int.Parse(number);
-
-            while(controll > 10000 || controll < 1000)   //aggiunto controllo validità del numero
+ 
+            while(!char.IsDigit(number[0]) || number.Length != 4)   //aggiunto controllo validità del numero
             {
                 Console.WriteLine("Reinserisci un numero di 4 cifre:");
                 number = Console.ReadLine();
-                controll = int.Parse(number);
+             
             }
             //somma cifre 
             byte a = (byte)Char.GetNumericValue(number[0]);
