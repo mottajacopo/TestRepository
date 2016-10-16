@@ -6,7 +6,7 @@ namespace es_04
     {
         static void Main(string[] args)
         {
-            string input;
+            string input; 
 
             Console.WriteLine("Inserisci i dati del dipendente:");
 
@@ -20,7 +20,7 @@ namespace es_04
             input = Console.ReadLine();
             while (input[0] != 'm' && input[0] != 'f')           //aggiunto controllo inserimento genere
             {
-                Console.WriteLine("Formato genere non corretto ");
+                Console.WriteLine("Formato genere non corretto!");
                 Console.WriteLine("Reinserire genere (uomo = m , donna = f):");
                 input = Console.ReadLine();
             }
@@ -40,13 +40,13 @@ namespace es_04
             input = Console.ReadLine();
             while (!Char.IsDigit(input[0]) && int.Parse(input) > 27560000 && int.Parse(input) < 27569999)           //aggiunto controllo inserimento età
             {
-                Console.WriteLine("Formato non corretto ");
+                Console.WriteLine("Formato non corretto!");
                 Console.WriteLine("Reinserire numero identificativo (attenzione non inserire lettere o numeri non compresi nell' intervallo previsto):");
                 input = Console.ReadLine();
             }
             int number = int.Parse(input);
 
-            Console.WriteLine("La scheda anagrafica è:");
+            Console.WriteLine("La scheda anagrafica è :");
             Console.WriteLine("Nome : {0} ", firstName);
             Console.WriteLine("Cognome : {0} ", lastName);
             Console.WriteLine("Genere: {0} ", gender);
