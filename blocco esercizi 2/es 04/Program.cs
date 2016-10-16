@@ -27,6 +27,10 @@ namespace es_04
                     digit = (byte)Char.GetNumericValue(numString[0]);
                     hundred = (oneToNineteen[numShort + 1]) + "hundred";
                 }
+             else
+                {
+                    numString = "0" + numString;
+                }
       
                 digit = (byte)Char.GetNumericValue(numString[1]);
 
