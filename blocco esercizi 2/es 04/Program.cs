@@ -25,7 +25,7 @@ namespace es_04
              if (numString.Length > 2)
                 {
                     digit = (byte)Char.GetNumericValue(numString[0]);
-                    hundred = (oneToNineteen[digit + 1]) + "hundred";
+                    hundred = (oneToNineteen[digit]) + " hundred";
                 }
              else
                 {
@@ -43,7 +43,8 @@ namespace es_04
 
                 if (digit != 0)
                 {
-                    unit = (oneToNineteen[digit + 1]);
+                    unit = (oneToNineteen[digit]);
+
                 }
             }
 
