@@ -4,7 +4,7 @@ namespace es_04
 {
     public class Program
     {
-        public static void pronunciationOfNumber(ref short numShort, ref string numString)
+        public static string pronunciationOfNumber(ref short numShort, ref string numString)
         {
             string[] oneToNineteen = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
                                         "ten", "eleven", "twelve", "thirteen", "fourteen", "fiveteen", "sixteen",
@@ -38,6 +38,14 @@ namespace es_04
                 {
                     dozen = (dozens[digit - 2]);
                 }
+            else
+                {
+                    digit = (byte)Char.GetNumericValue(numString[2]);
+                    dozen = oneToNineteen[digit + 10];
+                    hundred = hundred + " " + dozen;
+                    return hundred;
+
+                }
       
                 digit = (byte)Char.GetNumericValue(numString[2]);
 
@@ -47,26 +55,28 @@ namespace es_04
 
                 }
             }
+            hundred = hundred + " " + dozen + " " + unit;
 
-            Console.WriteLine("{0} {1} {2}", hundred, dozen, unit);
+            return hundred;
         }
         public static void isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int i = 0;
             bool testDigit = false;
 
-            while (testDigit == false) 
+            while (testDigit == false) { 
                 testDigit = true;
 
-                for (; i < input.Length; i++)
+                for (; i < input.Length; i++) 
                 {
                     if (!Char.IsDigit(input[i]) || (input.Length > 3))         //se il char non è un numero o non è compreso tra 0 e 999 lo reinserisco
                     {
                         Console.WriteLine("Errore! Inserisci di nuovo un numero (tra 0 e 999): ");
                         input = Console.ReadLine();
                         testDigit = false;
-                        i = 0;
+                        i = -1;
                     }
+                }
             }
             return;
         }
@@ -82,7 +92,8 @@ namespace es_04
             numShort = short.Parse(numString);
 
             Console.WriteLine("{0} in parole è:", numShort);
-            pronunciationOfNumber(ref numShort, ref numString);
+            numString = pronunciationOfNumber(ref numShort, ref numString);
+            Console.WriteLine("{0}", numString);
         }
     }
 }
