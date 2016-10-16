@@ -17,36 +17,36 @@ namespace es_04
 
             if (numShort < 20)  //se è minore di 20 stampo il numero predefinito
             {
-              hundred = (oneToNineteen[numShort]);
+                hundred = (oneToNineteen[numShort]);
+                return hundred;
             }
             else
             {
 
-             if (numString.Length > 2)
+                if (numString.Length > 2)
                 {
                     digit = (byte)Char.GetNumericValue(numString[0]);
                     hundred = (oneToNineteen[digit]) + " hundred";
                 }
-             else
+                else
                 {
-                    numString = "0" + numString;
+                    numString = "0" + numString; //se il numero è minore di 100 lo interpreto come 0xx
                 }
-      
+
                 digit = (byte)Char.GetNumericValue(numString[1]);
 
-            if (digit > 1)
+                if (digit > 1)
                 {
                     dozen = (dozens[digit - 2]);
                 }
-            else
+                if (digit == 1)
                 {
                     digit = (byte)Char.GetNumericValue(numString[2]);
                     dozen = oneToNineteen[digit + 10];
                     hundred = hundred + " " + dozen;
                     return hundred;
-
                 }
-      
+                
                 digit = (byte)Char.GetNumericValue(numString[2]);
 
                 if (digit != 0)
