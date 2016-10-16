@@ -5,15 +5,18 @@ namespace es_04
 {
     public class Program
     {
-        public static string pronunciationOfNumber(ref short numShort, ref string numString, ref string[] oneToNineteen, ref string[] dozens)
+        public static void pronunciationOfNumber(ref short numShort, ref string numString)
         {
+            string[] oneToNineteen = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+                                        "ten", "eleven", "twelve", "thirteen", "fourteen", "fiveteen", "sixteen",
+                                        "seventeen", "eighteen", "nineteen"};
+            string[] dozens = { "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred" };
             string phrase;
 
             if (numShort < 20)
             {
-              phrase = []oneToNineteen(numShort);
+              phrase = oneToNineteen(numShort);
             }
-            return phrase;
         } 
         public static void isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
@@ -39,10 +42,6 @@ namespace es_04
         {
             string numString; //numero scritto in una stringa
             short numShort; //stesso numero ma scritto in una variabile "short"
-            string []oneToNineteen = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-                                        "ten", "eleven", "twelve", "thirteen", "fourteen", "fiveteen", "sixteen",
-                                        "seventeen", "eighteen", "nineteen"};
-            string[] dozens = { "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred" };
 
             Console.WriteLine("Inserisci un numero tra 0 e 999:");
 
@@ -51,7 +50,7 @@ namespace es_04
             numShort = short.Parse(numString);
 
             Console.WriteLine("{0} in parole è:", numShort);
-            Console.WriteLine(pronunciationOfNumber(ref numShort, ref numString, ref oneToNineteen, ref dozens));
+            pronunciationOfNumber(ref numShort, ref numString);
 
 
         }
