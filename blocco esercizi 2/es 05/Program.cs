@@ -12,6 +12,7 @@ namespace es_05
             bool isDigit = false;
 
             while (isDigit == false)
+            {
                 for (; i < input.Length; i++)
                 {
                     if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
@@ -19,10 +20,11 @@ namespace es_05
                         Console.WriteLine("errore inserisci di nuovo numero : ");
                         input = Console.ReadLine();
                         isDigit = false;
-                        i = 0;
+                        i = -1;
                     }
                     isDigit = true;
                 }
+            }
             return;
         }
         public static int factorial (int n)        // funzione ricorsiva per calcolare fattoriale
