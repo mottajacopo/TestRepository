@@ -26,21 +26,23 @@ namespace es_01
            int i = 0;
            bool testDigit = false;
 
-           while (testDigit == false)
-                testDigit = true;
-            for (; i < input.Length; i++)
+            while (testDigit == false)
             {
-                if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
+                testDigit = true;
+                for (; i < input.Length; i++)
                 {
-                    if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
+                    if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
                     {
-                        Console.WriteLine("errore inserisci di nuovo numero : ");
-                        input = Console.ReadLine();
-                        testDigit = false;
-                        i = 0;
+                        if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
+                        {
+                            Console.WriteLine("errore inserisci di nuovo numero : ");
+                            input = Console.ReadLine();
+                            testDigit = false;
+                            i = 0;
+                        }
                     }
+
                 }
-                   
             }
             return ;
         }
