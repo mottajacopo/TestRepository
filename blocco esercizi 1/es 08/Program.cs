@@ -9,7 +9,7 @@ namespace es_08
             Console.WriteLine("Inserisci un numero di 4 cifre:");
             string number = Console.ReadLine();
  
-            while(!char.IsDigit(number[0]) || number.Length != 4)   //aggiunto controllo validità del numero
+            while(!char.IsDigit(number[0]) || !char.IsDigit(number[1]) || !char.IsDigit(number[2]) || !char.IsDigit(number[3]) || number.Length != 4)   //aggiunto controllo validità del numero
             {
                 Console.WriteLine("Reinserisci un numero di 4 cifre:");
                 number = Console.ReadLine();
