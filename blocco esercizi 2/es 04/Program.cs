@@ -22,10 +22,9 @@ namespace es_04
             else
             {
 
-             digit = (byte)Char.GetNumericValue(numString[0]);
-
-             if (digit != 0)
+             if (numString.Length > 2)
                 {
+                    digit = (byte)Char.GetNumericValue(numString[0]);
                     hundred = (oneToNineteen[numShort + 1]) + "hundred";
                 }
       
