@@ -28,25 +28,25 @@ namespace es_03
             return 0;
         }
 
-        public static void isfloateger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static void isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int i = 0;
-            bool isDigit = false;
+            bool testDigit = false;
 
-            while (isDigit == false)
+            while (testDigit == false)
                 for (; i < input.Length; i++)
                 {
                     if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
                     {
                         if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
                         {
-                            Console.WriteLine("errore inserisci di nuovo numero : ");
+                            Console.WriteLine("Errore! Inserisci di nuovo numero : ");
                             input = Console.ReadLine();
-                            isDigit = false;
+                            testDigit = false;
                             i = 0;
                         }
                     }
-                    isDigit = true;
+                    testDigit = true;
                 }
             return;
         }
@@ -62,21 +62,21 @@ namespace es_03
             int result ;
             string input;
 
-            Console.WriteLine("inserisci i coefficienti dell ' equazione ax^2 + bx + c ");
+            Console.WriteLine("Inserisci i coefficienti dell ' equazione ax^2 + bx + c :");
 
-            Console.WriteLine("inserisci a :");
+            Console.WriteLine("Inserisci a :");
             input = Console.ReadLine();
-            isfloateger(ref input);          //controllo se l 'input inserito è un numero
+            isFloat(ref input);          //controllo se l 'input inserito è un numero
             a = float.Parse(input);
 
-            Console.WriteLine("inserisci b :");
+            Console.WriteLine("Inserisci b :");
             input = Console.ReadLine();
-            isfloateger(ref input);
+            isFloat(ref input);
             b = float.Parse(input);
 
-            Console.WriteLine("inserisci c :");
+            Console.WriteLine("Inserisci c :");
             input = Console.ReadLine();
-            isfloateger(ref input);
+            isFloat(ref input);
             c = float.Parse(input);
 
             result = roots(a, b, c, ref root1, ref root2);
@@ -84,13 +84,13 @@ namespace es_03
             switch (result)
             {
                 case 0:
-                    Console.WriteLine("l' equazione non ha radici reali");
+                    Console.WriteLine("L' equazione non ha radici reali.");
                     break;
                 case 1:
-                    Console.WriteLine("la radice dell ' equazione è {0}", root1);
+                    Console.WriteLine("La radice dell' equazione è: {0}", root1);
                     break;
                 case 2:
-                    Console.WriteLine("le radici dell ' equazione sono {0} e {1}", root1 , root2);
+                    Console.WriteLine("Le radici dell' equazione sono {0} e {1}.", root1 , root2);
                     break;
                 default:
 

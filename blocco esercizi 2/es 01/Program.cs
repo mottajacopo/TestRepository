@@ -21,13 +21,13 @@ namespace es_01
             return c;
         }    //restituisce true se a < b
 
-        public static void isfloateger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static void isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {                    
            int i = 0;
-           bool isDigit = false;
+           bool testDigit = false;
 
-           while (isDigit == false)
-                isDigit = true;
+           while (testDigit == false)
+                testDigit = true;
             for (; i < input.Length; i++)
             {
                 if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
@@ -36,7 +36,7 @@ namespace es_01
                     {
                         Console.WriteLine("errore inserisci di nuovo numero : ");
                         input = Console.ReadLine();
-                        isDigit = false;
+                        testDigit = false;
                         i = 0;
                     }
                 }
@@ -53,18 +53,18 @@ namespace es_01
             bool small;
             string input;
 
-            Console.WriteLine("inserisci 2 numeri per sapere quale è il maggiore e quale è il minore dei due");
+            Console.WriteLine("Inserisci 2 numeri per sapere qual è il maggiore e qual è il minore dei due:");
 
-            Console.WriteLine("numero 1: ");
+            Console.WriteLine("Numero 1: ");
             input = Console.ReadLine();
 
-            isfloateger(ref input);          //controllo se l 'input inserito è un numero 
+            isFloat(ref input);          //controllo se l 'input inserito è un numero 
             num1 = float.Parse(input);
 
-            Console.WriteLine("numero 2: ");
+            Console.WriteLine("Numero 2: ");
             input = Console.ReadLine();
 
-            isfloateger(ref input);          //controllo se l 'input inserito è un numero 
+            isFloat(ref input);          //controllo se l 'input inserito è un numero 
             num2 = float.Parse(input);
 
             big = greater(num1, num2);        //se a > b big = true

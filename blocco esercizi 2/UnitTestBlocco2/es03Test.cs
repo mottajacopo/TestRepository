@@ -10,7 +10,7 @@ namespace UnitTestBlocco2
         [TestMethod]
         public void TestEs03Roots()
         {
-            int result ;
+            int result;
             double root1 = 0;
             double root2 = 0;
             result = Program.roots(1, -4 , 4 , ref root1 , ref root2);
