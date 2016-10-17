@@ -35,7 +35,7 @@ namespace es_01
                     {
                         if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
                         {
-                            Console.WriteLine("errore inserisci di nuovo numero : ");
+                            Console.WriteLine("Errore! Inserisci di nuovo un numero:");
                             input = Console.ReadLine();
                             testDigit = false;
                             i = 0;
