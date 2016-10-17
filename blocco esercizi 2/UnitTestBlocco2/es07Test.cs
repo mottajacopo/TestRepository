@@ -7,5 +7,12 @@ namespace UnitTestBlocco2
     [TestClass]
     public class Es07Test
     {
+        [TestMethod]
+
+        public void TestEs07Randomizer()
+        {
+            
+        }
+
     }
 }
