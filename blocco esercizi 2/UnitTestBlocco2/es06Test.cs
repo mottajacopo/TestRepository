@@ -19,7 +19,6 @@ namespace UnitTestBlocco2
 
             result = Program.fromDecToBin("23c4f");
             Assert.AreEqual(result, "Impossibile! Il numero inserito non è decimale.");
-
         }
 
         [TestMethod]
@@ -31,7 +30,17 @@ namespace UnitTestBlocco2
 
             result = Program.fromBinToDec("452");
             Assert.AreEqual(result, "Impossibile! Il numero inserito non è binario.");
+        }
 
+        [TestMethod]
+        public void TestEs06FromHexToDec()
+        {
+            string result;
+            result = Program.fromHexToDec("c3b0");
+            Assert.AreEqual(result, "50096");
+
+            result = Program.fromHexToDec("65ad");
+            Assert.AreEqual(result, "26029");
         }
     }
 }

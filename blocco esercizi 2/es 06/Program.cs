@@ -159,7 +159,6 @@ namespace es_06
             Console.WriteLine("Da decimale a binario: {0}", fromDecToBin(numString));
             Console.WriteLine("Da binario a decimale: {0}", fromBinToDec(numString));
             Console.WriteLine("Da esadecimale a decimale: {0}", fromHexToDec(numString));
-
         }
     }
 }
