@@ -27,7 +27,7 @@ namespace es_05
             }
             return;
         }
-        public static int factorial (int n)        // funzione ricorsiva per calcolare fattoriale
+        public static float factorial (float n)        // funzione ricorsiva per calcolare fattoriale
         {
             if (n <= 1)
             {
@@ -39,18 +39,18 @@ namespace es_05
             } 
         }
 
-        public static int exponential(int x , int n)
+        public static float exponential(float x , float n)
         {
-            int p = 1;
+            float p = 1;
             for (int h = 0; h < n; h++)
             {
                 p *= x;
             }
             return p;
         }
-        public static int calculate(int x, int n)         
+        public static float calculate(float x, float n)         
         {
-            int s = 0;
+            float s = 0;
             for (int i = 0; i <=n; i++)
             {
                 s += factorial(i) / exponential(x , i);
@@ -59,22 +59,22 @@ namespace es_05
         }
         static void Main(string[] args)
         {
-            int n;
-            int x;
+            float n;
+            float x;
             string input;
-            int s;
+            float s;
 
             Console.WriteLine("inserisci n e x per calcolare s = 1 + 1!/x + 2!/x^2 + … + n!/x^n");
 
             Console.WriteLine("inserisci x :");
             input = Console.ReadLine();
             isFloat(ref input);
-            x = int.Parse(input);
+            x = float.Parse(input);
 
             Console.WriteLine("inserisci n :");
             input = Console.ReadLine();
             isFloat(ref input);
-            n = int.Parse(input);
+            n = float.Parse(input);
 
             s = calculate(x, n);
             Console.WriteLine("la somma è : {0}", s);

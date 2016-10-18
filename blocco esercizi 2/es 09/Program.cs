@@ -30,14 +30,13 @@ namespace es_09
             }
             return;
         }
-        public static void maxSequence(int[] array , int n)
+        public static void maxSequence(int[] array , int n , ref int [] seq)
         {
             int[] len = new int[n];       //array che servirà per l algoritmo
-            int[] seq = new int[n];       //array che conterrà la sequenza
             int x;
             int prev;
             int max= 0;                   //lunghezza sottosequenza più lunga
-           
+            
             int i;                        //variabile contatore
            
 
@@ -116,6 +115,7 @@ namespace es_09
         {
             int n;
             string input;
+           
 
             Console.WriteLine("inserisci la lunghezza dell' array :");
             input = (Console.ReadLine());
@@ -124,7 +124,10 @@ namespace es_09
             
             Console.WriteLine("inserisci gli elementi dell' array :");
             int[] array = new int[n];
-           
+            int[] seq = new int[n];       //array che conterrà la sequenza
+
+            
+
             for (int i = 0; i < n; i++)
             {
                     input = (Console.ReadLine());
@@ -132,22 +135,10 @@ namespace es_09
                     array[i] = int.Parse(input);
             }
 
-            maxSequence(array , n);
+            maxSequence(array , n , ref seq);
+
             
         }
     }
 }
 
-
-
-
-/*
-
- Console.WriteLine("posizione dell ultimo elemento della sottosequenza : {0}", x);
-
- for (i = 0; i < n; i++)
- {
-     Console.WriteLine("{0}", len[i]);
- }
-
-*/
