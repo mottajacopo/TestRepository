@@ -148,6 +148,83 @@ namespace es_06
             numString = Convert.ToString(HexToDec);
             return numString;
         }
+        public static string fromDecToHex(string numString)
+        { 
+            string DecToHex = "";
+            for (int i = 0; i < numString.Length; i++) //se il numero inserito è esadecimale questa conversione non è possibile
+            {
+                if ((numString[i] == 'a') || (numString[i] == 'b') || (numString[i] == 'c') || (numString[i] == 'd') || (numString[i] == 'e') || (numString[i] == 'f'))
+                {
+                    DecToHex = "Impossibile! Il numero inserito non è decimale.";
+                    return DecToHex;
+                }
+            }
+            int numInt = int.Parse(numString);
+            int rest = 0;
+
+            if (numInt == 0) //caso particolare: il numero è 0
+            {
+                return "0";
+            }
+            while (numInt >= 1)
+            {
+                rest = numInt % 16;
+                numInt = numInt / 16;
+
+                switch (rest)
+                {
+                    case 0:
+                        DecToHex = "0" + DecToHex;
+                        break;
+                    case 1:
+                        DecToHex = "1" + DecToHex;
+                        break;
+                    case 2:
+                        DecToHex = "2" + DecToHex;
+                        break;
+                    case 3:
+                        DecToHex = "3" + DecToHex;
+                        break;
+                    case 4:
+                        DecToHex = "4" + DecToHex;
+                        break;
+                    case 5:
+                        DecToHex = "5" + DecToHex;
+                        break;
+                    case 6:
+                        DecToHex = "6" + DecToHex;
+                        break;
+                    case 7:
+                        DecToHex = "7" + DecToHex;
+                        break;
+                    case 8:
+                        DecToHex = "8" + DecToHex;
+                        break;
+                    case 9:
+                        DecToHex = "9" + DecToHex;
+                        break;
+                    case 10:
+                        DecToHex = "A" + DecToHex;
+                        break;
+                    case 11:
+                        DecToHex = "B" + DecToHex;
+                        break;
+                    case 12:
+                        DecToHex = "C" + DecToHex;
+                        break;
+                    case 13:
+                        DecToHex = "D" + DecToHex;
+                        break;
+                    case 14:
+                        DecToHex = "E" + DecToHex;
+                        break;
+                    case 15:
+                        DecToHex = "F" + DecToHex;
+                        break;
+                }
+            }
+            return DecToHex;
+        }
         static void Main(string[] args)
         {
             string numString;
@@ -159,6 +236,7 @@ namespace es_06
             Console.WriteLine("Da decimale a binario: {0}", fromDecToBin(numString));
             Console.WriteLine("Da binario a decimale: {0}", fromBinToDec(numString));
             Console.WriteLine("Da esadecimale a decimale: {0}", fromHexToDec(numString));
+            Console.WriteLine("Da decimale a esadecimale: {0}", fromDecToHex(numString));
         }
     }
 }

@@ -42,5 +42,16 @@ namespace UnitTestBlocco2
             result = Program.fromHexToDec("65ad");
             Assert.AreEqual(result, "26029");
         }
+
+        [TestMethod]
+        public void TestEs06FromDecToHex()
+        {
+            string result;
+            result = Program.fromDecToHex("1002");
+            Assert.AreEqual(result, "3EA");
+
+            result = Program.fromDecToHex("58f");
+            Assert.AreEqual(result, "Impossibile! Il numero inserito non è decimale.");
+        }
     }
 }
