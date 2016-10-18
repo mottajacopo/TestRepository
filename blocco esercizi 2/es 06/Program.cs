@@ -85,6 +85,69 @@ namespace es_06
             numString = Convert.ToString(BinToDec);
             return numString;
         }
+        public static string fromHexToDec(string numString)
+        {
+            double HexToDec = 0; //contiene il numero trasformato in decimale, verrà convertita in stringa alla fine
+
+            for (int k = 0; k < numString.Length; k++)
+            { 
+                switch (numString[k])
+                {
+                    case '0':
+                        break;
+                    case '1':
+                        HexToDec += 1 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '2':
+                        HexToDec += 2 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '3':
+                        HexToDec += 3 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '4':
+                        HexToDec += 4 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '5':
+                        HexToDec += 5 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '6':
+                        HexToDec += 6 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '7':
+                        HexToDec += 7 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '8':
+                        HexToDec += 8 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case '9':
+                        HexToDec += 9 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case 'a':
+                        HexToDec += 10 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case 'b':
+                        HexToDec += 11 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case 'c':
+                        HexToDec += 12 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case 'd':
+                        HexToDec += 13 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case 'e':
+                        HexToDec += 14 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    case 'f':
+                        HexToDec += 15 * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                    default:
+                        HexToDec += numString[k] * (Math.Pow(16, numString.Length - k - 1));
+                        break;
+                }  
+            }
+            numString = Convert.ToString(HexToDec);
+            return numString;
+        }
         static void Main(string[] args)
         {
             string numString;
@@ -95,6 +158,7 @@ namespace es_06
      
             Console.WriteLine("Da decimale a binario: {0}", fromDecToBin(numString));
             Console.WriteLine("Da binario a decimale: {0}", fromBinToDec(numString));
+            Console.WriteLine("Da esadecimale a decimale: {0}", fromHexToDec(numString));
 
         }
     }
