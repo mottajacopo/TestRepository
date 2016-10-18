@@ -6,7 +6,7 @@ namespace es_05
     public class Program
     {
 
-        public static void isfloateger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static void isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int i = 0;
             bool isDigit = false;
@@ -17,7 +17,7 @@ namespace es_05
                 {
                     if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
                     {
-                        Console.WriteLine("errore inserisci di nuovo numero : ");
+                        Console.WriteLine("Errore! Inserisci di nuovo un numero:");
                         input = Console.ReadLine();
                         isDigit = false;
                         i = -1;
@@ -68,19 +68,16 @@ namespace es_05
 
             Console.WriteLine("inserisci x :");
             input = Console.ReadLine();
-            isfloateger(ref input);
+            isFloat(ref input);
             x = int.Parse(input);
 
             Console.WriteLine("inserisci n :");
             input = Console.ReadLine();
-            isfloateger(ref input);
+            isFloat(ref input);
             n = int.Parse(input);
 
             s = calculate(x, n);
             Console.WriteLine("la somma è : {0}", s);
-
-           
-
         }
     }
 }
