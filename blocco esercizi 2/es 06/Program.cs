@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace es_06
 {
     public class Program
@@ -18,7 +17,7 @@ namespace es_06
                 {
                     if (!Char.IsDigit(input[i]) || (input[i] == '-'))         //se il char non è un numero lo reinserisco
                     {
-                        if (input[i] != 'a' || input[i] != 'b' || input[i] != 'c' || input[i] != 'd' || input[i] != 'e' || input[i] != 'f')             //accetto solo i caratteri "a", "b", "c", "d", "e", "f".
+                        if (input[i] != 'a' && input[i] != 'b' && input[i] != 'c' && input[i] != 'd' && input[i] != 'e' && input[i] != 'f')             //accetto solo i caratteri "a", "b", "c", "d", "e", "f".
                         {
                             Console.WriteLine("Errore! Inserisci di nuovo un numero:");
                             input = Console.ReadLine();
