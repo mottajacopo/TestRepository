@@ -107,7 +107,7 @@ namespace es_09
                 Console.WriteLine("{0}", seq[i]);
             }
 
-           
+          
 
         }
 
@@ -142,3 +142,10 @@ namespace es_09
     }
 }
 
+
+/*
+  for( i = 0; i < n; i++)
+            {
+                Console.WriteLine("{0}", len[i]);
+            }
+*/

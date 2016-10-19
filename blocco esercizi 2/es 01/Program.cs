@@ -28,7 +28,6 @@ namespace es_01
 
             while (testDigit == false)
             {
-                testDigit = true;
                 for (; i < input.Length; i++)
                 {
                     if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
@@ -43,6 +42,7 @@ namespace es_01
                     }
 
                 }
+                testDigit = true;
             }
             return ;
         }
@@ -78,3 +78,4 @@ namespace es_01
         }
     }
 }
+
