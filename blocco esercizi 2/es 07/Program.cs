@@ -30,7 +30,7 @@ namespace es_07
         }
         public static void randomizer(int n)
         {
-            int[] array = new int[n] ;
+            int[] array = new int[n]; 
             int temp;
             int swap;
             Random rand = new Random();
