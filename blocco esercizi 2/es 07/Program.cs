@@ -28,17 +28,12 @@ namespace es_07
             }
             return;
         }
-        public static void randomizer(int n)
+        public static void randomizer(int n , ref int []array)
         {
-            int[] array = new int[n] ;
+           
             int temp;
             int swap;
             Random rand = new Random();
-
-            for (int i = 0; i < n; i++)
-            {
-                array[i] = i + 1;
-            }
 
             Console.WriteLine("gli elementi dell array in ordine corretto sono :");
             for (int k = 0; k < n; k++)
@@ -73,8 +68,13 @@ namespace es_07
             isInteger(ref num); //controllo che la stringa contenga unicamente un numero
             n = int.Parse(num); //lo converto in un intero
 
+            int[] array = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = i + 1;
+            }
 
-            randomizer(n);
+            randomizer(n , ref array);
         }
     }
 }
