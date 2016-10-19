@@ -5,7 +5,6 @@ namespace es_07
 {
     public class Program
     {
-
         public static void isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int i = 0;
@@ -30,7 +29,8 @@ namespace es_07
         }
         public static void randomizer(int n , ref int []array)
         {
-            int[] array = new int[n] ;            int temp;
+            int[] arrays = new int[n] ;
+            int temp;
             int swap;
             Random rand = new Random();
 
