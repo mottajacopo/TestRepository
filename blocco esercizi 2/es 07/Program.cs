@@ -29,7 +29,6 @@ namespace es_07
         }
         public static void randomizer(int n , ref int []array)
         {
-            int[] arrays = new int[n] ;
             int temp;
             int swap;
             Random rand = new Random();
