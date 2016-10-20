@@ -24,6 +24,7 @@ namespace UnitTestBlocco2
             int result;
             result = Program.LCM(-12, 8, 4);
             Assert.AreEqual(result, 24);
+
             result = Program.LCM(13, 4, 1);
             Assert.AreEqual(result, 52);
 

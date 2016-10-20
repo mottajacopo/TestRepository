@@ -5,30 +5,15 @@ namespace es_08
 {
     public class Program
     {
-        public static void isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int isInteger(string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            int i = 0;
-            bool testDigit = false;
-
-            while (testDigit == false)
+            int num = 0;
+            while (!Int32.TryParse(input, out num))
             {
-                testDigit = true;
-
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]))         //se il char non è un numero lo reinserisco
-                    {
-                        if (input[i] != '-')             //permette l 'inserimento di numeri negativi
-                        {
-                            Console.Write("Errore! Inserisci di nuovo un numero: ");
-                            input = Console.ReadLine();
-                            testDigit = false;
-                            i = 0;
-                        }
-                    }
-                }
-            }
-            return;
+                Console.Write("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
+            }        
+            return num;
         }
         public static int GCD(int a, int b)
         {
@@ -47,7 +32,7 @@ namespace es_08
                 smaller = a;
             }
 
-            for(int k = 1; k < smaller; k++)
+            for(int k = 1; k < Math.Abs(smaller); k++)
             {
                 if ((smaller % k == 0) && (bigger % k == 0))
                 {
@@ -69,13 +54,11 @@ namespace es_08
 
             Console.Write("Inserisci due numeri interi per vedere il massimo comun divisore e il minimo comune multiplo:\nNumero 1: ");
             num1Str = Console.ReadLine();
-            isInteger(ref num1Str); //controllo che la stringa contenga unicamente un numero
-            num1Int = int.Parse(num1Str); //lo converto in un intero
+            num1Int = isInteger(num1Str); //controllo che la stringa contenga unicamente un numero
 
             Console.Write("Numero 2: ");
             num2Str = Console.ReadLine();
-            isInteger(ref num2Str); //controllo che la stringa contenga unicamente un numero
-            num2Int = int.Parse(num2Str); //lo converto in un intero
+            num2Int = isInteger(num2Str); //controllo che la stringa contenga unicamente un numero
             
             Console.WriteLine("Il massimo comun divisore tra {0} e {1} è: {2}", num1Int, num2Int, GCD(num1Int, num2Int)); //stampo il MCD
             Console.WriteLine("Il minimo comune multiplo tra {0} e {1} è: {2}", num1Int, num2Int, LCM(num1Int, num2Int, GCD(num1Int, num2Int))); //stampo il mcm
