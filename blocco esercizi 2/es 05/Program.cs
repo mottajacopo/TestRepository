@@ -17,7 +17,7 @@ namespace es_05
                 {
                     if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
                     {
-                        Console.WriteLine("Errore! Inserisci di nuovo un numero:");
+                        Console.Write("Errore! Inserisci di nuovo un numero: ");
                         input = Console.ReadLine();
                         isDigit = false;
                         i = -1;
@@ -64,20 +64,20 @@ namespace es_05
             string input;
             float s;
 
-            Console.WriteLine("inserisci n e x per calcolare s = 1 + 1!/x + 2!/x^2 + … + n!/x^n");
+            Console.WriteLine("Inserisci n e x per calcolare s = 1 + 1!/x + 2!/x^2 + … + n!/x^n");
 
-            Console.WriteLine("inserisci x :");
+            Console.Write("Inserisci x: ");
             input = Console.ReadLine();
             isFloat(ref input);
             x = float.Parse(input);
 
-            Console.WriteLine("inserisci n :");
+            Console.Write("Inserisci n: ");
             input = Console.ReadLine();
             isFloat(ref input);
             n = float.Parse(input);
 
             s = calculate(x, n);
-            Console.WriteLine("la somma è : {0}", s);
+            Console.WriteLine("La somma è: {0}", s);
         }
     }
 }

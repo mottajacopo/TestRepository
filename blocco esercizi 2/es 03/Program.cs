@@ -40,7 +40,7 @@ namespace es_03
                     {
                         if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
                         {
-                            Console.WriteLine("Errore! Inserisci di nuovo numero : ");
+                            Console.Write("Errore! Inserisci di nuovo numero: ");
                             input = Console.ReadLine();
                             testDigit = false;
                             i = 0;
@@ -64,17 +64,17 @@ namespace es_03
 
             Console.WriteLine("Inserisci i coefficienti dell ' equazione ax^2 + bx + c :");
 
-            Console.WriteLine("Inserisci a :");
+            Console.Write("Inserisci a : ");
             input = Console.ReadLine();
             isFloat(ref input);          //controllo se l 'input inserito è un numero
             a = float.Parse(input);
 
-            Console.WriteLine("Inserisci b :");
+            Console.Write("Inserisci b: ");
             input = Console.ReadLine();
             isFloat(ref input);
             b = float.Parse(input);
 
-            Console.WriteLine("Inserisci c :");
+            Console.Write("Inserisci c: ");
             input = Console.ReadLine();
             isFloat(ref input);
             c = float.Parse(input);

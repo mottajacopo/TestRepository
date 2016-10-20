@@ -20,7 +20,7 @@ namespace es_08
                     {
                         if (input[i] != '-')             //permette l 'inserimento di numeri negativi
                         {
-                            Console.WriteLine("Errore! Inserisci di nuovo un numero:");
+                            Console.Write("Errore! Inserisci di nuovo un numero: ");
                             input = Console.ReadLine();
                             testDigit = false;
                             i = 0;
@@ -67,12 +67,12 @@ namespace es_08
             string num1Str;
             string num2Str;
 
-            Console.WriteLine("Inserisci due numeri interi per vedere il massimo comun divisore e il minimo comune multiplo:\nNumero 1:");
+            Console.Write("Inserisci due numeri interi per vedere il massimo comun divisore e il minimo comune multiplo:\nNumero 1: ");
             num1Str = Console.ReadLine();
             isInteger(ref num1Str); //controllo che la stringa contenga unicamente un numero
             num1Int = int.Parse(num1Str); //lo converto in un intero
 
-            Console.WriteLine("Numero 2:");
+            Console.Write("Numero 2: ");
             num2Str = Console.ReadLine();
             isInteger(ref num2Str); //controllo che la stringa contenga unicamente un numero
             num2Int = int.Parse(num2Str); //lo converto in un intero

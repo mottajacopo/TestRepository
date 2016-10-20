@@ -5,6 +5,28 @@ namespace es_10
 {
     public class Program
     {
+        public static void isInteger(ref string input)
+        {
+            int i = 0;
+            bool testDigit = false;
+
+            while (testDigit == false)
+            {
+                testDigit = true;
+
+                for (; i < input.Length; i++)
+                {
+                    if (!Char.IsDigit(input[i]))         //se il char non è un numero lo reinserisco
+                    {
+                        Console.Write("Errore! Inserisci di nuovo un numero: ");
+                        input = Console.ReadLine();
+                        testDigit = false;
+                        i = -1;
+                    }
+                }
+            }
+            return;
+        }
         public static void printArray(int[,] array, int n) {
             
             for(int i = 0; i < n; i++)
@@ -82,7 +104,9 @@ namespace es_10
         static void Main(string[] args)
         {
             Console.Write("Inserisci la dimensione dell'array: ");
-            int n = int.Parse(Console.ReadLine());
+            string numString = Console.ReadLine(); //prendo il numero come stringa
+            isInteger(ref numString); //controllo che sia valido
+            int n = int.Parse(numString); //lo converto in un intero e lo passo alla funzione
 
             Console.WriteLine("Gli elementi disposti secondo la funzione A sono:\n");
             functionA(n);

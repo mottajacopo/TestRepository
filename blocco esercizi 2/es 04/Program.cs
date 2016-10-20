@@ -71,7 +71,7 @@ namespace es_04
                 {
                     if (!Char.IsDigit(input[i]) || (input.Length > 3))         //se il char non è un numero o non è compreso tra 0 e 999 lo reinserisco
                     {
-                        Console.WriteLine("Errore! Inserisci di nuovo un numero (tra 0 e 999): ");
+                        Console.Write("Errore! Inserisci di nuovo un numero (tra 0 e 999): ");
                         input = Console.ReadLine();
                         testDigit = false;
                         i = -1;
@@ -85,7 +85,7 @@ namespace es_04
             string numString; //numero scritto in una stringa
             short numShort; //stesso numero ma scritto in una variabile "short"
 
-            Console.WriteLine("Inserisci un numero tra 0 e 999:");
+            Console.Write("Inserisci un numero tra 0 e 999: ");
 
             numString = Console.ReadLine();
             isInteger(ref numString);

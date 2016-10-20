@@ -20,7 +20,7 @@ namespace es_09
                     if (!Char.IsDigit(input[i]) )         
                     {
                         
-                            Console.WriteLine("Errore! Inserisci di nuovo un numero : ");
+                            Console.Write("Errore! Inserisci di nuovo un numero: ");
                             input = Console.ReadLine();
                             testDigit = false;
                             i = -1;
@@ -101,16 +101,13 @@ namespace es_09
             }
 
             //stampo la sequenza
-            Console.WriteLine("la massima sequenza è :");
+            Console.WriteLine("La massima sequenza è :");
             for(i = 0; i < max; i++)
             {
                 Console.WriteLine("{0}", seq[i]);
             }
 
-          
-
         }
-
         static void Main(string[] args)
         {
             int n;
@@ -136,8 +133,7 @@ namespace es_09
             }
 
             maxSequence(array , n , ref seq);
-
-            
+ 
         }
     }
 }

@@ -34,7 +34,7 @@ namespace es_01
                     {
                         if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
                         {
-                            Console.WriteLine("Errore! Inserisci di nuovo un numero:");
+                            Console.Write("Errore! Inserisci di nuovo un numero: ");
                             input = Console.ReadLine();
                             testDigit = false;
                             i = 0;
@@ -57,13 +57,13 @@ namespace es_01
 
             Console.WriteLine("Inserisci 2 numeri per sapere qual è il maggiore e qual è il minore dei due:");
 
-            Console.WriteLine("Numero 1: ");
+            Console.Write("Numero 1: ");
             input = Console.ReadLine();
 
             isFloat(ref input);          //controllo se l 'input inserito è un numero 
             num1 = float.Parse(input);
 
-            Console.WriteLine("Numero 2: ");
+            Console.Write("Numero 2: ");
             input = Console.ReadLine();
 
             isFloat(ref input);          //controllo se l 'input inserito è un numero 
