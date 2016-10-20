@@ -40,11 +40,11 @@ namespace es_08
                 }
             }
             return c;
-        }
+        } //massimo comun divisore
         public static int LCM(int a, int b, int gcd)
         {
             return (Math.Abs(a * b) / gcd);
-        }
+        } //minimo comune multiplo
         static void Main(string[] args)
         {
             int num1Int;

@@ -29,11 +29,11 @@ namespace es_10
         }
         public static void printArray(int[,] array, int n) {
             
-            for(int i = 0; i < n; i++)
+            for(int row = 0; row < n; row++)
             {
-                for (int k = 0; k < n; k++)
+                for (int column = 0; column < n; column++)
                 {
-                    Console.Write("{0}\t", array[i, k]);
+                    Console.Write("{0}\t", array[row, column]);
                 }
                 Console.WriteLine("\n");
             }
@@ -44,11 +44,11 @@ namespace es_10
             int[,] array = new int[n, n];
             int element = 1;
 
-            for(int i = 0; i < n; i++ )
+            for(int row = 0; row < n; row++ )
             {
-                for(int k = 0; k < n; k++)
+                for(int column = 0; column < n; column++)
                 {
-                    array[k, i] = element;
+                    array[column, row] = element;
                     element++;
                 }
             }
@@ -60,22 +60,22 @@ namespace es_10
             int element = 1;
             bool x = true;  
 
-            for (int i = 0; i < n; i++)
+            for (int row = 0; row < n; row++)
             {
             if (x)
                 {
-                    for (int k = 0; k < n; k++)
+                    for (int column = 0; column < n; column++)
                     {
-                        array[k, i] = element;
+                        array[column, row] = element;
                         element++;
                     }
                     x = false;
                 }
             else
                 {
-                    for (int j = n - 1; j >= 0; j--)
+                    for (int column = n - 1; column >= 0; column--)
                     {
-                        array[j, i] = element;
+                        array[column, row] = element;
                         element++;
                     }
                     x = true;

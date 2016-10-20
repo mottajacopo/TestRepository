@@ -51,7 +51,6 @@ namespace es_03
             return;
         }
 
-
         static void Main(string[] args)
         {
             double root1 = 0;

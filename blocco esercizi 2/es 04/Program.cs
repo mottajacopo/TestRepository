@@ -59,7 +59,8 @@ namespace es_04
 
             return hundred;
         }
-        public static void isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+
+        public static void isInteger(ref string input)
         {
             int i = 0;
             bool testDigit = false;
@@ -79,7 +80,8 @@ namespace es_04
                 }
             }
             return;
-        }
+        } //controllo per verificare che vengano inseriti numeri e non lettere o altro
+
         static void Main(string[] args)
         {
             string numString; //numero scritto in una stringa

@@ -6,7 +6,7 @@ namespace es_05
     public class Program
     {
 
-        public static void isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static void isFloat(ref string input)
         {
             int i = 0;
             bool isDigit = false;
@@ -26,7 +26,8 @@ namespace es_05
                 }
             }
             return;
-        }
+        }  //controllo per verificare che vengano inseriti numeri e non lettere o altro
+
         public static float factorial (float n)        // funzione ricorsiva per calcolare fattoriale
         {
             if (n <= 1)
@@ -48,6 +49,7 @@ namespace es_05
             }
             return p;
         }
+
         public static float calculate(float x, float n)         
         {
             float s = 0;
@@ -57,6 +59,7 @@ namespace es_05
             }
             return s;
         }
+
         static void Main(string[] args)
         {
             float n;

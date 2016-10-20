@@ -70,7 +70,7 @@ namespace es_09
                     x = i;        //dentro x metto la posizione dell ultimo elemento della sequenza
                 }
 
-            Console.WriteLine("la lunghezza della sequenza massima è : {0}", max);
+            Console.WriteLine("La lunghezza della sequenza massima è : {0}", max);
           
             //ora ricostruisco la sequenza
 
@@ -114,12 +114,12 @@ namespace es_09
             string input;
            
 
-            Console.WriteLine("inserisci la lunghezza dell' array :");
+            Console.Write("Inserisci la lunghezza dell' array: ");
             input = (Console.ReadLine());
             isInteger(ref input);
             n = int.Parse(input);
             
-            Console.WriteLine("inserisci gli elementi dell' array :");
+            Console.WriteLine("Inserisci gli elementi dell' array:");
             int[] array = new int[n];
             int[] seq = new int[n];       //array che conterrà la sequenza
 

@@ -4,7 +4,7 @@ namespace es_06
 {
     public class Program
     {
-        public static void isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static void isInteger(ref string input)
         {
             int i = 0;
             bool testDigit = false;
@@ -28,7 +28,8 @@ namespace es_06
                 }
             }
             return;
-        }
+        } //controllo per verificare che vengano inseriti numeri e non lettere o altro
+
         public static string fromDecToBin (string numString) {
 
             string DecToBin = "";
@@ -62,7 +63,8 @@ namespace es_06
                 }   
             }
             return DecToBin;
-            }
+            } //conversione da decimale a binario
+
         public static string fromBinToDec (string numString)
         {
             double BinToDec = 0; //contiene il numero trasformato in decimale, verrà convertita in stringa alla fine
@@ -84,7 +86,8 @@ namespace es_06
             }
             numString = Convert.ToString(BinToDec);
             return numString;
-        }
+        }  //conversione da binario a decimale
+
         public static string fromHexToDec(string numString)
         {
             double HexToDec = 0; //contiene il numero trasformato in decimale, verrà convertita in stringa alla fine
@@ -147,7 +150,8 @@ namespace es_06
             }
             numString = Convert.ToString(HexToDec);
             return numString;
-        }
+        }  //conversione da esadecimale a decimale
+
         public static string fromDecToHex(string numString)
         { 
             string DecToHex = "";
@@ -224,7 +228,8 @@ namespace es_06
                 }
             }
             return DecToHex;
-        }
+        } //conversione da decimale a esadecimale
+
         static void Main(string[] args)
         {
             string numString;
