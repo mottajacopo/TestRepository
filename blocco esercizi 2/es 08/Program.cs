@@ -5,7 +5,7 @@ namespace es_08
 {
     public class Program
     {
-        public static int isInteger(string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int isInteger(string input)
         {
             int num = 0;
             while (!Int32.TryParse(input, out num))
@@ -14,7 +14,8 @@ namespace es_08
                 input = Console.ReadLine();
             }        
             return num;
-        }
+        } //controllo per verificare che vengano inseriti numeri e non lettere o altro
+
         public static int GCD(int a, int b)
         {
             int c = 1; //variabile che contiene il massimo comun divisore, come minimo è 1
@@ -41,10 +42,12 @@ namespace es_08
             }
             return c;
         } //massimo comun divisore
+
         public static int LCM(int a, int b, int gcd)
         {
             return (Math.Abs(a * b) / gcd);
         } //minimo comune multiplo
+
         static void Main(string[] args)
         {
             int num1Int;
