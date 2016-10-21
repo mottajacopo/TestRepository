@@ -31,6 +31,10 @@ namespace es_07
             for (int c = 0; c < n; c++)
             {
                 swap = rand.Next(0, n);
+                while (swap == c)
+                {
+                    swap = rand.Next(0, n);
+                }
                 temp = array[c];
                 array[c] = array[swap];
                 array[swap] = temp;
