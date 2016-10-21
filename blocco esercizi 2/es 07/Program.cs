@@ -20,6 +20,13 @@ namespace es_07
         {
             int temp;
             int swap;
+
+            int [] testArray = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                testArray[i] = i + 1;
+            }
+
             Random rand = new Random();
 
             Console.WriteLine("gli elementi dell array in ordine corretto sono :");
@@ -30,12 +37,16 @@ namespace es_07
 
             for (int c = 0; c < n; c++)
             {
+                
                 swap = rand.Next(0, n);
-                while (swap == c)
+                temp = array[c];
+
+                // controllo per evitare che un numero finisca casualmente nella sua posizione originale
+                while (array[c] == testArray[swap] || array[c] == swap +1 || array[swap] == c+1)
                 {
                     swap = rand.Next(0, n);
                 }
-                temp = array[c];
+
                 array[c] = array[swap];
                 array[swap] = temp;
             }
