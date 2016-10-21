@@ -16,7 +16,8 @@ namespace es_10
             return num;
         }
 
-        public static void printArray(int[,] array, int n) {
+        public static void printArray(int[,] array, int n)
+        {
 
             for (int row = 0; row < n; row++)
             {
@@ -29,9 +30,9 @@ namespace es_10
 
         }
 
-        public static void functionA(int n)
+        public static int[,] functionA(int n, int[,] array)
         {
-            int[,] array = new int[n, n];
+
             int element = 1;
 
             for (int row = 0; row < n; row++)
@@ -43,11 +44,12 @@ namespace es_10
                 }
             }
             printArray(array, n);
+            return array;
         }
 
-        public static void functionB(int n)
+        public static int[,] functionB(int n, int[,] array)
         {
-            int[,] array = new int[n, n];
+
             int element = 1;
             bool x = true;
 
@@ -73,11 +75,12 @@ namespace es_10
                 }
             }
             printArray(array, n);
+            return array;
         }
 
-        public static void functionC(int n)
+        public static int[,] functionC(int n, int[,] array)
         {
-            int[,] array = new int[n, n];
+
 
             int element = 1;
             for (int row = n - 1; row >= 0; row--)
@@ -96,11 +99,12 @@ namespace es_10
                 }
             }
             printArray(array, n);
+            return array;
         }
 
-        public static void functionD(int n)
+        public static int[,] functionD(int n, int[,] array)
         {
-            int[,] array = new int[n, n];
+
             int el = 0;
             int colPos = 0;
             int rowPos = 0;
@@ -144,6 +148,7 @@ namespace es_10
                 colPos -= (n - element - 1);
             }
             printArray(array, n);
+            return array;
         }
 
         public static int goDown(int[,] array, int col, int rowStart, int passes, int valueStart)
@@ -188,22 +193,28 @@ namespace es_10
 
         static void Main(string[] args)
         {
-                Console.Write("Inserisci la dimensione dell'array: ");
-                string numString = Console.ReadLine(); //prendo il numero come stringa
-                
-                int n = isInteger(ref numString); //controllo che sia valido
+            Console.Write("Inserisci la dimensione dell'array: ");
+            string numString = Console.ReadLine(); //prendo il numero come stringa
 
-                Console.WriteLine("Gli elementi disposti secondo la funzione A sono:\n");
-                functionA(n);
+            int n = isInteger(ref numString); //controllo che sia valido
 
-                Console.WriteLine("Gli elementi disposti secondo la funzione B sono:\n");
-                functionB(n);
+            int[,] arrayA = new int[n, n];
+            int[,] arrayB = new int[n, n];
+            int[,] arrayC = new int[n, n];
+            int[,] arrayD = new int[n, n];
 
-                Console.WriteLine("Gli elementi disposti secondo la funzione C sono:\n");
-                functionC(n);
+            Console.WriteLine("Gli elementi disposti secondo la funzione A sono:\n");
+            arrayA = functionA(n, arrayA);
 
-                Console.WriteLine("Gli elementi disposti secondo la funzione D sono:\n");
-                functionD(n);
-            }
+            Console.WriteLine("Gli elementi disposti secondo la funzione B sono:\n");
+            arrayB = functionA(n, arrayB);
+
+            Console.WriteLine("Gli elementi disposti secondo la funzione C sono:\n");
+            arrayC = functionA(n, arrayC);
+
+            Console.WriteLine("Gli elementi disposti secondo la funzione D sono:\n");
+            arrayD = functionA(n, arrayD);
+
         }
     }
+}

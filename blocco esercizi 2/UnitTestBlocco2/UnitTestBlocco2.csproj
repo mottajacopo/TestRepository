@@ -61,6 +61,7 @@
     <Compile Include="es07Test.cs" />
     <Compile Include="es08Test.cs" />
     <Compile Include="es09Test.cs" />
+    <Compile Include="es10Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
