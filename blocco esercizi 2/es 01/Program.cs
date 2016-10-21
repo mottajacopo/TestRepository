@@ -5,27 +5,33 @@ namespace es_01
 {
     public class Program
     {
-        public static bool greater(float num1, float num2)
+        public static int greater(int num1, int num2)
         {
-            float a = num1;
-            float b = num2;
-            float c = a - b;
+            int a = num1;
+            int b = num2;
+            int c = a - b;
+            int k = (c >> 31) & 0x1;
+            int max = a - k * c;
 
-            return c;
-        }    //restituisce true se a > b
+            return max;
+        }    
 
-        public static bool smaller(float num1, float num2)
+        public static int smaller(int num1, int num2)
         {
-            float a = num1;
-            float b = num2;
-            bool c = a < b;
-            return c;
-        }    //restituisce true se a < b
+            int a = num1;
+            int b = num2;
+            int c = a - b;
+            int k = (c >> 31) & 0x1;
+            int min = b + k * c;
 
-        public static float isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+            return min;
+        }    
+
+
+        public static int isint(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            float num = 0;
-            while (!float.TryParse(input, out num))
+            int num = 0;
+            while (!int.TryParse(input, out num))
             {
                 Console.Write("Errore! Inserisci di nuovo un numero: ");
                 input = Console.ReadLine();
@@ -36,27 +42,27 @@ namespace es_01
 
         static void Main(string[] args)
         {
-            float num1 = 0;
-            float num2 = 0;
-            bool big;
-            bool small;
+            int num1 = 0;
+            int num2 = 0;
+            int big;
+            int small;
             string input;
 
             Console.WriteLine("Inserisci 2 numeri per sapere qual è il maggiore e qual è il minore dei due:");
 
             Console.Write("Numero 1: ");
             input = Console.ReadLine();
-            num1 = isFloat(ref input);          //controllo se l 'input inserito è un numero 
+            num1 = isint(ref input);          //controllo se l 'input inserito è un numero 
 
             Console.Write("Numero 2: ");
             input = Console.ReadLine();
-            num2 = isFloat(ref input);          //controllo se l 'input inserito è un numero 
+            num2 = isint(ref input);          //controllo se l 'input inserito è un numero 
 
             big = greater(num1, num2);        //se a > b big = true
             small = smaller(num1, num2);      //se a < b small = false
 
-            Console.WriteLine("{1} è maggiore di {2} ? {0}" ,big , num1 ,num2);
-            Console.WriteLine("{1} è minore di {2} ? {0}", small , num1 ,num2);
+            Console.Write("Il maggiore è: {0}\n" ,big);
+            Console.Write("Il minore è: {0}\n", small);
 
         }
     }

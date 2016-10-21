@@ -11,7 +11,7 @@ namespace UnitTestBlocco4
         public void TestEs04PronunciationOfNumbers()
         {
             string result;
-            short numShort =  670;
+            int numShort =  670;
             string  numString = "670";
             result = Program.pronunciationOfNumber(ref numShort, ref numString);
             Assert.AreEqual(result, "six hundred seventy ");

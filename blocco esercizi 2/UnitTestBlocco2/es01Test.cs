@@ -10,21 +10,21 @@ namespace UnitTestBlocco2
         [TestMethod]
         public void TestEs01Greater()
         {
-            bool result;
+            int result;
             result = Program.greater(3, 5);
-            Assert.AreEqual(result, false);
-            result = Program.greater(5, 3);
-            Assert.AreEqual(result, true);
+            Assert.AreEqual(result, 5);
+            result = Program.greater(-4, 12);
+            Assert.AreEqual(result, 12);
         }
 
         [TestMethod]
         public void TestEs01Smaller()
         {
-            bool result;
-            result = Program.smaller(8, 9);
-            Assert.AreEqual(result, true);
-            result = Program.smaller(9, 8);
-            Assert.AreEqual(result, false);
+            int result;
+            result = Program.smaller(3, 5);
+            Assert.AreEqual(result, 3);
+            result = Program.smaller(-4, 12);
+            Assert.AreEqual(result, -4);
 
         }
     }

@@ -11,18 +11,35 @@ namespace UnitTestBlocco2
 
         public void TestEs07Randomizer()
         {
-            int[] array = new int[10];
-            for (int i = 0; i < 10; i++)
+            int[] array = new int[100];
+            for (int i = 0; i < 100; i++)
             {
                 array[i] = i + 1;
             }
 
-            Program.randomizer(10 , ref array);
+            Program.randomizer(100 , ref array);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
                 Assert.AreNotEqual(array[i] , i+1);
             }
+
+            int counter = 0; //se il contatore è arrivato a 10, l'array contiene tutti gli elementi distinti
+
+            for(int i = 1; i <= 100; i++) //numero
+            {
+                for(int j = 0; j < 100; j++) //posizione
+                {
+                    if(array[j] == i)
+                    {
+                        counter++;
+                    }
+                }
+            }
+            Assert.AreEqual(counter, 100);
+
+
+
         }
 
     }

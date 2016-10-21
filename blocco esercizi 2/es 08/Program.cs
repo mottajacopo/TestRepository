@@ -22,6 +22,14 @@ namespace es_08
             int bigger;
             int smaller;
 
+            if(a == 0)  //se uno dei due è zero ritorno il modulo dell'altro
+            {
+                return Math.Abs(b);
+            }
+            if (b == 0)
+            {
+                return Math.Abs(a);
+            }
             if (Math.Abs(a) > Math.Abs(b))
             {
                 bigger = a;
