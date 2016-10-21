@@ -4,31 +4,16 @@ namespace es_06
 {
     public class Program
     {
-        public static void isInteger(ref string input)
+        public static void isInteger(ref string input)   //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            int i = 0;
-            bool testDigit = false;
-
-            while (testDigit == false)
+            int num = 0;
+            while (!Int32.TryParse(input, out num) || input[0] == '-')
             {
-                testDigit = true;
-
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]) || (input[i] == '-'))         //se il char non è un numero lo reinserisco
-                    {
-                        if (input[i] != 'a' && input[i] != 'b' && input[i] != 'c' && input[i] != 'd' && input[i] != 'e' && input[i] != 'f')             //accetto solo i caratteri "a", "b", "c", "d", "e", "f".
-                        {
-                            Console.WriteLine("Errore! Inserisci di nuovo un numero:");
-                            input = Console.ReadLine();
-                            testDigit = false;
-                            i = 0;
-                        }
-                    }
-                }
+                Console.Write("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
             }
-            return;
-        } //controllo per verificare che vengano inseriti numeri e non lettere o altro
+            
+        }
 
         public static string fromDecToBin (string numString) {
 

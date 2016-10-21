@@ -5,28 +5,16 @@ namespace es_07
 {
     public class Program
     {
-        public static void isInteger(ref string input)
+        public static int isInteger(ref string input)  //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            int i = 0;
-            bool testDigit = false;
-
-            while (testDigit == false)
+            int num = 0;
+            while (!Int32.TryParse(input, out num) || input[0] == '-')
             {
-                testDigit = true;
-
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]))         //se il char non è un numero lo reinserisco
-                    {
-                            Console.WriteLine("Errore! Inserisci di nuovo un numero:");
-                            input = Console.ReadLine();
-                            testDigit = false;
-                            i = 0;
-                    }
-                }
+                Console.Write("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
             }
-            return;
-        } //controllo per verificare che vengano inseriti numeri e non lettere o altro
+            return num;
+        } 
 
         public static void randomizer(int n , ref int []array)
         {
@@ -64,8 +52,7 @@ namespace es_07
             string num;
             Console.WriteLine("inserisci un numero intero N :");
             num = Console.ReadLine();
-            isInteger(ref num); //controllo che la stringa contenga unicamente un numero
-            n = int.Parse(num); //lo converto in un intero
+            n = isInteger(ref num); //controllo che la stringa contenga unicamente un numero
 
             int[] array = new int[n];
             for (int i = 0; i < n; i++)

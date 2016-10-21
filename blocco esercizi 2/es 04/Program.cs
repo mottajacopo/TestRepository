@@ -4,7 +4,7 @@ namespace es_04
 {
     public class Program
     {
-        public static string pronunciationOfNumber(ref short numShort, ref string numString)
+        public static string pronunciationOfNumber(ref int numShort, ref string numString)
         {
             string[] oneToNineteen = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
                                         "ten", "eleven", "twelve", "thirteen", "fourteen", "fiveteen", "sixteen",
@@ -52,7 +52,6 @@ namespace es_04
                 if (digit != 0)
                 {
                     unit = (oneToNineteen[digit]);
-
                 }
             }
             hundred = hundred + " " + dozen + " " + unit;
@@ -60,38 +59,26 @@ namespace es_04
             return hundred;
         }
 
-        public static void isInteger(ref string input)
+        public static int isInteger(ref string input)   //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            int i = 0;
-            bool testDigit = false;
-
-            while (testDigit == false) { 
-                testDigit = true;
-
-                for (; i < input.Length; i++) 
-                {
-                    if (!Char.IsDigit(input[i]) || (input.Length > 3))         //se il char non è un numero o non è compreso tra 0 e 999 lo reinserisco
-                    {
-                        Console.Write("Errore! Inserisci di nuovo un numero (tra 0 e 999): ");
-                        input = Console.ReadLine();
-                        testDigit = false;
-                        i = -1;
-                    }
-                }
+            int num = 0;
+            while (!Int32.TryParse(input, out num) || input[0] == '-')
+            {
+                    Console.Write("Errore! Inserisci di nuovo un numero: ");
+                    input = Console.ReadLine();
             }
-            return;
-        } //controllo per verificare che vengano inseriti numeri e non lettere o altro
+            return num;
+        }
 
         static void Main(string[] args)
         {
             string numString; //numero scritto in una stringa
-            short numShort; //stesso numero ma scritto in una variabile "short"
+            int numShort; //stesso numero ma scritto in una variabile "short"
 
             Console.Write("Inserisci un numero tra 0 e 999: ");
 
             numString = Console.ReadLine();
-            isInteger(ref numString);
-            numShort = short.Parse(numString);
+            numShort = isInteger(ref numString);
 
             Console.WriteLine("{0} in parole è:", numShort);
             numString = pronunciationOfNumber(ref numShort, ref numString);

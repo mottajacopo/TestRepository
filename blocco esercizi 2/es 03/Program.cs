@@ -28,27 +28,15 @@ namespace es_03
             return 0;
         }
 
-        public static void isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static float isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            int i = 0;
-            bool testDigit = false;
-
-            while (testDigit == false)
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
-                    {
-                        if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
-                        {
-                            Console.Write("Errore! Inserisci di nuovo numero: ");
-                            input = Console.ReadLine();
-                            testDigit = false;
-                            i = 0;
-                        }
-                    }
-                    testDigit = true;
-                }
-            return;
+            float num = 0;
+            while (!float.TryParse(input, out num))
+            {
+                Console.Write("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
+            }
+            return num;
         }
 
         static void Main(string[] args)
@@ -65,18 +53,15 @@ namespace es_03
 
             Console.Write("Inserisci a : ");
             input = Console.ReadLine();
-            isFloat(ref input);          //controllo se l 'input inserito è un numero
-            a = float.Parse(input);
+            a = isFloat(ref input);          //controllo se l 'input inserito è un numero
 
             Console.Write("Inserisci b: ");
             input = Console.ReadLine();
-            isFloat(ref input);
-            b = float.Parse(input);
+            b = isFloat(ref input);
 
             Console.Write("Inserisci c: ");
             input = Console.ReadLine();
-            isFloat(ref input);
-            c = float.Parse(input);
+            c = isFloat(ref input);
 
             result = roots(a, b, c, ref root1, ref root2);
 

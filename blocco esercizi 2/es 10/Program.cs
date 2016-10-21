@@ -5,27 +5,15 @@ namespace es_10
 {
     public class Program
     {
-        public static void isInteger(ref string input)
+        public static int isInteger(ref string input)
         {
-            int i = 0;
-            bool testDigit = false;
-
-            while (testDigit == false)
+            int num = 0;
+            while (!Int32.TryParse(input, out num) || input[0] == '-')
             {
-                testDigit = true;
-
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]))         //se il char non è un numero lo reinserisco
-                    {
-                        Console.Write("Errore! Inserisci di nuovo un numero: ");
-                        input = Console.ReadLine();
-                        testDigit = false;
-                        i = -1;
-                    }
-                }
+                Console.WriteLine("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
             }
-            return;
+            return num;
         }
 
         public static void printArray(int[,] array, int n) {
@@ -202,8 +190,8 @@ namespace es_10
         {
                 Console.Write("Inserisci la dimensione dell'array: ");
                 string numString = Console.ReadLine(); //prendo il numero come stringa
-                isInteger(ref numString); //controllo che sia valido
-                int n = int.Parse(numString); //lo converto in un intero e lo passo alla funzione
+                
+                int n = isInteger(ref numString); //controllo che sia valido
 
                 Console.WriteLine("Gli elementi disposti secondo la funzione A sono:\n");
                 functionA(n);

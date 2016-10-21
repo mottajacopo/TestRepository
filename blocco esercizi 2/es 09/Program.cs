@@ -6,29 +6,15 @@ namespace es_09
     public class Program
     {
 
-        public static void isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            int i = 0;
-            bool testDigit = false;
-
-            while (testDigit == false)
+            int num = 0;
+            while (!Int32.TryParse(input, out num))
             {
-                testDigit = true;
-
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]) )         
-                    {
-                        
-                            Console.Write("Errore! Inserisci di nuovo un numero: ");
-                            input = Console.ReadLine();
-                            testDigit = false;
-                            i = -1;
-                        
-                    }
-                }
+                Console.WriteLine("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
             }
-            return;
+            return num;
         }
         public static void maxSequence(int[] array , int n , ref int [] seq)
         {
@@ -115,21 +101,25 @@ namespace es_09
            
 
             Console.Write("Inserisci la lunghezza dell' array: ");
+
             input = (Console.ReadLine());
-            isInteger(ref input);
-            n = int.Parse(input);
-            
+            if (input[0] == '-')
+            {
+                Console.Write("Errore! Inserisci di nuovo un numero: ");
+                input = (Console.ReadLine());
+            }
+            n = isInteger(ref input);
+
+            Console.WriteLine();
             Console.WriteLine("Inserisci gli elementi dell' array:");
             int[] array = new int[n];
             int[] seq = new int[n];       //array che conterrà la sequenza
 
             
-
             for (int i = 0; i < n; i++)
             {
                     input = (Console.ReadLine());
-                    isInteger(ref input);
-                    array[i] = int.Parse(input);
+                    array[i] = isInteger(ref input);
             }
 
             maxSequence(array , n , ref seq);

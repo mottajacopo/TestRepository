@@ -9,7 +9,8 @@ namespace es_01
         {
             float a = num1;
             float b = num2;
-            bool c = a > b;
+            float c = a - b;
+
             return c;
         }    //restituisce true se a > b
 
@@ -21,30 +22,16 @@ namespace es_01
             return c;
         }    //restituisce true se a < b
 
-        public static void isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
-        {                    
-           int i = 0;
-           bool testDigit = false;
-
-            while (testDigit == false)
+        public static float isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        {
+            float num = 0;
+            while (!float.TryParse(input, out num))
             {
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
-                    {
-                        if (input[i] != ',' && input[i] != '-')             //permette l 'inserimento di numeri con la virgola
-                        {
-                            Console.Write("Errore! Inserisci di nuovo un numero: ");
-                            input = Console.ReadLine();
-                            testDigit = false;
-                            i = 0;
-                        }
-                    }
-
-                }
-                testDigit = true;
+                Console.Write("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
             }
-            return ;
+            return num;
+           
         }
 
         static void Main(string[] args)
@@ -59,15 +46,11 @@ namespace es_01
 
             Console.Write("Numero 1: ");
             input = Console.ReadLine();
-
-            isFloat(ref input);          //controllo se l 'input inserito è un numero 
-            num1 = float.Parse(input);
+            num1 = isFloat(ref input);          //controllo se l 'input inserito è un numero 
 
             Console.Write("Numero 2: ");
             input = Console.ReadLine();
-
-            isFloat(ref input);          //controllo se l 'input inserito è un numero 
-            num2 = float.Parse(input);
+            num2 = isFloat(ref input);          //controllo se l 'input inserito è un numero 
 
             big = greater(num1, num2);        //se a > b big = true
             small = smaller(num1, num2);      //se a < b small = false
@@ -78,4 +61,5 @@ namespace es_01
         }
     }
 }
+
 

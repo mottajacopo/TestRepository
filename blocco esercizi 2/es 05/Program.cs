@@ -6,29 +6,18 @@ namespace es_05
     public class Program
     {
 
-        public static void isFloat(ref string input)
+        public static int isInteger(ref string input)  //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
-            int i = 0;
-            bool isDigit = false;
-
-            while (isDigit == false)
+            int num = 0;
+            while (!Int32.TryParse(input, out num))
             {
-                for (; i < input.Length; i++)
-                {
-                    if (!Char.IsDigit(input[i]))         //se il char non è un numero ritorna falso
-                    {
-                        Console.Write("Errore! Inserisci di nuovo un numero: ");
-                        input = Console.ReadLine();
-                        isDigit = false;
-                        i = -1;
-                    }
-                    isDigit = true;
-                }
+                Console.Write("Errore! Inserisci di nuovo un numero: ");
+                input = Console.ReadLine();
             }
-            return;
-        }  //controllo per verificare che vengano inseriti numeri e non lettere o altro
+            return num;
+        } 
 
-        public static float factorial (float n)        // funzione ricorsiva per calcolare fattoriale
+        public static double factorial (double n)        // funzione ricorsiva per calcolare fattoriale
         {
             if (n <= 1)
             {
@@ -40,9 +29,9 @@ namespace es_05
             } 
         }
 
-        public static float exponential(float x , float n)
+        public static double exponential(double x , double n)
         {
-            float p = 1;
+            double p = 1;
             for (int h = 0; h < n; h++)
             {
                 p *= x;
@@ -50,9 +39,9 @@ namespace es_05
             return p;
         }
 
-        public static float calculate(float x, float n)         
+        public static double calculate(double x, double n)         
         {
-            float s = 0;
+            double s = 0;
             for (int i = 0; i <=n; i++)
             {
                 s += factorial(i) / exponential(x , i);
@@ -62,22 +51,22 @@ namespace es_05
 
         static void Main(string[] args)
         {
-            float n;
-            float x;
+            int n;
+            int x;
             string input;
-            float s;
+            double s;
 
             Console.WriteLine("Inserisci n e x per calcolare s = 1 + 1!/x + 2!/x^2 + … + n!/x^n");
 
             Console.Write("Inserisci x: ");
             input = Console.ReadLine();
-            isFloat(ref input);
-            x = float.Parse(input);
+            
+            x = isInteger(ref input);
 
             Console.Write("Inserisci n: ");
             input = Console.ReadLine();
-            isFloat(ref input);
-            n = float.Parse(input);
+            
+            n = isInteger(ref input);
 
             s = calculate(x, n);
             Console.WriteLine("La somma è: {0}", s);
