@@ -207,13 +207,13 @@ namespace es_10
             arrayA = functionA(n, arrayA);
 
             Console.WriteLine("Gli elementi disposti secondo la funzione B sono:\n");
-            arrayB = functionA(n, arrayB);
+            arrayB = functionB(n, arrayB);
 
             Console.WriteLine("Gli elementi disposti secondo la funzione C sono:\n");
-            arrayC = functionA(n, arrayC);
+            arrayC = functionC(n, arrayC);
 
             Console.WriteLine("Gli elementi disposti secondo la funzione D sono:\n");
-            arrayD = functionA(n, arrayD);
+            arrayD = functionD(n, arrayD);
 
         }
     }
