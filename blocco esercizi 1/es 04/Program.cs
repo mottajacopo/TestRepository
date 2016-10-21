@@ -6,17 +6,18 @@ namespace es_04
     {
         static void Main(string[] args)
         {
-            string input; 
+            string input;
+            int num; //per il controllo di età e numero identificativo
 
             Console.WriteLine("Inserisci i dati del dipendente:");
 
-            Console.WriteLine("Nome :");
+            Console.Write("Nome: ");
             string firstName = Console.ReadLine();
 
-            Console.WriteLine("Cognome :");
+            Console.Write("Cognome: ");
             string lastName = Console.ReadLine();
 
-            Console.WriteLine("Genere (uomo = m , donna = f):");
+            Console.Write("Genere (uomo = m , donna = f): ");
             input = Console.ReadLine();
             while (input[0] != 'm' && input[0] != 'f')           //aggiunto controllo inserimento genere
             {
@@ -26,27 +27,46 @@ namespace es_04
             }
             char gender = Char.Parse(input);
 
-            Console.WriteLine("Età :");
+            Console.Write("Età: ");
             input = Console.ReadLine();
-            while (!Char.IsDigit(input[0]))           //aggiunto controllo inserimento età
-            {
-                Console.WriteLine("Formato genere non corretto ");
-                Console.WriteLine("Reinserire età (attenzione non inserire età negative o lettere):");
-                input = Console.ReadLine();
-            }
-            byte age = byte.Parse(input);
-
-            Console.WriteLine("Numero identificativo (compreso tra 27560000 to 27569999):");
-            input = Console.ReadLine();
-            while (!Char.IsDigit(input[0]) && int.Parse(input) > 27560000 && int.Parse(input) < 27569999)           //aggiunto controllo inserimento età
+            while (!Int32.TryParse(input, out num) || input[0] == '-')
             {
                 Console.WriteLine("Formato non corretto!");
                 Console.WriteLine("Reinserire numero identificativo (attenzione non inserire lettere o numeri non compresi nell' intervallo previsto):");
                 input = Console.ReadLine();
             }
+
+            byte age = byte.Parse(input);
+
+            Console.Write("Numero identificativo (compreso tra 27560000 to 27569999): ");
+            input = Console.ReadLine();
+
+            bool controll = false;  //aggiunto controllo range numero
+            while (controll == false)
+            {
+                {
+                    while (!Int32.TryParse(input, out num) || input[0] == '-')
+                    {
+                        Console.WriteLine("Formato non corretto!");
+                        Console.WriteLine("Reinserire numero identificativo (attenzione non inserire lettere o numeri non compresi nell' intervallo previsto):");
+                        input = Console.ReadLine();
+                    }
+                    if (num < 27560000 || num > 27569999)
+                    {
+                        Console.WriteLine("Numero non compreso nel range corretto!");
+                        Console.WriteLine("Reinserire numero identificativo (attenzione non inserire lettere o numeri non compresi nell' intervallo previsto):");
+                        input = Console.ReadLine();
+                    }
+                    else
+                    {
+                        controll = true;
+                    }
+                }
+            }
+           
             int number = int.Parse(input);
 
-            Console.WriteLine("La scheda anagrafica è :");
+            Console.WriteLine("La scheda anagrafica è:");
             Console.WriteLine("Nome : {0} ", firstName);
             Console.WriteLine("Cognome : {0} ", lastName);
             Console.WriteLine("Genere: {0} ", gender);

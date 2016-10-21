@@ -8,9 +8,10 @@ namespace es_08
         {
             Console.WriteLine("Inserisci un numero di 4 cifre:");
             string number = Console.ReadLine();
+            int n; 
 
             //aggiunto controllo validità del numero
-            while (!char.IsDigit(number[0]) || !char.IsDigit(number[1]) || !char.IsDigit(number[2]) || !char.IsDigit(number[3]) || number.Length != 4)  
+            while (!Int32.TryParse(number, out n) || number.Length != 4 || number[0] == '-')  
             {
                 Console.WriteLine("Reinserisci un numero di 4 cifre:");
                 number = Console.ReadLine();
