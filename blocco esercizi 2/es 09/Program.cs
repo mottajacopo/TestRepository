@@ -87,7 +87,7 @@ namespace es_09
             }
 
             //stampo la sequenza
-            Console.WriteLine("La massima sequenza è :");
+            Console.WriteLine("La massima sequenza è:");
             for(i = 0; i < max; i++)
             {
                 Console.WriteLine("{0}", seq[i]);

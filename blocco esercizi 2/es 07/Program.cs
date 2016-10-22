@@ -29,7 +29,7 @@ namespace es_07
 
             Random rand = new Random();
 
-            Console.WriteLine("gli elementi dell array in ordine corretto sono :");
+            Console.WriteLine("Gli elementi dell array in ordine corretto sono:");
             for (int k = 0; k < n; k++)
             {
                 Console.Write("{0}  ", array[k]);
@@ -52,7 +52,7 @@ namespace es_07
             }
 
             Console.WriteLine("");
-            Console.WriteLine("gli elementi dell array in ordine casuale sono :");
+            Console.WriteLine("Gli elementi dell array in ordine casuale sono:");
 
             for (int h = 0; h < n ; h++)
             {
@@ -65,7 +65,7 @@ namespace es_07
         {
             int n;
             string num;
-            Console.WriteLine("inserisci un numero intero N :");
+            Console.WriteLine("Inserisci un numero intero N:");
             num = Console.ReadLine();
             n = isInteger(ref num); //controllo che la stringa contenga unicamente un numero
 

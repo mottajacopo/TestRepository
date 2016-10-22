@@ -13,7 +13,7 @@ namespace es_06
             {
                 testDigit = true;
 
-                for (; i < input.Length; i++)
+                for (i = 0; i < input.Length; i++)
                 {
                     if (!Char.IsDigit(input[i]) || (input[i] == '-'))         //se il char non è un numero lo reinserisco
                     {
