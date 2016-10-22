@@ -22,8 +22,11 @@ namespace UnitTestBlocco2
         [TestMethod]
         public void TestEs05Sum()
         {
-            double sum = Program.calculate(1, 3);
+            double sum;
+            sum = Program.calculate(1, 3);
             Assert.AreEqual(sum, 10);
+            sum = Program.calculate(-4, 5);
+            Assert.AreEqual(sum, 0.7578125);
 
         }
     }
