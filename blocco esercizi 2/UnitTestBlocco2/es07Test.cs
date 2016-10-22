@@ -8,7 +8,6 @@ namespace UnitTestBlocco2
     public class Es07Test
     {
         [TestMethod]
-
         public void TestEs07Randomizer()
         {
             int[] array = new int[100];
@@ -39,7 +38,6 @@ namespace UnitTestBlocco2
             }
             Assert.AreEqual(counter, 100);
         }
-
     }
 }
 

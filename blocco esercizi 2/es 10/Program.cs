@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace es_10
 {
     public class Program
@@ -18,7 +17,6 @@ namespace es_10
 
         public static void printArray(int[,] array, int n)
         {
-
             for (int row = 0; row < n; row++)
             {
                 for (int column = 0; column < n; column++)
@@ -27,7 +25,6 @@ namespace es_10
                 }
                 Console.WriteLine("\n");
             }
-
         }
 
         public static int[,] functionA(int n, int[,] array)
@@ -49,7 +46,6 @@ namespace es_10
 
         public static int[,] functionB(int n, int[,] array)
         {
-
             int element = 1;
             bool x = true;
 
@@ -80,8 +76,6 @@ namespace es_10
 
         public static int[,] functionC(int n, int[,] array)
         {
-
-
             int element = 1;
             for (int row = n - 1; row >= 0; row--)
             {
@@ -104,7 +98,6 @@ namespace es_10
 
         public static int[,] functionD(int n, int[,] array)
         {
-
             int el = 0;
             int colPos = 0;
             int rowPos = 0;
@@ -122,7 +115,7 @@ namespace es_10
                 {
                     break;
                 }
-
+                
                 el += goRight(array, rowPos, colPos, n - element, el + 1);
                 rowPos--;
                 colPos += (n - element - 1);

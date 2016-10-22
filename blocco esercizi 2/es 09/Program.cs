@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace es_09
 {
     public class Program
@@ -32,7 +31,6 @@ namespace es_09
             }
 
             //cerco la posizione dell ' ultimo elemento della sequenza   
-
             //confronto ciascun elemento (partendo dal secondo) con quelli precedenti 
             //se l elemento di posizione x nell array[] iniziale è maggiore di quello di posizione prev (precedente)
             //e l elemento corrispondente (stessa posizione) dell array len[] è più piccolo di len[prev] + 1
@@ -99,7 +97,6 @@ namespace es_09
             int n;
             string input;
            
-
             Console.Write("Inserisci la lunghezza dell' array: ");
 
             input = (Console.ReadLine());
@@ -114,8 +111,7 @@ namespace es_09
             Console.WriteLine("Inserisci gli elementi dell' array:");
             int[] array = new int[n];
             int[] seq = new int[n];       //array che conterrà la sequenza
-
-            
+           
             for (int i = 0; i < n; i++)
             {
                     input = (Console.ReadLine());
@@ -123,15 +119,6 @@ namespace es_09
             }
 
             maxSequence(array , n , ref seq);
- 
         }
     }
 }
-
-
-/*
-  for( i = 0; i < n; i++)
-            {
-                Console.WriteLine("{0}", len[i]);
-            }
-*/

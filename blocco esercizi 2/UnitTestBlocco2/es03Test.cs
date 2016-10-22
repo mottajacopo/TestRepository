@@ -25,6 +25,5 @@ namespace UnitTestBlocco2
             Assert.AreEqual(root1, 2);
             Assert.AreEqual(root2, -4);
         }
-
     }
 }

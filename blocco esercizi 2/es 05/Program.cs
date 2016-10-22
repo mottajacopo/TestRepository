@@ -4,7 +4,6 @@ namespace es_05
 {
     public class Program
     {
-
         public static int isInteger(ref string input)  //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int num = 0;

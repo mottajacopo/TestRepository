@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace es_08
 {
     public class Program

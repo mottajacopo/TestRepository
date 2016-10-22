@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace es_07
 {
     public class Program
@@ -37,7 +36,6 @@ namespace es_07
 
             for (int c = 0; c < n; c++)
             {
-                
                 swap = rand.Next(0, n);
                 temp = array[c];
 

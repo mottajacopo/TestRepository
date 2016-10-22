@@ -25,7 +25,6 @@ namespace UnitTestBlocco2
             Assert.AreEqual(result, 3.2F);
             result = Program.smaller(-4, 12.6F);
             Assert.AreEqual(result, -4);
-
         }
     }
 }

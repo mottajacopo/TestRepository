@@ -10,7 +10,6 @@ namespace es_01
             float d = c - 1;
             float k = ((int)d >> 31) & 0x1;
             float max = a - k * c;
-
             return max;
         }    
 
@@ -21,7 +20,6 @@ namespace es_01
             //float d = (float)Math.Round(c);
             float k = ((int)d >> 31) & 0x1;
             float min = b + k * c;
-
             return min;
         }    
 
@@ -55,7 +53,6 @@ namespace es_01
 
             Console.Write("\nIl maggiore è: {0}\n", greater(num1, num2));
             Console.Write("Il minore è: {0}\n\n", smaller(num1, num2));
-
         }
     }
 }

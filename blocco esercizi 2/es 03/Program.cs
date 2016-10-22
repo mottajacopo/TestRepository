@@ -1,9 +1,7 @@
 ﻿using System;
 
-
 namespace es_03
 {
-    
     public class Program
     {
         public static int roots(float a, float b, float c, ref double root1, ref double root2)
@@ -80,7 +78,6 @@ namespace es_03
 
                     break;
             }
-           
         }
     }
 }

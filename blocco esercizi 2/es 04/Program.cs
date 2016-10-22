@@ -22,7 +22,6 @@ namespace es_04
             }
             else
             {
-
                 if (numString.Length > 2)
                 {
                     digit = (byte)Char.GetNumericValue(numString[0]);
@@ -39,6 +38,7 @@ namespace es_04
                 {
                     dozen = (dozens[digit - 2]);
                 }
+                
                 if (digit == 1)
                 {
                     digit = (byte)Char.GetNumericValue(numString[2]);

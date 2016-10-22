@@ -21,7 +21,6 @@ namespace UnitTestBlocco2
                     Assert.AreEqual(matrixReal[i, j], matrixTest[i, j]);
                 }
             }
-
         }
 
         [TestMethod]
@@ -72,7 +71,5 @@ namespace UnitTestBlocco2
                 }
             }
         }
-
-
     }
 }

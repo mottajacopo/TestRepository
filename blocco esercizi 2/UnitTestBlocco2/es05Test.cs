@@ -29,6 +29,5 @@ namespace UnitTestBlocco2
             Assert.AreEqual(sum, 0.7578125);
 
         }
-    }
-        
+    }   
 }

@@ -4,11 +4,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestBlocco2
 {
-   
     [TestClass]
     public class es09Test
     {
-       
         [TestMethod]
         public void TestEs09MaxSequence()
         {
@@ -21,8 +19,6 @@ namespace UnitTestBlocco2
             {
                 Assert.AreEqual(seq[i], result[i]);
             } 
-           
-            
         }
     }
 }
