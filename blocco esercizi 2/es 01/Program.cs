@@ -8,7 +8,6 @@ namespace es_01
         {
             float c = a - b;
             float d = c - 1;
-            
             float k = ((int)d >> 31) & 0x1;
             float max = a - k * c;
 
