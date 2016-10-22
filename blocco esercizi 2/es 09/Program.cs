@@ -31,7 +31,7 @@ namespace es_09
                 len[i] = 1;
             }
 
-            //cerco la posizione dell ' ultimo elemento della sequenza   https://www.youtube.com/watch?v=CE2b_-XfVDk
+            //cerco la posizione dell ' ultimo elemento della sequenza   
 
             //confronto ciascun elemento (partendo dal secondo) con quelli precedenti 
             //se l elemento di posizione x nell array[] iniziale è maggiore di quello di posizione prev (precedente)

@@ -28,7 +28,7 @@ namespace es_01
         }    
 
 
-        public static int isint(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int num = 0;
             while (!int.TryParse(input, out num))
@@ -52,11 +52,11 @@ namespace es_01
 
             Console.Write("Numero 1: ");
             input = Console.ReadLine();
-            num1 = isint(ref input);          //controllo se l 'input inserito è un numero 
+            num1 = isInteger(ref input);          //controllo se l 'input inserito è un numero 
 
             Console.Write("Numero 2: ");
             input = Console.ReadLine();
-            num2 = isint(ref input);          //controllo se l 'input inserito è un numero 
+            num2 = isInteger(ref input);          //controllo se l 'input inserito è un numero 
 
             big = greater(num1, num2);        //se a > b big = true
             small = smaller(num1, num2);      //se a < b small = false
