@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace es_05
 {
     public class Program
@@ -65,8 +64,14 @@ namespace es_05
 
             Console.Write("Inserisci n: ");
             input = Console.ReadLine();
-            
             n = isInteger(ref input);
+
+            while (n < 0)
+            {
+                Console.Write("n deve essere positivo per farne il fattoriale! ");
+                input = Console.ReadLine();
+                n = isInteger(ref input);
+            }
 
             s = calculate(x, n);
             Console.WriteLine("La somma è: {0}", s);

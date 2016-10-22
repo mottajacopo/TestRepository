@@ -12,7 +12,6 @@ namespace es_06
                 Console.Write("Errore! Inserisci di nuovo un numero: ");
                 input = Console.ReadLine();
             }
-            
         }
 
         public static string fromDecToBin (string numString) {
