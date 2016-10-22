@@ -19,13 +19,13 @@ namespace es_04
 
             Console.Write("Genere (uomo = m , donna = f): ");
             input = Console.ReadLine();
-            while (input[0] != 'm' && input[0] != 'f')           //aggiunto controllo inserimento genere
+            while (input.Length != 1 ||  input[0] != 'm' && input[0] != 'f')           //aggiunto controllo inserimento genere
             {
                 Console.WriteLine("Formato genere non corretto!");
                 Console.WriteLine("Reinserire genere (uomo = m , donna = f):");
                 input = Console.ReadLine();
             }
-            char gender = Char.Parse(input);
+            string gender = input ;
 
             Console.Write("Età: ");
             input = Console.ReadLine();
@@ -36,7 +36,7 @@ namespace es_04
                 input = Console.ReadLine();
             }
 
-            byte age = byte.Parse(input);
+            int age = int.Parse(input);
 
             Console.Write("Numero identificativo (compreso tra 27560000 to 27569999): ");
             input = Console.ReadLine();
