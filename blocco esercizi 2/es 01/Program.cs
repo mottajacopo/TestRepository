@@ -1,14 +1,11 @@
 ﻿using System;
 
-
 namespace es_01
 {
     public class Program
     {
-        public static int greater(int num1, int num2)
+        public static int greater(int a, int b)
         {
-            int a = num1;
-            int b = num2;
             int c = a - b;
             int k = (c >> 31) & 0x1;
             int max = a - k * c;
@@ -16,17 +13,14 @@ namespace es_01
             return max;
         }    
 
-        public static int smaller(int num1, int num2)
+        public static int smaller(int a, int b)
         {
-            int a = num1;
-            int b = num2;
             int c = a - b;
             int k = (c >> 31) & 0x1;
             int min = b + k * c;
 
             return min;
         }    
-
 
         public static int isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
@@ -44,8 +38,6 @@ namespace es_01
         {
             int num1 = 0;
             int num2 = 0;
-            int big;
-            int small;
             string input;
 
             Console.WriteLine("Inserisci 2 numeri per sapere qual è il maggiore e qual è il minore dei due:");
@@ -58,11 +50,8 @@ namespace es_01
             input = Console.ReadLine();
             num2 = isInteger(ref input);          //controllo se l 'input inserito è un numero 
 
-            big = greater(num1, num2);        //se a > b big = true
-            small = smaller(num1, num2);      //se a < b small = false
-
-            Console.Write("Il maggiore è: {0}\n" ,big);
-            Console.Write("Il minore è: {0}\n", small);
+            Console.Write("\nIl maggiore è: {0}\n", greater(num1, num2));
+            Console.Write("Il minore è: {0}\n\n", smaller(num1, num2));
 
         }
     }
