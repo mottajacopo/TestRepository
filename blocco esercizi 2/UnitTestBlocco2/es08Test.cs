@@ -12,10 +12,10 @@ namespace UnitTestBlocco2
         {
             int result;
             result = Program.GCD(-12, 8);
-            Assert.AreEqual(result, 4);
+            Assert.AreEqual( 4, result);
 
             result = Program.GCD(13, 4);
-            Assert.AreEqual(result, 1);
+            Assert.AreEqual(1, result);
         }
 
         [TestMethod]
@@ -23,10 +23,10 @@ namespace UnitTestBlocco2
         {
             int result;
             result = Program.LCM(-12, 8, 4);
-            Assert.AreEqual(result, 24);
+            Assert.AreEqual(24, result);
 
             result = Program.LCM(13, 4, 1);
-            Assert.AreEqual(result, 52);
+            Assert.AreEqual(52, result);
 
         }
     }

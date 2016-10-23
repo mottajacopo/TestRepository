@@ -18,7 +18,7 @@ namespace UnitTestBlocco2
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    Assert.AreEqual(matrixReal[i, j], matrixTest[i, j]);
+                    Assert.AreEqual( matrixTest[i, j], matrixReal[i, j]);
                 }
             }
         }
@@ -34,7 +34,7 @@ namespace UnitTestBlocco2
             {
                 for(int j = 0; j <3; j++)
                 {
-                    Assert.AreEqual(matrixReal[i,j], matrixTest[i,j]);
+                    Assert.AreEqual( matrixTest[i,j], matrixReal[i, j]);
                 }
             }
         }
@@ -50,7 +50,7 @@ namespace UnitTestBlocco2
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    Assert.AreEqual(matrixReal[i, j], matrixTest[i, j]);
+                    Assert.AreEqual(matrixTest[i, j], matrixReal[i, j]);
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace UnitTestBlocco2
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    Assert.AreEqual(matrixReal[i, j], matrixTest[i, j]);
+                    Assert.AreEqual( matrixTest[i, j], matrixReal[i, j]);
                 }
             }
         }

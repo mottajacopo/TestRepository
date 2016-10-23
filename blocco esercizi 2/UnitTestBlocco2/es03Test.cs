@@ -13,17 +13,17 @@ namespace UnitTestBlocco2
             int result;
             double root1 = 0;
             double root2 = 0;
+
             result = Program.roots(1, -4 , 4 , ref root1 , ref root2);
-            Assert.AreEqual(result, 1);
-            Assert.AreEqual(root1, 2);
+            Assert.AreEqual(1, result);
+            Assert.AreEqual(2, root1);
 
             result = Program.roots(1, -4, 6, ref root1, ref root2);
-            Assert.AreEqual(result, 0);
+            Assert.AreEqual(0, result);
 
             result = Program.roots(1, 2, -8, ref root1, ref root2);
-            Assert.AreEqual(result, 2);
-            Assert.AreEqual(root1, 2);
-            Assert.AreEqual(root2, -4);
+            Assert.AreEqual(2, root1);
+            Assert.AreEqual(-4, root2);
         }
     }
 }

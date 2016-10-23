@@ -21,7 +21,7 @@ namespace UnitTestBlocco2
 
             for (int i = 0; i < 100; i++)
             {
-                Assert.AreNotEqual(array[i], i+1);
+                Assert.AreNotEqual( i+1, array[i]);
             }
 
             int counter = 0; //se il contatore è arrivato a 10, l'array contiene tutti gli elementi distinti
@@ -36,7 +36,7 @@ namespace UnitTestBlocco2
                     }
                 }
             }
-            Assert.AreEqual(counter, 100);
+            Assert.AreEqual( 100, counter);
         }
     }
 }

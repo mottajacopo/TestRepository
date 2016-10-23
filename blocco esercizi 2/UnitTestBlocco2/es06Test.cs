@@ -12,13 +12,13 @@ namespace UnitTestBlocco2
         {
             string result;
             result = Program.fromDecToBin("13");
-            Assert.AreEqual(result, "1101");
+            Assert.AreEqual("1101", result);
 
             result = Program.fromDecToBin("0");
-            Assert.AreEqual(result, "0");
+            Assert.AreEqual("0", result);
 
             result = Program.fromDecToBin("23c4f");
-            Assert.AreEqual(result, "Impossibile! Il numero inserito non è decimale.");
+            Assert.AreEqual("Impossibile! Il numero inserito non è decimale.", result);
         }
 
         [TestMethod]
@@ -26,10 +26,10 @@ namespace UnitTestBlocco2
         {
             string result;
             result = Program.fromBinToDec("1110101");
-            Assert.AreEqual(result, "117");
+            Assert.AreEqual("117", result);
 
             result = Program.fromBinToDec("452");
-            Assert.AreEqual(result, "Impossibile! Il numero inserito non è binario.");
+            Assert.AreEqual("Impossibile! Il numero inserito non è binario.", result);
         }
 
         [TestMethod]
@@ -37,10 +37,10 @@ namespace UnitTestBlocco2
         {
             string result;
             result = Program.fromHexToDec("c3b0");
-            Assert.AreEqual(result, "50096");
+            Assert.AreEqual("50096", result);
 
             result = Program.fromHexToDec("65ad");
-            Assert.AreEqual(result, "26029");
+            Assert.AreEqual("26029", result);
         }
 
         [TestMethod]
@@ -48,10 +48,10 @@ namespace UnitTestBlocco2
         {
             string result;
             result = Program.fromDecToHex("1002");
-            Assert.AreEqual(result, "3EA");
+            Assert.AreEqual("3EA", result);
 
             result = Program.fromDecToHex("58f");
-            Assert.AreEqual(result, "Impossibile! Il numero inserito non è decimale.");
+            Assert.AreEqual("Impossibile! Il numero inserito non è decimale.", result);
         }
     }
 }
