@@ -40,7 +40,7 @@ namespace es_01
             float num2 = 0;
             string input;
 
-            Console.WriteLine("Inserisci 2 numeri floateri per sapere qual è il maggiore e qual è il minore dei due:");
+            Console.WriteLine("Inserisci 2 numeri per sapere qual è il maggiore e qual è il minore dei due:");
 
             Console.Write("Numero 1: ");
             input = Console.ReadLine();
