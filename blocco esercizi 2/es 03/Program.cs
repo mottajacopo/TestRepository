@@ -36,7 +36,7 @@ namespace es_03
             }
             return num;
         }
-
+    
         static void Main(string[] args)
         {
             double root1 = 0;

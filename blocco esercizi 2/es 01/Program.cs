@@ -7,7 +7,7 @@ namespace es_01
         public static float greater(float a, float b)
         {
             float c = a - b;
-            float d = c - 1;
+            float d = c - 1;         // serve nel caso la differenza sia minore di 1
             float k = ((int)d >> 31) & 0x1;
             float max = a - k * c;
             return max;

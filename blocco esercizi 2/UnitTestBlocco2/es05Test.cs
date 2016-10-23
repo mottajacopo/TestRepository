@@ -10,14 +10,21 @@ namespace UnitTestBlocco2
         [TestMethod]
         public void TestEs05Factor()
         {
-            double factor = Program.factorial(5);
+            double factor;
+            factor = Program.factorial(5);
             Assert.AreEqual(factor, 120);
+            factor = Program.factorial(12);
+            Assert.AreEqual(factor, 479001600);
         }
         [TestMethod]
         public void TestEs05Exp()
         {
-            double exp = Program.exponential(2, 5);
+            double exp;
+            exp = Program.exponential(2, 5);
             Assert.AreEqual(exp, 32);
+            exp = Program.exponential(-7, 5);
+            Assert.AreEqual(exp , -16807);
+
         }
         [TestMethod]
         public void TestEs05Sum()
