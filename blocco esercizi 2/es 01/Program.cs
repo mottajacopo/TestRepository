@@ -31,8 +31,7 @@ namespace es_01
                 Console.Write("Errore! Inserisci di nuovo un numero: ");
                 input = Console.ReadLine();
             }
-            return num;
-           
+            return num;  
         }
 
         static void Main(string[] args)
