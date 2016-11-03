@@ -4,7 +4,7 @@ namespace es_01
 {
     public class Program
     {
-        public static float greater(float a, float b)
+        public static float Greater(float a, float b)
         {
             float c = a - b;
             float d = c - 1;         // serve nel caso la differenza sia minore di 1
@@ -13,17 +13,16 @@ namespace es_01
             return max;
         }    
 
-        public static float smaller(float a, float b)
+        public static float Smaller(float a, float b)
         {
             float c = a - b;
             float d = c - 1;
-            //float d = (float)Math.Round(c);
             float k = ((int)d >> 31) & 0x1;
             float min = b + k * c;
             return min;
         }    
 
-        public static float isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static float IsFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             float num = 0;
             while (!float.TryParse(input, out num))
@@ -44,14 +43,14 @@ namespace es_01
 
             Console.Write("Numero 1: ");
             input = Console.ReadLine();
-            num1 = isFloat(ref input);          //controllo se l 'input inserito è un numero 
+            num1 = IsFloat(ref input);          //controllo se l 'input inserito è un numero 
 
             Console.Write("Numero 2: ");
             input = Console.ReadLine();
-            num2 = isFloat(ref input);          //controllo se l 'input inserito è un numero 
+            num2 = IsFloat(ref input);          //controllo se l 'input inserito è un numero 
 
-            Console.Write("\nIl maggiore è: {0}\n", greater(num1, num2));
-            Console.Write("Il minore è: {0}\n\n", smaller(num1, num2));
+            Console.Write("\nIl maggiore è: {0}\n", Greater(num1, num2));
+            Console.Write("Il minore è: {0}\n\n", Smaller(num1, num2));
         }
     }
 }

@@ -4,7 +4,7 @@ namespace es_04
 {
     public class Program
     {
-        public static string pronunciationOfNumber(ref int numShort, ref string numString)
+        public static string PronunciationOfNumber(ref int num, ref string numString)
         {
             string[] oneToNineteen = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
                                         "ten", "eleven", "twelve", "thirteen", "fourteen", "fiveteen", "sixteen",
@@ -15,9 +15,9 @@ namespace es_04
             string unit = "";
             byte digit; //valore della cifre che sto esaminando
 
-            if (numShort < 20)  //se è minore di 20 stampo il numero predefinito
+            if (num < 20)  //se è minore di 20 stampo il numero predefinito
             {
-                hundred = (oneToNineteen[numShort]);
+                hundred = (oneToNineteen[num]);
                 return hundred;
             }
             else
@@ -59,7 +59,7 @@ namespace es_04
             return hundred;
         }
 
-        public static int isInteger(ref string input)   //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int IsInteger(ref string input)   //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int num = 0;
             while (!Int32.TryParse(input, out num) || input[0] == '-')
@@ -73,15 +73,15 @@ namespace es_04
         static void Main(string[] args)
         {
             string numString; //numero scritto in una stringa
-            int numShort; //stesso numero ma scritto in una variabile "short"
+            int num; //stesso numero ma scritto in una variabile "int"
 
             Console.Write("Inserisci un numero tra 0 e 999: ");
 
             numString = Console.ReadLine();
-            numShort = isInteger(ref numString);
+            num = IsInteger(ref numString);
 
-            Console.WriteLine("{0} in parole è:", numShort);
-            numString = pronunciationOfNumber(ref numShort, ref numString);
+            Console.WriteLine("{0} in parole è:", num);
+            numString = PronunciationOfNumber(ref num, ref numString);
             Console.WriteLine("{0}", numString);
         }
     }

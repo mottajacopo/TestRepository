@@ -5,53 +5,36 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestBlocco2
 {
     [TestClass]
-    public class Es06Test
+    public class UnitTest6
     {
         [TestMethod]
-        public void TestEs06FromDecToBin()
+        public void TestDecToBin()
         {
-            string result;
-            result = Program.fromDecToBin("13");
-            Assert.AreEqual("1101", result);
-
-            result = Program.fromDecToBin("0");
-            Assert.AreEqual("0", result);
-
-            result = Program.fromDecToBin("23c4f");
-            Assert.AreEqual("Impossibile! Il numero inserito non è decimale.", result);
+            Assert.AreEqual("0", Program.DecToBin("0"));
+            Assert.AreEqual("1", Program.DecToBin("1"));
+            Assert.AreEqual("1000", Program.DecToBin("8"));
         }
-
         [TestMethod]
-        public void TestEs06FromBinToDec()
+        public void TestBinToDec()
         {
-            string result;
-            result = Program.fromBinToDec("1110101");
-            Assert.AreEqual("117", result);
-
-            result = Program.fromBinToDec("452");
-            Assert.AreEqual("Impossibile! Il numero inserito non è binario.", result);
+            Assert.AreEqual("0", Program.BinToDec("0"));
+            Assert.AreEqual("1", Program.BinToDec("1"));
+            Assert.AreEqual("3", Program.BinToDec("11"));
         }
-
         [TestMethod]
-        public void TestEs06FromHexToDec()
+        public void TestDecToHex()
         {
-            string result;
-            result = Program.fromHexToDec("c3b0");
-            Assert.AreEqual("50096", result);
-
-            result = Program.fromHexToDec("65ad");
-            Assert.AreEqual("26029", result);
+            Assert.AreEqual("0x0", Program.DecToHex("0"));
+            Assert.AreEqual("0xa", Program.DecToHex("10"));
+            Assert.AreEqual("0x100", Program.DecToHex("256"));
         }
-
         [TestMethod]
-        public void TestEs06FromDecToHex()
+        public void TestHexToDec()
         {
-            string result;
-            result = Program.fromDecToHex("1002");
-            Assert.AreEqual("3EA", result);
-
-            result = Program.fromDecToHex("58f");
-            Assert.AreEqual("Impossibile! Il numero inserito non è decimale.", result);
+            Assert.AreEqual("0", Program.HexToDec("0x0"));
+            Assert.AreEqual("10", Program.HexToDec("0xa"));
+            Assert.AreEqual("256", Program.HexToDec("0x100"));
         }
+
     }
 }

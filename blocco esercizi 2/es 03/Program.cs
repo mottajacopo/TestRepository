@@ -4,7 +4,7 @@ namespace es_03
 {
     public class Program
     {
-        public static int roots(float a, float b, float c, ref double root1, ref double root2)
+        public static int Roots(float a, float b, float c, ref double root1, ref double root2)
         {
             float discriminant = b*b  - 4 * a * c;
 
@@ -26,7 +26,7 @@ namespace es_03
             return 0;
         }
 
-        public static float isFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static float IsFloat(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             float num = 0;
             while (!float.TryParse(input, out num))
@@ -51,17 +51,17 @@ namespace es_03
 
             Console.Write("Inserisci a : ");
             input = Console.ReadLine();
-            a = isFloat(ref input);          //controllo se l 'input inserito è un numero
+            a = IsFloat(ref input);          //controllo se l 'input inserito è un numero
 
             Console.Write("Inserisci b: ");
             input = Console.ReadLine();
-            b = isFloat(ref input);
+            b = IsFloat(ref input);
 
             Console.Write("Inserisci c: ");
             input = Console.ReadLine();
-            c = isFloat(ref input);
+            c = IsFloat(ref input);
 
-            result = roots(a, b, c, ref root1, ref root2);
+            result = Roots(a, b, c, ref root1, ref root2);
 
             switch (result)
             {

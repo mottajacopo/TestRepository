@@ -4,7 +4,7 @@ namespace es_10
 {
     public class Program
     {
-        public static int isInteger(ref string input)
+        public static int IsInteger(ref string input)
         {
             int num = 0;
             while (!Int32.TryParse(input, out num) || input[0] == '-')
@@ -15,7 +15,7 @@ namespace es_10
             return num;
         }
 
-        public static void printArray(int[,] array, int n)
+        public static void PrintArray(int[,] array, int n)
         {
             for (int row = 0; row < n; row++)
             {
@@ -27,7 +27,7 @@ namespace es_10
             }
         }
 
-        public static int[,] functionA(int n, int[,] array)
+        public static int[,] FunctionA(int n, int[,] array)
         {
 
             int element = 1;
@@ -40,11 +40,11 @@ namespace es_10
                     element++;
                 }
             }
-            printArray(array, n);
+            PrintArray(array, n);
             return array;
         }
 
-        public static int[,] functionB(int n, int[,] array)
+        public static int[,] FunctionB(int n, int[,] array)
         {
             int element = 1;
             bool x = true;
@@ -70,11 +70,11 @@ namespace es_10
                     x = true;
                 }
             }
-            printArray(array, n);
+            PrintArray(array, n);
             return array;
         }
 
-        public static int[,] functionC(int n, int[,] array)
+        public static int[,] FunctionC(int n, int[,] array)
         {
             int element = 1;
             for (int row = n - 1; row >= 0; row--)
@@ -92,11 +92,11 @@ namespace es_10
                     array[row, row + column] = element++;
                 }
             }
-            printArray(array, n);
+            PrintArray(array, n);
             return array;
         }
 
-        public static int[,] functionD(int n, int[,] array)
+        public static int[,] FunctionD(int n, int[,] array)
         {
             int el = 0;
             int colPos = 0;
@@ -105,7 +105,7 @@ namespace es_10
 
             while (el < n * n)
             {
-                el += goDown(array, colPos, rowPos, n - element, el + 1);
+                el += GoDown(array, colPos, rowPos, n - element, el + 1);
                 rowPos += (n - element - 1);
                 colPos++;
 
@@ -116,7 +116,7 @@ namespace es_10
                     break;
                 }
                 
-                el += goRight(array, rowPos, colPos, n - element, el + 1);
+                el += GoRight(array, rowPos, colPos, n - element, el + 1);
                 rowPos--;
                 colPos += (n - element - 1);
 
@@ -125,7 +125,7 @@ namespace es_10
                     break;
                 }
 
-                el += goUp(array, colPos, rowPos, n - element, el + 1);
+                el += GoUp(array, colPos, rowPos, n - element, el + 1);
                 colPos--;
                 rowPos -= (n - element - 1);
 
@@ -136,15 +136,15 @@ namespace es_10
                     break;
                 }
 
-                el += goLeft(array, rowPos, colPos, n - element, el + 1);
+                el += GoLeft(array, rowPos, colPos, n - element, el + 1);
                 rowPos++;
                 colPos -= (n - element - 1);
             }
-            printArray(array, n);
+            PrintArray(array, n);
             return array;
         }
 
-        public static int goDown(int[,] array, int col, int rowStart, int passes, int valueStart)
+        public static int GoDown(int[,] array, int col, int rowStart, int passes, int valueStart)
         {
             for (int p = rowStart; p < rowStart + passes; p++)
             {
@@ -154,7 +154,7 @@ namespace es_10
             return passes;
         }
 
-        public static int goRight(int[,] array, int row, int colStart, int passes, int valueStart)
+        public static int GoRight(int[,] array, int row, int colStart, int passes, int valueStart)
         {
             for (int p = colStart; p < colStart + passes; p++)
             {
@@ -164,7 +164,7 @@ namespace es_10
             return passes;
         }
 
-        public static int goUp(int[,] array, int col, int rowStart, int passes, int valueStart)
+        public static int GoUp(int[,] array, int col, int rowStart, int passes, int valueStart)
         {
             for (int p = rowStart; p > rowStart - passes; p--)
             {
@@ -174,7 +174,7 @@ namespace es_10
             return passes;
         }
 
-        public static int goLeft(int[,] array, int row, int colStart, int passes, int valueStart)
+        public static int GoLeft(int[,] array, int row, int colStart, int passes, int valueStart)
         {
             for (int p = colStart; p > colStart - passes; p--)
             {
@@ -189,7 +189,7 @@ namespace es_10
             Console.Write("Inserisci la dimensione dell'array: ");
             string numString = Console.ReadLine(); //prendo il numero come stringa
 
-            int n = isInteger(ref numString); //controllo che sia valido
+            int n = IsInteger(ref numString); //controllo che sia valido
 
             int[,] arrayA = new int[n, n];
             int[,] arrayB = new int[n, n];
@@ -197,16 +197,16 @@ namespace es_10
             int[,] arrayD = new int[n, n];
 
             Console.WriteLine("Gli elementi disposti secondo la funzione A sono:\n");
-            arrayA = functionA(n, arrayA);
+            arrayA = FunctionA(n, arrayA);
 
             Console.WriteLine("Gli elementi disposti secondo la funzione B sono:\n");
-            arrayB = functionB(n, arrayB);
+            arrayB = FunctionB(n, arrayB);
 
             Console.WriteLine("Gli elementi disposti secondo la funzione C sono:\n");
-            arrayC = functionC(n, arrayC);
+            arrayC = FunctionC(n, arrayC);
 
             Console.WriteLine("Gli elementi disposti secondo la funzione D sono:\n");
-            arrayD = functionD(n, arrayD);
+            arrayD = FunctionD(n, arrayD);
 
         }
     }

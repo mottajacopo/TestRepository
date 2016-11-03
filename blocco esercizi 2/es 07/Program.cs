@@ -4,7 +4,7 @@ namespace es_07
 {
     public class Program
     {
-        public static int isInteger(ref string input)  //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int IsInteger(ref string input)  //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int num = 0;
             while (!Int32.TryParse(input, out num) || input[0] == '-')
@@ -15,7 +15,7 @@ namespace es_07
             return num;
         } 
 
-        public static void randomizer(int n , ref int []array)
+        public static void Randomizer(int n , ref int []array)
         {
             int temp;
             int swap;
@@ -26,7 +26,7 @@ namespace es_07
                 testArray[i] = i + 1;
             }
 
-            Random rand = new Random();
+            Random rand = new Random((int)DateTime.Now.Ticks);
 
             Console.WriteLine("Gli elementi dell array in ordine corretto sono:");
             for (int k = 0; k < n; k++)
@@ -65,7 +65,7 @@ namespace es_07
             string num;
             Console.WriteLine("Inserisci un numero intero N:");
             num = Console.ReadLine();
-            n = isInteger(ref num); //controllo che la stringa contenga unicamente un numero
+            n = IsInteger(ref num); //controllo che la stringa contenga unicamente un numero
 
             int[] array = new int[n];
             for (int i = 0; i < n; i++)
@@ -73,7 +73,7 @@ namespace es_07
                 array[i] = i + 1;
             }
 
-            randomizer(n , ref array);
+            Randomizer(n , ref array);
         }
     }
 }

@@ -12,15 +12,10 @@ namespace UnitTestBlocco2
         {
             int[,] matrixTest = { {1,4,7}, {2,5,8}, {3,6,9} };
             int[,] matrixReal = new int[3, 3];
-            matrixReal = Program.functionA(3, matrixReal);
+            matrixReal = Program.FunctionA(3, matrixReal);
 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Assert.AreEqual( matrixTest[i, j], matrixReal[i, j]);
-                }
-            }
+            CollectionAssert.AreEqual(matrixTest, matrixReal);
+
         }
 
         [TestMethod]
@@ -28,15 +23,9 @@ namespace UnitTestBlocco2
         {
             int[,] matrixTest = { {1,6,7}, {2,5,8}, {3,4,9} };
             int[,] matrixReal = new int[3, 3];
-            matrixReal = Program.functionB(3, matrixReal);
+            matrixReal = Program.FunctionB(3, matrixReal);
 
-            for(int i = 0; i<3; i++)
-            {
-                for(int j = 0; j <3; j++)
-                {
-                    Assert.AreEqual( matrixTest[i,j], matrixReal[i, j]);
-                }
-            }
+            CollectionAssert.AreEqual(matrixTest, matrixReal);
         }
 
         [TestMethod]
@@ -44,15 +33,9 @@ namespace UnitTestBlocco2
         {
             int[,] matrixTest = { {4,7,9}, {2,5,8}, {1,3,6} };
             int[,] matrixReal = new int[3, 3];
-            matrixReal = Program.functionC(3, matrixReal);
+            matrixReal = Program.FunctionC(3, matrixReal);
 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Assert.AreEqual(matrixTest[i, j], matrixReal[i, j]);
-                }
-            }
+            CollectionAssert.AreEqual(matrixTest, matrixReal);
         }
 
 
@@ -61,15 +44,9 @@ namespace UnitTestBlocco2
         {
             int[,] matrixTest = { {1,8,7}, {2,9,6}, {3,4,5} };
             int[,] matrixReal = new int[3, 3];
-            matrixReal = Program.functionD(3, matrixReal);
+            matrixReal = Program.FunctionD(3, matrixReal);
 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Assert.AreEqual( matrixTest[i, j], matrixReal[i, j]);
-                }
-            }
+            CollectionAssert.AreEqual(matrixTest, matrixReal);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace UnitTestBlocco2
         [TestMethod]
         public void TestEs02Fibonacci()
         {
-            decimal[] result = Program.fibonacci();
+            decimal[] result = Program.Fibonacci(100);
    
             for (int i = 2; i < 100; i++)
                 Assert.AreEqual(result[i - 2] + result[i - 1], result[i]);

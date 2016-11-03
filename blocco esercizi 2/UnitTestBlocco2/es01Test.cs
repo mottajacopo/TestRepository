@@ -11,25 +11,31 @@ namespace UnitTestBlocco2
         public void TestEs01Greater()
         {
             float result;
-            result = Program.greater( 5 , 3.2F);
-            Assert.AreEqual(5 ,result);
-            result = Program.greater(12.6F , -4);
-            Assert.AreEqual( 12.6F ,result);
-            result = Program.greater(0, 44);
-            Assert.AreEqual(44, result);
+            result = Program.Greater( 8 , 3.2F);
+            Assert.AreEqual(8 ,result);
         }
 
+        public void TestEs01GreaterEqual()
+        {
+            float result;
+            result = Program.Greater(5, 5);
+            Assert.AreEqual(5, result);
+        }
 
         [TestMethod]
         public void TestEs01Smaller()
         {
             float result;
-            result = Program.smaller(3.2F, 5);
-            Assert.AreEqual(3.2F, result);
-            result = Program.smaller(-4, 12.6F);
-            Assert.AreEqual( -4, result);
-            result = Program.smaller(0, 44);
-            Assert.AreEqual( 0, result);
+            result = Program.Smaller(3.2F, 5);
+            Assert.AreEqual(3.2F, result);  
+        }
+
+        [TestMethod]
+        public void TestEs01SmallerEqual()
+        {
+            float result;
+            result = Program.Smaller(9, 9);
+            Assert.AreEqual(9, result);
         }
     }
 }

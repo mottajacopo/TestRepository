@@ -5,9 +5,9 @@ namespace es_02
 {
     public class Program
     {
-        public static decimal[] fibonacci()
+        public static decimal[] Fibonacci(int n)
         {
-            decimal[] array = new decimal[100];
+            decimal[] array = new decimal[n];
             decimal num1 = 0;
             decimal num2 = 1;
             decimal temp;
@@ -27,8 +27,9 @@ namespace es_02
         }
         static void Main(string[] args)
         {
+            int n = 100;
             Console.WriteLine("Ecco i primi 100 numeri della sequenza di Fibonacci:");
-            decimal []result = fibonacci();
+            decimal []result = Fibonacci(n);
         }
     }
 }

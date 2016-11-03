@@ -5,7 +5,7 @@ namespace es_09
     public class Program
     {
 
-        public static int isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int IsInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int num = 0;
             while (!Int32.TryParse(input, out num))
@@ -15,7 +15,7 @@ namespace es_09
             }
             return num;
         }
-        public static void maxSequence(int[] array , int n , ref int [] seq)
+        public static void MaxSequence(int[] array , int n , ref int [] seq)
         {
             int[] len = new int[n];       //array che servirà per l algoritmo
             int x;
@@ -105,7 +105,7 @@ namespace es_09
                 Console.Write("Errore! Inserisci di nuovo un numero: ");
                 input = (Console.ReadLine());
             }
-            n = isInteger(ref input);
+            n = IsInteger(ref input);
 
             Console.WriteLine();
             Console.WriteLine("Inserisci gli elementi dell' array:");
@@ -115,10 +115,10 @@ namespace es_09
             for (int i = 0; i < n; i++)
             {
                     input = (Console.ReadLine());
-                    array[i] = isInteger(ref input);
+                    array[i] = IsInteger(ref input);
             }
 
-            maxSequence(array , n , ref seq);
+            MaxSequence(array , n , ref seq);
         }
     }
 }
