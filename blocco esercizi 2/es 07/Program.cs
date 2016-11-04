@@ -27,8 +27,6 @@ namespace es_07
                 testArray[i] = i + 1;
             }
 
-            
-
             Console.WriteLine("Gli elementi dell array in ordine corretto sono:");
             for (int k = 0; k < n; k++)
             {
