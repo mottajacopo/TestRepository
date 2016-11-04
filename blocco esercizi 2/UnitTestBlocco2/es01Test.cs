@@ -10,14 +10,15 @@ namespace UnitTestBlocco2
         [TestMethod]
         public void TestEs01Greater()
         {
-            float result;
-            result = Program.Greater( 8 , 3.2F);
+            int result;
+            result = Program.Greater( 8 , 3);
             Assert.AreEqual(8 ,result);
         }
 
+        [TestMethod]
         public void TestEs01GreaterEqual()
         {
-            float result;
+            int result;
             result = Program.Greater(5, 5);
             Assert.AreEqual(5, result);
         }
@@ -25,15 +26,15 @@ namespace UnitTestBlocco2
         [TestMethod]
         public void TestEs01Smaller()
         {
-            float result;
-            result = Program.Smaller(3.2F, 5);
-            Assert.AreEqual(3.2F, result);  
+            int result;
+            result = Program.Smaller(3, 5);
+            Assert.AreEqual(3, result);  
         }
 
         [TestMethod]
         public void TestEs01SmallerEqual()
         {
-            float result;
+            int result;
             result = Program.Smaller(9, 9);
             Assert.AreEqual(9, result);
         }

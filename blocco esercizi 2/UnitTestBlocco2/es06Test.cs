@@ -8,33 +8,33 @@ namespace UnitTestBlocco2
     public class UnitTest6
     {
         [TestMethod]
-        public void TestDecToBin()
+        public void TestEs06DecToHex()
         {
-            Assert.AreEqual("0", Program.DecToBin("0"));
-            Assert.AreEqual("1", Program.DecToBin("1"));
-            Assert.AreEqual("1000", Program.DecToBin("8"));
-        }
-        [TestMethod]
-        public void TestBinToDec()
-        {
-            Assert.AreEqual("0", Program.BinToDec("0"));
-            Assert.AreEqual("1", Program.BinToDec("1"));
-            Assert.AreEqual("3", Program.BinToDec("11"));
-        }
-        [TestMethod]
-        public void TestDecToHex()
-        {
+            Assert.AreEqual("0xc", Program.DecToHex("12"));
+            Assert.AreEqual("0x41", Program.DecToHex("65"));
             Assert.AreEqual("0x0", Program.DecToHex("0"));
-            Assert.AreEqual("0xa", Program.DecToHex("10"));
-            Assert.AreEqual("0x100", Program.DecToHex("256"));
         }
         [TestMethod]
-        public void TestHexToDec()
+        public void TestEs06HexToDec()
         {
+            Assert.AreEqual("42", Program.HexToDec("0x2a"));
+            Assert.AreEqual("2748", Program.HexToDec("0xabc"));
             Assert.AreEqual("0", Program.HexToDec("0x0"));
-            Assert.AreEqual("10", Program.HexToDec("0xa"));
-            Assert.AreEqual("256", Program.HexToDec("0x100"));
         }
 
+        [TestMethod]
+        public void TestEs06DecToBin()
+        {
+            Assert.AreEqual("101100", Program.DecToBin("44"));
+            Assert.AreEqual("111", Program.DecToBin("7"));
+            Assert.AreEqual("0", Program.DecToBin("0"));
+        }
+        [TestMethod]
+        public void TestEs06BinToDec()
+        {
+            Assert.AreEqual("26", Program.BinToDec("11010"));
+            Assert.AreEqual("57", Program.BinToDec("111001"));
+            Assert.AreEqual("0", Program.BinToDec("0"));
+        }
     }
 }
