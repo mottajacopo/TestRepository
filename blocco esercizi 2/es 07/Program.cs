@@ -4,6 +4,7 @@ namespace es_07
 {
     public class Program
     {
+        public static Random rand = new Random();
         public static int IsInteger(ref string input)  //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int num = 0;
@@ -26,7 +27,7 @@ namespace es_07
                 testArray[i] = i + 1;
             }
 
-            Random rand = new Random((int)DateTime.Now.Ticks);
+            
 
             Console.WriteLine("Gli elementi dell array in ordine corretto sono:");
             for (int k = 0; k < n; k++)
