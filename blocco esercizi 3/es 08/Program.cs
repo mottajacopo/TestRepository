@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Text;
 
-
 namespace es_08
 {
-    class Program
+    public class Program
     {
         public static string Encode(string message, string cipher)
         {

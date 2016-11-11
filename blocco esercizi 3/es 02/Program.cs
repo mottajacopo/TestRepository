@@ -4,7 +4,7 @@ using System.Text;
 
 namespace es_02
 {
-    class Program
+    public class Program
     {
         public static string Sum(string num1, string num2)
         {
