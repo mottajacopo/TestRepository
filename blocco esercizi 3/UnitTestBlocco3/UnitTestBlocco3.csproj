@@ -56,6 +56,48 @@
     <Compile Include="es08Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\es 01\es 01.csproj">
+      <Project>{e9d59181-df29-4690-a901-2a1daea68643}</Project>
+      <Name>es 01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 02\es 02.csproj">
+      <Project>{2d7c4b33-f4bf-49e7-acd3-db56293c4193}</Project>
+      <Name>es 02</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 03\es 03.csproj">
+      <Project>{76677d08-6a94-404c-839e-3dd039012a19}</Project>
+      <Name>es 03</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 04\es 04.csproj">
+      <Project>{38436c33-0a1f-44f5-b38e-96fdf8a31f2b}</Project>
+      <Name>es 04</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 05\es 05.csproj">
+      <Project>{e9b7f4bc-821d-465f-91fd-91fd0ebb11fd}</Project>
+      <Name>es 05</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 06\es 06.csproj">
+      <Project>{6ade2a78-5a01-4d70-9a8e-d687ca614013}</Project>
+      <Name>es 06</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 07\es 07.csproj">
+      <Project>{dfbbdd9c-2f8e-4235-a954-a70891a4e0e1}</Project>
+      <Name>es 07</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 08\es 08.csproj">
+      <Project>{2f4081ca-a511-4e82-8830-c9d209be13ad}</Project>
+      <Name>es 08</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 09\es 09.csproj">
+      <Project>{efb027d9-a351-4611-9157-5a6843db839f}</Project>
+      <Name>es 09</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\es 10\es 10.csproj">
+      <Project>{79bbd73d-fd63-4d78-b6b6-0ee2ad46f976}</Project>
+      <Name>es 10</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

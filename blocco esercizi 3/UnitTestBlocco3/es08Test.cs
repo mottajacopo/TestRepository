@@ -13,7 +13,7 @@ namespace UnitTestBlocco3
         {
             string input = "Test";
             string cipher = "ab";
-            string encoded = Encode(input, cipher);
+            string encoded = Program.Encode(input, cipher);
             string resultExpected = "\\u0035\\u0007\\u0012\\u0016";
             Assert.AreEqual(resultExpected, encoded);
         }

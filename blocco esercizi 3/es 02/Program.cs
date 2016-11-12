@@ -6,6 +6,10 @@ namespace es_02
 {
     public class Program
     {
+
+        static void Main(string[] args)
+        {
+        }
         public static string Sum(string num1, string num2)
         {
 
@@ -65,4 +69,7 @@ namespace es_02
             return InvertedString.ToString();
         }
     }
+
+   
 }
+

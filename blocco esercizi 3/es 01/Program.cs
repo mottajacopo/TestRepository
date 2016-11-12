@@ -2,7 +2,7 @@
 
 namespace es_01
 {
-    class Program
+    public class Program
     {
         public static bool GreaterThanNeighbours(int []array , int n , int position)
         {
