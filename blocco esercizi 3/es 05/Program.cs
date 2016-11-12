@@ -2,11 +2,26 @@
 
 namespace es_05
 {
-    class Program
+    public class Program
     {
         public static Random rand = new Random();
-        public static string  RandomAdvertisement (string[] Phrase1 , string[] Phrase2, string[] Phrase3, string[] Phrase4 , string[] Phrase5)
+        public static string  RandomAdvertisement ()
         {
+            string[] Phrase1 = new string[]
+           { "The product is excellent.", "This is a great product.", "I use this product constantly.", "This is the best product from this category." };
+
+            string[] Phrase2 = new string[]
+            { "Now I feel better.", "I managed to change.", "It made some miracle.", "I can’t believe it, but now I am feeling great.", "You should try it, too. I am very satisfied." };
+
+            string[] Phrase3 = new string[]
+            {"Dayan", "Stella", "Hellen", "Kate"};
+
+            string[] Phrase4 = new string[]
+            {"Johnson", "Peterson", "Charles"};
+
+            string[] Phrase5 = new string[]
+            {"London", "Paris", "Berlin", "New York", "Madrid"};
+
             string PhraseFinal;
             int i = rand.Next(0, 3); 
             int j = rand.Next(0, 4); 
@@ -20,22 +35,9 @@ namespace es_05
         }
         public static void Main(string[] args)
         {
-            string[] Phrase1 = new string[] 
-            { "The product is excellent.", "This is a great product.", "I use this product constantly.", "This is the best product from this category." };
+           
 
-            string[] Phrase2 = new string[] 
-            { "Now I feel better.", "I managed to change.", "It made some miracle.", "I can’t believe it, but now I am feeling great.", "You should try it, too. I am very satisfied." };
-
-            string[] Phrase3 = new string[]
-            {"Dayan", "Stella", "Hellen", "Kate"};
-
-            string[] Phrase4 = new string[]
-            {"Johnson", "Peterson", "Charles"};
-
-            string[] Phrase5 = new string[]
-            {"London", "Paris", "Berlin", "New York", "Madrid"};
-
-            Console.WriteLine("{0}" , RandomAdvertisement(Phrase1 , Phrase2 , Phrase3 , Phrase4 , Phrase5));
+            Console.WriteLine("{0}" , RandomAdvertisement());
         }
     }
 }
