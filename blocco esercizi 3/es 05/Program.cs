@@ -8,10 +8,10 @@ namespace es_05
         public static string  RandomAdvertisement ()
         {
             string[] Phrase1 = new string[]
-           { "The product is excellent.", "This is a great product.", "I use this product constantly.", "This is the best product from this category." };
+            {"The product is excellent.", "This is a great product.", "I use this product constantly.", "This is the best product from this category." };
 
             string[] Phrase2 = new string[]
-            { "Now I feel better.", "I managed to change.", "It made some miracle.", "I can’t believe it, but now I am feeling great.", "You should try it, too. I am very satisfied." };
+            {"Now I feel better.", "I managed to change.", "It made some miracle.", "I can’t believe it, but now I am feeling great.", "You should try it, too. I am very satisfied." };
 
             string[] Phrase3 = new string[]
             {"Dayan", "Stella", "Hellen", "Kate"};
@@ -35,8 +35,6 @@ namespace es_05
         }
         public static void Main(string[] args)
         {
-           
-
             Console.WriteLine("{0}" , RandomAdvertisement());
         }
     }
