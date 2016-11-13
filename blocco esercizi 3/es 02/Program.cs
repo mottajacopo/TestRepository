@@ -6,10 +6,6 @@ namespace es_02
 {
     public class Program
     {
-
-        static void Main(string[] args)
-        {
-        }
         public static string Sum(string num1, string num2)
         {
 
@@ -39,7 +35,7 @@ namespace es_02
                     sumDigits += digitSecondNumber;
                 }
 
-                remainder = sumDigits / 10; 
+                remainder = sumDigits / 10;
                 if (remainder > 0)
                 {
                     sum.Append(sumDigits % 10);
@@ -68,8 +64,10 @@ namespace es_02
 
             return InvertedString.ToString();
         }
-    }
 
-   
+        public static void Main(string[] args)
+        {
+        }
+    }
 }
 
