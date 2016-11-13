@@ -15,7 +15,7 @@ namespace es_01
 
             return result;
         }
-        public static int isInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
+        public static int IsInteger(ref string input)         //controllo per verificare che vengano inseriti numeri e non lettere o altro
         {
             int num = 0;
             while (!Int32.TryParse(input, out num))
@@ -40,7 +40,7 @@ namespace es_01
                 Console.Write("Errore! Inserisci di nuovo un numero: ");
                 input = (Console.ReadLine());
             }
-            n = isInteger(ref input);
+            n = IsInteger(ref input);
 
             int[] array = new int[n];
             Console.WriteLine();
@@ -49,12 +49,12 @@ namespace es_01
             for (int i = 0; i < n; i++)
             {
                 input = (Console.ReadLine());
-                array[i] = isInteger(ref input);
+                array[i] = IsInteger(ref input);
             }
 
             Console.WriteLine("inserisci la posizione dell elemento del quale vuoi verificare se è maggiore dei 2 elementi vicini");
             input = Console.ReadLine();
-            position = isInteger(ref input);
+            position = IsInteger(ref input);
 
             result = GreaterThanNeighbours(array, n , position);
 
