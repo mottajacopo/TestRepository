@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace es_03
 {
-    class Program
+    public class Program
     {
         public static List<string> DirSearch(string sDir)
         {
@@ -22,15 +22,15 @@ namespace es_03
                     array.AddRange( DirSearch(d));
                 }
             }
-            catch (System.Exception excpt)
+            catch (Exception excpt)
             {
                 Console.WriteLine(excpt.Message);
             }
             return array;
         }
-        static void Main(string[] args)
+      public static void Main(string[] args)
         {
-            string sDir = "C:\\Users\\jacopo\\Desktop";
+            string sDir = "C:\\Workstation\\TestRemoteRepo\\blocco esercizi 3\\es 03\\cartella_test_04";
             List<string> array = new List<string>();
             array = DirSearch(sDir);
             foreach (string w in array)
