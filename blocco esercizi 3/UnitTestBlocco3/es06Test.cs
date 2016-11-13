@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Text;
+using System.IO;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using es_06;
 
@@ -10,16 +13,16 @@ namespace UnitTestBlocco3
         [TestMethod]
         public void TestFileParse()
         {
-            string getInput = @"..\..\correctTest.txt";
-            FileParses.FileParse(getInput);
+            int[] array = { 1, 2, 3, 4, 5 };
+            int[] numbers = Program.ParseNumberFile("file2.txt");
+            CollectionAssert.AreEqual(array, numbers);
 
         }
         [TestMethod]
-        [ExpectedException(typeof(FileParseException))]
-        public void TestFileParseWrong()
+        [ExpectedException(typeof(Program.FileParseException))]
+        public void TestFileParse2()
         {
-            string getInput = @"..\..\wrongTest.txt";
-            FileParses.FileParse(getInput);
-        } 
+            int[] numbers = Program.ParseNumberFile("file.txt");
+        }
     }
 }

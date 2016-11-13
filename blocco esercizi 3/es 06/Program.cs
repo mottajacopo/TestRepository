@@ -3,6 +3,67 @@ using System.IO;
 
 namespace es_06
 {
+    public class Program
+    {
+        public static int[] ParseNumberFile(string filename)
+        {
+
+            string fileContent = File.ReadAllText(filename);
+
+            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            int[] integers = new int[integerStrings.Length];
+
+            for (int row = 0; row < integerStrings.Length; row++)
+            {
+                try
+                {
+                    integers[row] = int.Parse(integerStrings[row]);
+                }
+
+                catch (Exception)
+                {
+                    throw new FileParseException(filename, row);
+                }
+            }
+            return integers;
+        }
+
+        public class FileParseException : ApplicationException
+        {
+            string message;
+            string fileName;
+            int row;
+            public FileParseException(string fileName, int row)
+            {
+                this.fileName = fileName;
+                this.row = row;
+                message = string.Format("Nel file {0}, nella riga {1} non è presente un intero ", this.fileName, this.row);
+            }
+            public override string Message
+            {
+                get { return this.message; }
+            }
+        }
+        public static void Main()
+        {
+            int[] numbers = ParseNumberFile("file.txt");
+            foreach (int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+    }
+
+}
+
+
+
+/*using System;
+using System.IO;
+
+namespace es_06
+{
     public class FileParses
     {
         public static void FileParse(string path)
@@ -34,14 +95,14 @@ namespace es_06
                     throw new FileParseException(path, row, exception);
                 }
 
-                line = input.ReadLine();
+                
                 row++;
             }
 
         }
-
         static void Main(string[] args)
         {
+            FileParse("file.txt");
         }
     }
 
@@ -97,3 +158,4 @@ namespace es_06
 
     }
 }
+*/
