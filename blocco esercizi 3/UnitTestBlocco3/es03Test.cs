@@ -14,7 +14,7 @@ namespace UnitTestBlocco3
         [TestMethod]
         public void TestDirSearchCount()
         {
-            string sDir = "C:\\Workstation\\TestRemoteRepo\\blocco esercizi 3\\es 03\\cartella_test_03";
+            string sDir = "cartella_test_03";
             List<string> filesAndFolders = Program.DirSearch(sDir);
             Assert.AreEqual(8, filesAndFolders.Count);
         }
