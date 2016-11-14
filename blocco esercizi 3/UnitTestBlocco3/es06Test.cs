@@ -14,7 +14,7 @@ namespace UnitTestBlocco3
         public void TestFileParse()
         {
             int[] array = { 1, 2, 3, 4, 5 };
-            int[] numbers = Program.ParseNumberFile("file2.txt");
+            int[] numbers = Program.ParseNumberFile(@"..\..\file2.txt"); 
             CollectionAssert.AreEqual(array, numbers);
 
         }
@@ -22,7 +22,7 @@ namespace UnitTestBlocco3
         [ExpectedException(typeof(Program.FileParseException))]
         public void TestFileParse2()
         {
-            int[] numbers = Program.ParseNumberFile("file.txt");
+            int[] numbers = Program.ParseNumberFile(@"..\..\file.txt");
         }
     }
 }

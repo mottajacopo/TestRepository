@@ -14,7 +14,7 @@ namespace UnitTestBlocco3
         [TestMethod]
         public void TestDirSearchCount()
         {
-            string sDir = "cartella_test_03";
+            string sDir = @"..\..\cartella_test_03";
             List<string> filesAndFolders = Program.DirSearch(sDir);
             Assert.AreEqual(8, filesAndFolders.Count);
         }
