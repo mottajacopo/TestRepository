@@ -30,7 +30,7 @@ namespace es_03
         }
       public static void Main(string[] args)
         {
-            string sDir = "C:\\Workstation\\TestRemoteRepo\\blocco esercizi 3\\es 03\\cartella_test_04";
+            string sDir = @"..\..\cartella_test_03";
             List<string> array = new List<string>();
             array = DirSearch(sDir);
             foreach (string w in array)
