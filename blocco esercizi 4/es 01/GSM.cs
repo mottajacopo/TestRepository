@@ -15,8 +15,6 @@ namespace es_01
         private Battery battery = null;
         private Display display = null;
 
-        static private GSM samsungGalaxyS7 = new GSM("Samsung Galaxy S7", "Samsung", "Pippo", 800, new Battery("3000mAh", 100, 22), new Display(5.2f, 16000000));
-
         public string Model
         {
             get
@@ -112,6 +110,23 @@ namespace es_01
         {
         }
 
+        static private GSM samsungGalaxyS7 = new GSM("Samsung Galaxy S7", "Samsung", "Pippo", 800, new Battery("3000mAh", 22, 120), new Display(5.2f, 16000000));
+
+        public string[] PhoneInformation()
+        {
+            string[] info = new string[10];
+            info[0] = "Model is : " + samsungGalaxyS7.Model;
+            info[1] = "Manufacturer is : " + samsungGalaxyS7.Manufacturer;
+            info[2] = "Owner is : " + samsungGalaxyS7.Owner;
+            info[3] = "Price is : " + samsungGalaxyS7.Price;
+            info[4] = "Battery size is : " + samsungGalaxyS7.battery.Model;
+            info[5] = "Idle time is : " + samsungGalaxyS7.battery.IdleTime;
+            info[6] = "Talk time is : " + samsungGalaxyS7.battery.TalkTime;
+            info[7] = "Display size is : " + samsungGalaxyS7.display.Inches;
+            info[8] = "Display colors are : " + samsungGalaxyS7.display.Colors;
+           
+            return info;
+        }
 
         public Call[] callList = new Call[100];
         public int counter = 0;

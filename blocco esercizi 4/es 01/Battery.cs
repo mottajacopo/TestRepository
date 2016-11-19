@@ -15,11 +15,11 @@ namespace es_01
         private Technology type;
 
 
-        public Battery(string model, int talkTime, int idleTime, Technology type = Technology.LiIon)
+        public Battery(string model, int talktime, int idleTime, Technology type = Technology.LiIon)
         {
             this.model = model;
             this.idleTime = idleTime;
-            this.talkTime = talkTime;
+            this.talkTime = talktime;
             this.type = type;
         }
 

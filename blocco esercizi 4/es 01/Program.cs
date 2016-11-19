@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace es_01
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            GSM phone = new GSM();
+            phone.PhoneInformation();
         }
     }
 }
