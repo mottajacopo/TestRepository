@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace es_01
 {
-    class GSM
+    public class GSM
     {
         private string model = null;
         private string manufacturer = null;
@@ -14,7 +14,9 @@ namespace es_01
         private int price = 0;
         private Battery battery = null;
         private Display display = null;
-        
+
+        static private GSM samsungGalaxyS7 = new GSM("Samsung Galaxy S7", "Samsung", "Pippo", 800, new Battery("3000mAh", 100, 22), new Display(5.2f, 16000000));
+
         public string Model
         {
             get
@@ -110,13 +112,12 @@ namespace es_01
         {
         }
 
-        static private GSM samsungGalaxyS7 = new GSM("Samsung Galaxy S7", "Samsung", "Pippo", 800, new Battery("3000mAh", 100, 22), new Display(5.2f, 16000000));
 
-        private Call[] callList;
+        public Call[] callList;
         public int counter = 0;
-        public void AddCall(int date, int startTime, int duration)
+        public void AddCall(string date, string startTime, int duration)
         {
-            this.callList[counter] = new Call(date , startTime ,duration);
+            this.callList[counter] = new Call(date, startTime, duration);
             counter++;
         }
         public void RemoveCall(int index)
@@ -126,7 +127,7 @@ namespace es_01
             {
                 this.callList[i] = this.callList[i + 1];
             }
-            this.callList[counter- 1] = null;
+            this.callList[counter - 1] = null;
             counter--;
         }
 
@@ -138,11 +139,11 @@ namespace es_01
             }
         }
 
-        public float CallPrice( int oneMinutePrice)
+        public float CallPrice(int oneMinutePrice)
         {
             float price = 0;
 
-            for(int i = 0; i < counter; i++)
+            for (int i = 0; i < counter; i++)
             {
                 price += this.callList[i].Duration * oneMinutePrice;
             }

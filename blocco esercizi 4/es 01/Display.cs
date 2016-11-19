@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace es_01
 {
-    class Display
+    public class Display
     {
         private float inches = 0;
         private decimal colors = 0;
 
-        public Display(float inches, decimal colors) : this(inches, colors)
+        public Display(float inches, decimal colors)
         {
             this.inches = inches;
             this.colors = colors;

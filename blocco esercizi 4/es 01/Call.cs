@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace es_01
 {
-    class Call
+    public class Call
     {
-        int date = 0;
-        int startTime = 0;
+        string date = null;
+        string startTime = null;
         int duration = 0;
 
-        public Call(int date ,int startTime , int duration)
+        public Call(string date, string startTime, int duration)
         {
             this.date = date;
             this.startTime = startTime;
             this.duration = duration;
         }
 
-        public int Date
+        public string Date
         {
             get
             {
@@ -31,7 +31,7 @@ namespace es_01
             }
         }
 
-        public int StartTime
+        public string StartTime
         {
             get
             {

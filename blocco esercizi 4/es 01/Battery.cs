@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace es_01
 {
     public enum Technology { LiIon, NiMH, NiCd }
-    class Battery
+    public class Battery
     {
         private string model = null;
         private int talkTime = 0;
         private int idleTime = 0;
-        private Technology type ;
+        private Technology type;
 
 
-        public Battery(string model, int talkTime , int idleTime , Technology type = Technology.LiIon)
+        public Battery(string model, int talkTime, int idleTime, Technology type = Technology.LiIon)
         {
             this.model = model;
             this.idleTime = idleTime;
@@ -35,7 +35,7 @@ namespace es_01
             }
         }
         public int IdleTime
-        { 
+        {
             get
             {
                 return this.idleTime;

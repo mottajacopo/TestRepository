@@ -2,68 +2,25 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using es_01;
 
 namespace UnitTestBlocco4
 {
-    /// <summary>
-    /// Descrizione del riepilogo per es01Test
-    /// </summary>
     [TestClass]
-    public class es01Test
+    public class TestGSM
     {
-        public es01Test()
-        {
-            //
-            // TODO: aggiungere qui la logica del costruttore
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Ottiene o imposta il contesto del test che fornisce
-        ///le informazioni e le funzionalità per l'esecuzione del test corrente.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Attributi di test aggiuntivi
-        //
-        // È possibile utilizzare i seguenti attributi aggiuntivi per la scrittura dei test:
-        //
-        // Utilizzare ClassInitialize per eseguire il codice prima di eseguire il primo test della classe
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Utilizzare ClassCleanup per eseguire il codice dopo l'esecuzione di tutti i test della classe
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Utilizzare TestInitialize per eseguire il codice prima di eseguire ciascun test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Utilizzare TestCleanup per eseguire il codice dopo l'esecuzione di ciascun test
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void GSMAddCall()
         {
-            //
-            // TODO: aggiungere qui la logica del test
-            //
+            GSM samsungGalaxyS7 = new GSM("Samsung Galaxy S7", "Samsung", "Pippo", 800, new Battery("3000mAh", 100, 22), new Display(5.2f, 16000000));
+            samsungGalaxyS7.AddCall("12-11-2016", "11:30" , 10);
+            samsungGalaxyS7.AddCall("28-10-2016", "14:37", 15);
+            samsungGalaxyS7.AddCall("16-10-2016", "18:05", 5);
+            samsungGalaxyS7.AddCall("10-10-2016", "21:45", 4);
+
+            Assert.AreEqual(4 , samsungGalaxyS7.counter);
         }
+
     }
 }

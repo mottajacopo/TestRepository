@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F9CB0EE6-68C0-4005-A9F7-DA20CB8760EB}</ProjectGuid>
+    <ProjectGuid>{4F5FB23A-A6A4-4819-8C6A-3DF4301A1E11}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>es_01</RootNamespace>
@@ -47,6 +47,7 @@
     <Compile Include="Call.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="GSM.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

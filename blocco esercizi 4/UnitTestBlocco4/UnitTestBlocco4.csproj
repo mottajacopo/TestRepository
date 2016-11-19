@@ -66,7 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\es 01\es 01.csproj">
-      <Project>{f9cb0ee6-68c0-4005-a9f7-da20cb8760eb}</Project>
+      <Project>{4f5fb23a-a6a4-4819-8c6a-3df4301a1e11}</Project>
       <Name>es 01</Name>
     </ProjectReference>
     <ProjectReference Include="..\es 02\es 02.csproj">
