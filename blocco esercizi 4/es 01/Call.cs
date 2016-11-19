@@ -18,7 +18,8 @@ namespace es_01
             this.startTime = startTime;
             this.duration = duration;
         }
-
+        public Call()
+          : this(null, null , 0) { }
         public string Date
         {
             get

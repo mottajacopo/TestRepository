@@ -113,7 +113,7 @@ namespace es_01
         }
 
 
-        public Call[] callList;
+        public Call[] callList = new Call[100];
         public int counter = 0;
         public void AddCall(string date, string startTime, int duration)
         {
@@ -137,11 +137,12 @@ namespace es_01
             {
                 this.callList[i] = null;
             }
+            counter = 0;
         }
 
-        public float CallPrice(int oneMinutePrice)
+        public float CallPrice(float oneMinutePrice)
         {
-            float price = 0;
+            float price = 0.0f;
 
             for (int i = 0; i < counter; i++)
             {
