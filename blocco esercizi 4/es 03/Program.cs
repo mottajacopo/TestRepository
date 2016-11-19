@@ -1,15 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Xml;
+using System.Xml.Linq;
 
-namespace es_03
+class Test
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-        }
+
+        StreamReader reader = new StreamReader("..\\..\\XML.xml");
+        string response = reader.ReadToEnd();
+        XDocument doc = XDocument.Parse(response);
+
+        Console.WriteLine(response);
+        
     }
 }
+
+/*
+       
+
+*/
