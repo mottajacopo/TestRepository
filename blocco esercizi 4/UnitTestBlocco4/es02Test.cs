@@ -6,10 +6,12 @@ using es_02;
 
 namespace UnitTestBlocco4
 {
+    [TestClass]
     public class TestLibrary
     {
         private Library libraryForTest = null;
 
+        [TestInitialize]
         public void InizializationOfBooks()
         {
             libraryForTest = new Library("Libreria per il test");
@@ -18,6 +20,7 @@ namespace UnitTestBlocco4
             libraryForTest.AddBook(new Book("Cujo", "Stephen King", "Viking", "Settembre 1982", "978-0-670-45193-7"));
             libraryForTest.AddBook(new Book("Robinson Crusoe", "Daniel Defoe", " Bickers and Bush", "Aprile 1719", "978-53-22-027763-8"));
             libraryForTest.AddBook(new Book("Il signore degli anelli", "J.R.R. Tolkien", "Bompiani", "Ottobre 2000", "978-88-452-9005-0"));
+            libraryForTest.AddBook(new Book("Il codice Da Vinci", "Dan Brown", "Mondadori Editore", "Marzo 2004", "88-04-52341-7"));
         }
 
         [TestMethod]
@@ -25,10 +28,22 @@ namespace UnitTestBlocco4
         {
             List<Book> foundBooks = libraryForTest.SearchAuthor("Stephen King");
             Assert.AreEqual(3, foundBooks.Count); //controllo numero di libri trovati
-            Assert.AreEqual("It", foundBooks[0].Title);
+            Assert.AreEqual("It", foundBooks[0].Title); //controllo il titolo dei libri trovati
+            Assert.AreEqual("Il miglio verde", foundBooks[1].Title);
+            Assert.AreEqual("Cujo", foundBooks[2].Title);
         }
         [TestMethod]
-        public void DisplayInformationOfBook()
+        public void DisplayInformationOfBook1()
+        {
+            string[] parameters = libraryForTest.DisplayInformation("Il codice Da Vinci");
+            Assert.AreEqual("Il codice Da Vinci", parameters[0]);
+            Assert.AreEqual("Dan Brown", parameters[1]);
+            Assert.AreEqual("Mondadori Editore", parameters[2]);
+            Assert.AreEqual("Marzo 2004", parameters[3]);
+            Assert.AreEqual("88-04-52341-7", parameters[4]);
+        }
+        [TestMethod]
+        public void DisplayInformationOfBook2()
         {
             string[] parameters = libraryForTest.DisplayInformation("Il signore degli anelli");
             Assert.AreEqual("Il signore degli anelli", parameters[0]);
@@ -66,7 +81,7 @@ namespace UnitTestBlocco4
         [TestMethod]
         public void DeleteSingleBook()
         {
-            bool delete = libraryForTest.DeleteBooksOfAuthor("Robinson Crusoe");
+            bool delete = libraryForTest.DeleteSingleBook("Robinson Crusoe");
             Assert.AreEqual(true, delete);
             Book searchedBookDeleted = libraryForTest.SearchTitle("Robinson Crusoe");
             Assert.AreEqual(null, searchedBookDeleted);

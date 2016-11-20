@@ -47,15 +47,25 @@ namespace es_02
         }
         public List<Book> SearchAuthor(string authorName) //metodo per trovare i libri di un autore
         {
-            List<Book> bookAuthor = null; ; //lista libri di un autore
+            bool condition = false;
+            List<Book> listBooksAuthor = new List<Book>(); //lista libri di un autore
             foreach (Book book in bookList)
             {
                 if (book.Author.Equals(authorName))
                 {
-                    bookAuthor.Add(book);
+                    listBooksAuthor.Add(book);
+                    condition = true;
                 }
             }
-            return bookAuthor;
+            if(condition == false) //se non ci sono libri di quell'autore
+            {
+                return null;
+            }
+            else
+            {
+                return listBooksAuthor; //ritorna la lista dei libri dell'autore
+            }
+            
         }
         public Book SearchTitle(string bookTitle) 
         {
@@ -83,25 +93,21 @@ namespace es_02
         }
         public bool DeleteBooksOfAuthor(string authorName)
         {
-            foreach (Book book in bookList)
+            int booksDeleted = bookList.RemoveAll(genericBook => genericBook.Author.Equals(authorName));
+            if (booksDeleted != 0)
             {
-                if (book.Author.Equals(authorName))
-                {
-                    BookList.Remove(book);
-                }
+                return true;
             }
-            return true;
+            return false;
         }
         public bool DeleteSingleBook(string bookTitle)
         {
-            foreach (Book book in bookList)
+            int booksDeleted = bookList.RemoveAll(genericBook => genericBook.Title.Equals(bookTitle));
+            if (booksDeleted != 0)
             {
-                if (book.Title.Equals(bookTitle))
-                {
-                    BookList.Remove(book);
-                }
+                return true;
             }
-            return true;
+            return false;
         }
 
     }
