@@ -19,23 +19,29 @@ namespace es_07
             }
             catch (WebException)
             {
-                Console.WriteLine("Errore . Si è verificata un eccezione di tipo WeException .");
-                Console.WriteLine("L'URI formato dalla combinazione BaseAddress e address non è valido.");
-                Console.WriteLine(" - oppure -");
-                Console.WriteLine(" filename è null o Empty.");
-                Console.WriteLine(" - oppure -");
-                Console.WriteLine("  Il file specificato non esiste.");
-                Console.WriteLine(" - oppure - si è verificato un errore durante il download dei dati.");
+                Exception e = new Exception("Errore . Si è verificata un eccezione di tipo WeException ." +
+                                            "\n L'URI formato dalla combinazione BaseAddress e address non è valido." +
+                                            "\n  - oppure - " +
+                                            "\n filename è null o Empty." +
+                                            "\n - oppure -" +
+                                            "\n  Il file specificato non esiste." +
+                                            "\n - oppure - si è verificato un errore durante il download dei dati.");
+                throw e;
+
             }
             catch (NotSupportedException)
             {
-                Console.WriteLine("Errore . Si è verificata un eccezione di tipo NotSupportedException .");
-                Console.WriteLine("Il metodo è stato chiamato simultaneamente su più thread.");
+                Exception e = new Exception("Errore . Si è verificata un eccezione di tipo NotSupportedException ." +
+                                           "\n	Il metodo è stato chiamato simultaneamente su più thread.");
+                throw e;
+                
             }
             catch (Exception)
             {
-                Console.WriteLine("Errore . Si è verificata un eccezione di tipo Exception .");
-                Console.WriteLine("	Controllare che il valore del parametro url non sia null.");
+                Exception e = new Exception("Errore . Si è verificata un eccezione di tipo Exception ." +
+                                            "\n	Controllare che il valore del parametro url non sia null.");
+                throw e;
+               
             }
             finally
             {
