@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace es_02
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Library library = new Library("Nuova libreria");
         }
     }
 }
