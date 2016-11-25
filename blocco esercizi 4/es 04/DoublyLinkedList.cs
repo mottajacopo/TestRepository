@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace es_04
 {
-    public class Program
+    class DoublyLinkedList<T> 
     {
-        static void Main(string[] args)
-        {
+        DoubleLinkedListNode<T> First;
+        DoubleLinkedListNode<T> Last;
         }
-    }
 }
