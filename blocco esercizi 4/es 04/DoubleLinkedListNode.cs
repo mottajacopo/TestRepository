@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace es_04
 {
-    public class Program
+    public class DoubleLinkedListNode<T>
     {
-        static void Main(string[] args)
-        {
-        }
+        public DoubleLinkedListNode<T> Previous;
+        public DoubleLinkedListNode<T> Next;
+
+
     }
 }
