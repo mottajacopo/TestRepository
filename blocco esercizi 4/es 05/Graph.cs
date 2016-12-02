@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace es_05
 {
-    class Graph
+    public class Graph
     {
-        internal const int MaxNode = 1024;
+        public const int MaxNode = 1024;
         private int[][] childNodes;
         public Graph(int[][] childNodes)
         {
@@ -21,15 +21,17 @@ namespace es_05
                 return childNodes.Length;
             }
         }
-        public void TraverseDFSRecursive(int node, bool[] visited )
+        public void TraverseDFSRecursive(int node, bool[] visited ,ref int line , ref int[,] subGraph , ref int counter)
         {
             if (!visited[node])
             {
                 visited[node] = true;
-                Console.Write("{0} ",node);
+                //Console.Write("{0} ",node);
+                subGraph[counter, line] = node;
+                line++;
                 foreach (int childNode in childNodes[node])
                 {
-                    TraverseDFSRecursive(childNode, visited );
+                    TraverseDFSRecursive(childNode, visited , ref line , ref subGraph , ref counter);
                 }
             }
         }
