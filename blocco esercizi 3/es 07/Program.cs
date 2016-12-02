@@ -11,42 +11,10 @@ namespace es_07
         {
             WebClient webClient = new WebClient();
 
-            try
-            {
                 webClient = new WebClient();
                 webClient.DownloadFile(url, filename);
                 Console.WriteLine("download eseguito con successo .");
-            }
-            catch (WebException)
-            {
-                Exception e = new Exception("Errore . Si è verificata un eccezione di tipo WeException ." +
-                                            "\n L'URI formato dalla combinazione BaseAddress e address non è valido." +
-                                            "\n  - oppure - " +
-                                            "\n filename è null o Empty." +
-                                            "\n - oppure -" +
-                                            "\n  Il file specificato non esiste." +
-                                            "\n - oppure - si è verificato un errore durante il download dei dati.");
-                throw e;
-
-            }
-            catch (NotSupportedException)
-            {
-                Exception e = new Exception("Errore . Si è verificata un eccezione di tipo NotSupportedException ." +
-                                           "\n	Il metodo è stato chiamato simultaneamente su più thread.");
-                throw e;
-                
-            }
-            catch (Exception)
-            {
-                Exception e = new Exception("Errore . Si è verificata un eccezione di tipo Exception ." +
-                                            "\n	Controllare che il valore del parametro url non sia null.");
-                throw e;
-               
-            }
-            finally
-            {
-                webClient.Dispose();
-            }
+          
         }
         public static void Main(string[] args)
         {
@@ -55,8 +23,35 @@ namespace es_07
             Console.WriteLine("rimominare il file :");
             string fileName = Console.ReadLine();
 
-            Download(url, fileName);
-            
+            try
+            {
+                Download(url, fileName);
+            }
+
+            catch (WebException)
+            {
+                Console.WriteLine("Errore . Si è verificata un eccezione di tipo WeException ." +
+                                            "\n L'URI formato dalla combinazione BaseAddress e address non è valido." +
+                                            "\n  - oppure - " +
+                                            "\n filename è Empty." +
+                                            "\n - oppure -" +
+                                            "\n  Il file specificato non esiste." +
+                                            "\n - oppure - si è verificato un errore durante il download dei dati.");
+
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Errore . Si è verificata un eccezione di tipo ArgumentNullException ." +
+                                           "\n	Controllare che il valore del parametro url o fileName non siano null.");
+                
+
+            }
+            catch (Exception)
+            {
+               Console.WriteLine("Errore . Si è verificata un eccezione di tipo Exception ." );
+               
+            }
+           
         }
 
     }

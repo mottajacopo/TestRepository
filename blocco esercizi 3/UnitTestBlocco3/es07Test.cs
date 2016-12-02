@@ -23,20 +23,20 @@ namespace UnitTestBlocco3
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception) )]
+        [ExpectedException(typeof(WebException) )]
         public void TestDownloadFileException()
         {
-            string url = null;
+            string url = "Http";
             string filename = "prova.jpg";
             Program.Download(url, filename);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void TestDownloadFileWebException()
         {
             string url = @"http://imgur.com/a/yjzwP";
-            string filename ="";
+            string filename =null;
 
             Program.Download(url, filename);
         }
