@@ -12,7 +12,7 @@ namespace UnitTestBlocco4
         [TestMethod]
         public void TestSunSign()
         {
-            Person paoloRossi = new Person();
+            Person paoloRossi = new Person("Paolo", "Rossi");
         }
     }
 }
