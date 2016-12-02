@@ -24,21 +24,17 @@ namespace es_05
             Console.Write("Depth-First Search (DFS) traversal (recursive): ");
             bool[] visited = new bool[Graph.MaxNode];
             int counter = 0;
-           
 
             Console.WriteLine();
             for (int i = 0; i < g.NumberOfNode; i++)
             {
                 if (visited[i] == false)
                 {
-                    g.TraverseDFSRecursive(i, visited );
+                    g.TraverseDFSRecursive(i, visited);
                     counter++;
                     Console.WriteLine("sottografo {0}", counter);
-                   
                 }
             }
-            
         }
-
     }
 }
