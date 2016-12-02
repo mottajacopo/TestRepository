@@ -10,8 +10,7 @@ namespace es_01
     {
         static void Main(string[] args)
         {
-            GSM phone = new GSM();
-            phone.PhoneInformation();
+           
         }
     }
 }
