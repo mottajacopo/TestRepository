@@ -21,7 +21,7 @@ namespace es_05
             new int[] {8},
             new int[] {7}});
 
-            Console.Write("Depth-First Search (DFS) traversal (recursive): ");
+            
             bool[] visited = new bool[Graph.MaxNode];
             int counter = 0;
             int line ;
