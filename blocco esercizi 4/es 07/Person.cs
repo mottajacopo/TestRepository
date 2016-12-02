@@ -9,11 +9,35 @@ namespace es_07
 {
     public class Person
     {
-
+        //campi
+        private string firstName;
+        private string lastName;
         private string emailAddress;
+        private DateTime dateOfBirth;
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        //proprietà
+        public string FirstName
+        {
+            get
+            {
+                return this.firstName;
+            }
+            set
+            {
+                firstName = value;
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+            set
+            {
+                lastName = value;
+            }
+        }
         public string EmailAddress
         {
             get
@@ -30,43 +54,35 @@ namespace es_07
 
             }
         }
-        public DateTime DateOfBirth { get; set; }
-
-        //costruttori
-        public Person(string firstName, string lastName)
+        public DateTime DateOfBirth
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            get
+            {
+                return this.dateOfBirth;
+            }
+            set
+            {
+                if ((dateOfBirth < DateTime.Now) || ((DateTime.Now.Year - dateOfBirth.Year) < 120))
+                {
+                    dateOfBirth = value; //se non è una data futura o un valore > 120 OK
+                }
+                throw new ApplicationException(); //altrimenti genero un'eccezione
+            }
         }
 
+        //costruttori
         public Person(string firstName, string lastName, string emailAddress, DateTime dateOfBirth)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            this.firstName = firstName;
+            this.lastName = lastName;
             this.emailAddress = emailAddress;
-            DateOfBirth =  dateOfBirth;
+            this.dateOfBirth =  dateOfBirth;
             if((dateOfBirth > DateTime.Now) || ((DateTime.Now.Year - dateOfBirth.Year) > 120))
             {
                 throw new ApplicationException();
             }
         }
-        public Person(string firstName, string lastName, DateTime dateOfBirth)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            DateOfBirth = dateOfBirth;
-            if ((dateOfBirth > DateTime.Now) || ((DateTime.Now.Year - dateOfBirth.Year) > 120))
-            {
-                throw new ApplicationException();
-            }
-        }
-        public Person(string firstName, string lastName, string emailAddress)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            this.emailAddress = emailAddress;
-        }
-        /*
+        
         public Person(string firstName, string lastName, string emailAddress)
             : this(firstName, lastName, emailAddress, DateTime.Today)
         {
@@ -75,13 +91,12 @@ namespace es_07
             : this(firstName, lastName, null, dateOfBirth)
         {
         }
-        costruttori vecchi
-        */
+        
         public bool Adult
         {
             get
             {
-                if((DateTime.Now.Year - DateOfBirth.Year) > 18)
+                if((DateTime.Now.Year - dateOfBirth.Year) > 18)
                 {
                     return true;
                 }
@@ -98,8 +113,8 @@ namespace es_07
 
                 for(int i = 0; i < 12; i++)
                 {
-                    DateTime dateSign = new DateTime(DateOfBirth.Year, i + 1, signStartDay[i]);
-                    if (DateOfBirth > dateSign)
+                    DateTime dateSign = new DateTime(dateOfBirth.Year, i + 1, signStartDay[i]);
+                    if (dateOfBirth > dateSign)
                     {
                         currentSign = sunSign[i]; 
                     }
@@ -117,7 +132,7 @@ namespace es_07
                 string currentSign = null;
                 for(int i = 0; i < 12; i++)
                 {
-                    if ((((chineseSignYear[i] - DateOfBirth.Year) % 12) == 0)) {
+                    if ((((chineseSignYear[i] - dateOfBirth.Year) % 12) == 0)) {
                         currentSign = chineseSign[i];
                     }
                 }
@@ -128,7 +143,7 @@ namespace es_07
         {
             get
             {
-                if((DateTime.Today.Day == DateOfBirth.Day) && DateTime.Today.Month == DateOfBirth.Month)
+                if((DateTime.Today.Day == dateOfBirth.Day) && DateTime.Today.Month == DateOfBirth.Month)
                 {
                     return true;
                 }
@@ -140,9 +155,9 @@ namespace es_07
             get
             {
                 StringBuilder screenName = new StringBuilder();
-                string firstNameLowCase = FirstName.ToLower();
+                string firstNameLowCase = firstName.ToLower();
                 screenName.Append(firstNameLowCase);
-                string lastNameLowCase = LastName.ToLower();
+                string lastNameLowCase = lastName.ToLower();
                 screenName.Append(lastNameLowCase);
                 screenName.Append(DateOfBirth.Year);
 
