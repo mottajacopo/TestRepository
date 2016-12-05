@@ -7,7 +7,7 @@ using es_04;
 namespace UnitTestBlocco4
 {
     [TestClass]
-    public class UnitTest04
+    public class TestList
     {
         static int[] Array;
         static int length;
