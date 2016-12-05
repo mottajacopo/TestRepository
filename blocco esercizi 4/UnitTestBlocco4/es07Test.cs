@@ -68,21 +68,21 @@ namespace UnitTestBlocco4
         [ExpectedException(typeof(ApplicationException))]
         public void TestFutureBirthSet()
         {
-            Person kk = new Person("Napoleone", "Bonaparte", "napo@gmail.com");
-            kk.DateOfBirth = (new DateTime(1769, 8, 15));
+            Person nb = new Person("Napoleone", "Bonaparte", "napo@gmail.com");
+            nb.DateOfBirth = (new DateTime(1769, 8, 15));
         }
         [TestMethod]
         [ExpectedException(typeof(ApplicationException))]
         public void TestOldBirthDateConstructor()
         {
-            Person jd = new Person("Napoleone", "Bonaparte", "napo@gmail.com", new DateTime(1769, 8, 15));
+            Person nb = new Person("Napoleone", "Bonaparte", "napo@gmail.com", new DateTime(1769, 8, 15));
         }
         [TestMethod]
         [ExpectedException(typeof(ApplicationException))]
         public void TestOldBirthDateSet()
         {
-            Person kk = new Person("Napoleone", "Bonaparte", "napo@gmail.com");
-            kk.DateOfBirth = (new DateTime(1769, 8, 15));
+            Person nb = new Person("Napoleone", "Bonaparte", "napo@gmail.com");
+            nb.DateOfBirth = (new DateTime(1769, 8, 15));
         }
         [TestMethod]
         [ExpectedException(typeof(ApplicationException))]

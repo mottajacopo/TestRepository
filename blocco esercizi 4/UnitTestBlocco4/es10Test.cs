@@ -8,7 +8,7 @@ namespace UnitTestBlocco4
 {
     [TestClass]
 
-    public class TestEmployee
+    public class TestEmployeeEs10
     {
         [TestMethod]
         public void TestSalary()

@@ -34,24 +34,26 @@ namespace es_06
                 return minutes % 60;
             }
         }
-        static public Time operator+(Time t1, Time t2)
+        static public Time operator+(Time time1, Time time2)
         {
-            Time result = new Time((t1.minutes + t2.minutes) / 60, (t1.minutes + t2.minutes) % 60);
-            return result;
+            int hours = time1.Hour + time2.Hour;
+            int min = time1.Minute + time2.Minute;
+            return new Time(hours, min);
         }
-        static public Time operator-(Time t1, Time t2)
+        static public Time operator-(Time time1, Time time2)
         {
-            Time result = new Time((t1.minutes - t2.minutes) / 60, (t1.minutes - t2.minutes) % 60);
-            return result;
+            int hours = time1.Hour - time2.Hour;
+            int min = time1.Minute - time2.Minute;
+            return new Time(hours, min);
         }
         static public implicit operator Time(int totalMinutes)
         {
             Time timeConverted = new Time(totalMinutes / 60, totalMinutes % 60);
             return timeConverted;
         }
-        static public explicit operator int (Time t)
+        static public explicit operator int (Time time)
         {
-            return t.minutes;
+            return time.minutes;
         }
 
     }

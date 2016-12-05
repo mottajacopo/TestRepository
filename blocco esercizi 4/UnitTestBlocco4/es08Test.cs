@@ -7,7 +7,7 @@ using es_08;
 namespace UnitTestBlocco4
 {
     [TestClass] 
-    public class TestEmployee
+    public class TestEmployeeEs08
     {
         [TestMethod]
         public void TestRetrieveAmount()

@@ -43,6 +43,7 @@ namespace UnitTestBlocco4
             Time t2 = new Time(7, 35);
             Assert.AreEqual(18, (t1 + t2).Hour);
             Assert.AreEqual(3, (t1 + t2).Minute);
+            Assert.AreEqual("18:03", (t1+t2).ToString());
         }
         [TestMethod]
         public void SubTwoTimes()
@@ -51,6 +52,7 @@ namespace UnitTestBlocco4
             Time t2 = new Time(7, 35);
             Assert.AreEqual(2, (t1 - t2).Hour);
             Assert.AreEqual(53, (t1 - t2).Minute);
+            Assert.AreEqual("02:53", (t1 - t2).ToString());
         }
         [TestMethod]
         public void TestTimeImplicitConversion()
