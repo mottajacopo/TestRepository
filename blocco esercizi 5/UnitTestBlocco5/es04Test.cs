@@ -2,68 +2,114 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using es_04;
 
 namespace UnitTestBlocco5
 {
-    /// <summary>
-    /// Descrizione del riepilogo per es04Test
-    /// </summary>
     [TestClass]
-    public class es04Test
+    public class TestEs04Complex
     {
-        public es04Test()
+        [TestMethod]
+        public void TestEs04Sum()
         {
-            //
-            // TODO: aggiungere qui la logica del costruttore
-            //
+            Complex z1 = new Complex(7, -3);
+            Complex z2 = new Complex(11, 7);
+            Complex sum = z1 + z2;
+
+            Assert.AreEqual("18 +4i", sum.ToStringForm());
         }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Ottiene o imposta il contesto del test che fornisce
-        ///le informazioni e le funzionalità per l'esecuzione del test corrente.
-        ///</summary>
-        public TestContext TestContext
+        [TestMethod]
+        public void TestEs04Difference()
         {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
+            Complex z1 = new Complex(7, -3);
+            Complex z2 = new Complex(11, 7);
+            Complex sum = z1 - z2;
 
-        #region Attributi di test aggiuntivi
-        //
-        // È possibile utilizzare i seguenti attributi aggiuntivi per la scrittura dei test:
-        //
-        // Utilizzare ClassInitialize per eseguire il codice prima di eseguire il primo test della classe
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Utilizzare ClassCleanup per eseguire il codice dopo l'esecuzione di tutti i test della classe
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Utilizzare TestInitialize per eseguire il codice prima di eseguire ciascun test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Utilizzare TestCleanup per eseguire il codice dopo l'esecuzione di ciascun test
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
+            Assert.AreEqual("-4 -10i", sum.ToStringForm());
+        }
+        [TestMethod]
+        public void TestEs04Multiplication()
+        {
+            Complex z1 = new Complex(7, -3);
+            Complex z2 = new Complex(11, 7);
+            Complex sum = z1 * z2;
+
+            Assert.AreEqual("98 +16i", sum.ToStringForm());
+        }
+        [TestMethod]
+        public void TestEs04Division()
+        {
+            Complex z1 = new Complex(28, 24);
+            Complex z2 = new Complex(8, 2);
+            Complex sum = z1 / z2;
+
+            Assert.AreEqual("4 +2i", sum.ToStringForm());
+        }
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestEs04Conjugate()
         {
-            //
-            // TODO: aggiungere qui la logica del test
-            //
+            Complex z1 = new Complex(7, -3);
+            Complex conjugate = ~z1;
+            Assert.AreEqual("7 +3i", conjugate.ToStringForm());
+        }
+    }
+
+    [TestClass]
+    public class TestEs04TriBool
+    {
+        [TestMethod]
+        public void TestEs04Conversions()
+        {
+            TriBool t1 = new TriBool(-1);
+            TriBool t2 = new TriBool(1);
+
+            bool b1 = (bool)t1;
+            Assert.IsFalse(b1);
+            bool b2 = (bool)t2;
+            Assert.IsTrue(b2);
+
+            bool b3 = true;
+            TriBool t3 = new TriBool(0);
+            t3 = (TriBool)b3;
+            Assert.AreEqual("true", t3.ToString());
+        }
+
+        [TestMethod]
+        public void TestEs04Comparisons()
+        {
+            TriBool t1 = new TriBool(-1);
+            TriBool t2 = new TriBool(0);
+            TriBool t3 = new TriBool(1);
+
+            Assert.AreEqual("false", (t2 == t3).ToString());
+            Assert.AreEqual("true", (t2 == t2).ToString());
+
+            Assert.AreEqual("true", (t2 != t3).ToString());
+            Assert.AreEqual("false", (t1 != t1).ToString());
+        }
+        [TestMethod]
+        public void TestEs04LogicalExpressions()
+        {
+            TriBool t1 = new TriBool(-1);
+            TriBool t2 = new TriBool(0);
+            TriBool t3 = new TriBool(1);
+
+            Assert.AreEqual("false", (t1 & t2).ToString());
+            Assert.AreEqual("true", (t3 & t3).ToString());
+
+            Assert.AreEqual("indeterminate", (t1 | t2).ToString());
+            Assert.AreEqual("true", (t1 | t3).ToString());
+
+        }
+        [TestMethod]
+        public void TestTriBoolTrueFalseOperator()
+        {
+            TriBool t1 = false;
+            TriBool t2 = true;
+
+            Assert.AreEqual("false", t1.ToString());
+            Assert.AreEqual("true", t2.ToString());
         }
     }
 }

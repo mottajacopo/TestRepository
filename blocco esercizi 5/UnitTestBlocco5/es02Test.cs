@@ -2,68 +2,27 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using es_02;
 
 namespace UnitTestBlocco5
 {
-    /// <summary>
-    /// Descrizione del riepilogo per es02Test
-    /// </summary>
     [TestClass]
-    public class es02Test
+    public class TestEs02Die
     {
-        public es02Test()
-        {
-            //
-            // TODO: aggiungere qui la logica del costruttore
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Ottiene o imposta il contesto del test che fornisce
-        ///le informazioni e le funzionalità per l'esecuzione del test corrente.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Attributi di test aggiuntivi
-        //
-        // È possibile utilizzare i seguenti attributi aggiuntivi per la scrittura dei test:
-        //
-        // Utilizzare ClassInitialize per eseguire il codice prima di eseguire il primo test della classe
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Utilizzare ClassCleanup per eseguire il codice dopo l'esecuzione di tutti i test della classe
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Utilizzare TestInitialize per eseguire il codice prima di eseguire ciascun test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Utilizzare TestCleanup per eseguire il codice dopo l'esecuzione di ciascun test
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
         [TestMethod]
-        public void TestMethod1()
+        public void TestSortArrayDice()
         {
-            //
-            // TODO: aggiungere qui la logica del test
-            //
+            Die[] dice = new Die[] { new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die()};
+
+            Array.Sort(dice);
+
+            for (int k = 0; k < 9; k++)
+            {
+
+                int valPrev = dice[k].Number();
+                int valNext = dice[k + 1].Number();
+                Assert.IsTrue(valPrev <= valNext);
+            }
         }
     }
 }

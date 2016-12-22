@@ -2,68 +2,56 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using es_06;
 
 namespace UnitTestBlocco5
 {
-    /// <summary>
-    /// Descrizione del riepilogo per es06Test
-    /// </summary>
     [TestClass]
-    public class es06Test
+    public class TestEs06Interval
     {
-        public es06Test()
+        [TestMethod]
+        public void TestEs06IntervalProperties()
         {
-            //
-            // TODO: aggiungere qui la logica del costruttore
-            //
-        }
+            Interval range = new Interval(8, 21);
+            Assert.AreEqual(8, range.From);
+            Assert.AreEqual(21, range.To);
+            Assert.AreEqual(14, range.Length);
 
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Ottiene o imposta il contesto del test che fornisce
-        ///le informazioni e le funzionalità per l'esecuzione del test corrente.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
+            for(int k = 8; k <= 21; k++)
             {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
+                Assert.AreEqual(k, range[k - 8]);
+            }         
         }
-
-        #region Attributi di test aggiuntivi
-        //
-        // È possibile utilizzare i seguenti attributi aggiuntivi per la scrittura dei test:
-        //
-        // Utilizzare ClassInitialize per eseguire il codice prima di eseguire il primo test della classe
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Utilizzare ClassCleanup per eseguire il codice dopo l'esecuzione di tutti i test della classe
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Utilizzare TestInitialize per eseguire il codice prima di eseguire ciascun test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Utilizzare TestCleanup per eseguire il codice dopo l'esecuzione di ciascun test
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestEs06IntervalOperators()
         {
-            //
-            // TODO: aggiungere qui la logica del test
-            //
+            Interval range = new Interval(8, 21);
+
+            range = range + 5;
+            Assert.AreEqual(13, range.From);
+            Assert.AreEqual(26, range.To);
+
+            range = range >> 3;
+            Assert.AreEqual(29, range.To);
+            Assert.AreEqual(17, range.Length);
+
+            range = range << 4;
+            Assert.AreEqual(17, range.From);
+            Assert.AreEqual(13, range.Length);
+
+            range = range - 10;
+            Assert.AreEqual(7, range.From);
+            Assert.AreEqual(19, range.To);
+
+            range = range * 2;
+            Assert.AreEqual(14, range.From);
+            Assert.AreEqual(38, range.To);
+            Assert.AreEqual(25, range.Length);
+
+            range = !range;
+            Assert.AreEqual(38, range.From);
+            Assert.AreEqual(14, range.To);
         }
     }
 }
