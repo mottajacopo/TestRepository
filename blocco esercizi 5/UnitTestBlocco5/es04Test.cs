@@ -83,10 +83,7 @@ namespace UnitTestBlocco5
             TriBool t3 = new TriBool(1);
 
             Assert.AreEqual("false", (t2 == t3).ToString());
-            Assert.AreEqual("true", (t2 == t2).ToString());
-
-            Assert.AreEqual("true", (t2 != t3).ToString());
-            Assert.AreEqual("false", (t1 != t1).ToString());
+            Assert.AreEqual("true", (t2 != t3).ToString());      
         }
         [TestMethod]
         public void TestEs04LogicalExpressions()

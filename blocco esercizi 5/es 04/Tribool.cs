@@ -15,9 +15,9 @@ namespace es_04
             this.value = value;
         }
 
-        public static implicit operator TriBool(bool x)
+        public static implicit operator TriBool(bool t)
         {
-            if (x == true)
+            if (t == true)
             {
                 return new TriBool(1);
             }
@@ -27,13 +27,13 @@ namespace es_04
             }
         }
 
-        public static explicit operator bool (TriBool x)
+        public static explicit operator bool (TriBool t)
         {
-            if (x.value == 0)
+            if (t.value == 0)
             {
                 throw new InvalidOperationException();
             }
-            if (x.value == -1)
+            if (t.value == -1)
             {
                 return false;
             }
@@ -43,9 +43,9 @@ namespace es_04
             }
         }
 
-        public static TriBool operator ==(TriBool x, TriBool y)
+        public static TriBool operator ==(TriBool t1, TriBool t2)
         {
-            if (x.value == y.value)
+            if (t1.value == t2.value)
             {
                 return new TriBool(1); //se sono uguali ritorna true
             }
@@ -55,9 +55,9 @@ namespace es_04
             }
         }
 
-        public static TriBool operator !=(TriBool x, TriBool y)
+        public static TriBool operator !=(TriBool t1, TriBool t2)
         {
-            if (x.value != y.value)
+            if (t1.value != t2.value)
             {
                 return new TriBool(1); //se sono diversi ritorna true
             }
@@ -68,14 +68,14 @@ namespace es_04
 
         }
 
-        public static TriBool operator !(TriBool x)
+        public static TriBool operator !(TriBool t)
         {
-            return new TriBool(-x.value); //ritorna valore opposto, se indeterminato lo lascia invariato
+            return new TriBool(-t.value); //ritorna valore opposto, se indeterminato lo lascia invariato
         }
 
-        public static TriBool operator &(TriBool x, TriBool y)
+        public static TriBool operator &(TriBool t1, TriBool t2)
         {
-            if (x.value == 1 && y.value == 1)
+            if (t1.value == 1 && t2.value == 1)
             {
                 return new TriBool(1); //la AND da true solo se entrambi sono true
             }
@@ -86,40 +86,41 @@ namespace es_04
 
         }
 
-        public static TriBool operator |(TriBool x, TriBool y)
+        public static TriBool operator |(TriBool t1, TriBool t2)
         {
-            if (x.value >= y.value)
+            if (t1.value >= t2.value)
             {
-                return new TriBool(x.value);
+                return new TriBool(t1.value);
             }
             else
             {
-                return new TriBool(y.value);
+                return new TriBool(t2.value);
             }
         }
 
-        public static bool operator true(TriBool x)
+        public static bool operator true(TriBool t)
         {
-            return x.value > 0;
+            return t.value > 0;
         }
 
-        public static bool operator false(TriBool x)
+        public static bool operator false(TriBool t)
         {
-            return x.value < 0;
+            return t.value < 0;
         }
 
         public override string ToString()
         {
-            switch (value)
+            if (value == -1)
             {
-                case -1:
-                    return "false";
-                case 0:
-                    return "indeterminate";
-                case 1:
-                    return "true";
-                default:
-                    throw new InvalidOperationException();
+                return "false";
+            }
+            else if (value == 1)
+            {
+                return "true";
+            }
+            else
+            {
+                return "indeterminate";
             }
         }
 

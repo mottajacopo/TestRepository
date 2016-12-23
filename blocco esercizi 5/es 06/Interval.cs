@@ -41,7 +41,7 @@ namespace es_06
                     }
                     else
                     {
-                        throw new ApplicationException("Valore fuori dall'intervallo");
+                        throw new ApplicationException();
                     }
                 }           
                 else 
@@ -52,7 +52,7 @@ namespace es_06
                     }
                     else
                     {
-                        throw new ApplicationException("Valore fuori dall'intervallo");
+                        throw new ApplicationException();
                     }               
                 }
             }
