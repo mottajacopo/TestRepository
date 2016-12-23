@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using es_03;
 
 namespace UnitTestBlocco5
 {
@@ -7,8 +8,16 @@ namespace UnitTestBlocco5
     public class es03Test
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestTwoSixes()
         {
+            Die testDice = new Die();
+            bool twoSixesEvent = false;
+            for (int i = 1; i < 10000; i++)
+            {
+                testDice.Toss();
+                testDice.twoSixesInARow += delegate () { twoSixesEvent = true; };
+            }
+            Assert.IsTrue(twoSixesEvent);
         }
     }
 }
