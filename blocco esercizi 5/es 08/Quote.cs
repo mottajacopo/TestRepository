@@ -8,7 +8,7 @@ namespace es_08
 {
     public class Quote
     {
-        public string Symbol { get; set; }
+        public string Symbol { get;  set; }
         public decimal Price { get; set; }
     }
 }
