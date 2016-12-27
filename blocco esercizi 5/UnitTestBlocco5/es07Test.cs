@@ -2,68 +2,79 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using es_07;
 
 namespace UnitTestBlocco5
 {
-    /// <summary>
-    /// Descrizione del riepilogo per es07Test
-    /// </summary>
     [TestClass]
     public class es07Test
     {
-        public es07Test()
-        {
-            //
-            // TODO: aggiungere qui la logica del costruttore
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Ottiene o imposta il contesto del test che fornisce
-        ///le informazioni e le funzionalità per l'esecuzione del test corrente.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Attributi di test aggiuntivi
-        //
-        // È possibile utilizzare i seguenti attributi aggiuntivi per la scrittura dei test:
-        //
-        // Utilizzare ClassInitialize per eseguire il codice prima di eseguire il primo test della classe
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Utilizzare ClassCleanup per eseguire il codice dopo l'esecuzione di tutti i test della classe
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Utilizzare TestInitialize per eseguire il codice prima di eseguire ciascun test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Utilizzare TestCleanup per eseguire il codice dopo l'esecuzione di ciascun test
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
         [TestMethod]
-        public void TestMethod1()
+        public void TestAnonymousDelegate()
         {
-            //
-            // TODO: aggiungere qui la logica del test
-            //
+            Point[] points = new Point[] { new Point(2, 3), new Point(-6, 6), new Point(7, -4), new Point(2, 6) };
+
+            Point test = Array.Find(points, delegate (Point xy)    // Find the first Point structure for which the sum is smaller than 0.0001
+            {
+                double sum = xy.X + xy.Y;
+                if (sum < 0)
+                {
+                    return sum >= 0.0001;
+                }
+                else { return sum <= 0.0001; }
+            });
+            Assert.AreEqual(-6, test.X, 0.00001);
+            Assert.AreEqual(6, test.Y, 0.00001);
+        }
+
+        private static bool SumNearToZero(Point xy)    // Return true if the sum is smaller than 0.0001
+        {
+            double sum = xy.X + xy.Y;
+            if (sum < 0)
+            {
+                return sum >= 0.0001;
+            }
+            else { return sum <= 0.0001; }
+        }
+        [TestMethod]
+        public void TestNamedStaticMethod()
+        {
+            Point[] points = new Point[] { new Point(2, 3), new Point(-6, 6), new Point(7, -4), new Point(2, 6) };
+
+            Point test = Array.Find(points, SumNearToZero);    // Find the first Point structure for which the sum is smaller than 0.0001
+            Assert.AreEqual(-6, test.X, 0.00001);
+            Assert.AreEqual(6, test.Y, 0.00001);
+        }
+
+        private static int Comparison (Point xy1, Point xy2)
+        {
+            double sum1 = Math.Abs(xy1.X + xy1.Y);
+            double sum2 = Math.Abs(xy2.X + xy2.Y);
+
+            if (sum1 < sum2)
+            {
+                return -1;
+            }
+            else if (sum1 == sum2)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            } 
+        }
+    [TestMethod]
+        public void TestSort()
+        {
+            Point[] points = new Point[] { new Point(2, 3), new Point(-6, 6), new Point(7, -4), new Point(2, 6) };
+
+            Array.Sort(points, Comparison);
+           
+            Assert.AreEqual(-6, points[0].X, 0.00001);
+            Assert.AreEqual(6, points[0].Y, 0.00001);
         }
     }
 }
+
+
