@@ -1,69 +1,32 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using es_08;
 
-namespace UnitTestBlocco5
+namespace UnitTestBlocco8
 {
-    /// <summary>
-    /// Descrizione del riepilogo per es08Test
-    /// </summary>
     [TestClass]
-    public class es08Test
+    public class TestEs08Quotes
     {
-        public es08Test()
-        {
-            //
-            // TODO: aggiungere qui la logica del costruttore
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Ottiene o imposta il contesto del test che fornisce
-        ///le informazioni e le funzionalità per l'esecuzione del test corrente.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Attributi di test aggiuntivi
-        //
-        // È possibile utilizzare i seguenti attributi aggiuntivi per la scrittura dei test:
-        //
-        // Utilizzare ClassInitialize per eseguire il codice prima di eseguire il primo test della classe
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Utilizzare ClassCleanup per eseguire il codice dopo l'esecuzione di tutti i test della classe
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Utilizzare TestInitialize per eseguire il codice prima di eseguire ciascun test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Utilizzare TestCleanup per eseguire il codice dopo l'esecuzione di ciascun test
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
         [TestMethod]
-        public void TestMethod1()
+        public void TestObserver()
         {
-            //
-            // TODO: aggiungere qui la logica del test
-            //
+            ObservableQuote oq = new ObservableQuote();
+            ObserverIBM ObserverIBM = new ObserverIBM();
+            ObserverDELL ObserverDELL = new ObserverDELL();
+            IEnumerable<Quote> quotes = new QuoteRepository().GetAllQuotes();
+            using (oq.Subscribe(ObserverIBM))
+            {
+                using (oq.Subscribe(ObserverDELL))
+                {
+                    foreach (Quote quote in quotes)
+                    {
+                        oq.Quote = quote;
+                    }
+                }
+            }
+            Assert.AreEqual(5, ObserverIBM.numQuotesReceived);
+            Assert.AreEqual(3, ObserverDELL.numQuotesReceived);
         }
     }
 }
