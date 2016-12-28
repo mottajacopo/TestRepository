@@ -8,7 +8,7 @@ namespace UnitTestBlocco5
     public class es01Test
     {
             [TestMethod]
-        public void TestTList()
+        public void TestEs01TList()
         {
             ITaxable[] tObjects = new ITaxable[]
             {
@@ -21,7 +21,7 @@ namespace UnitTestBlocco5
         }
 
         [TestMethod]
-        public void TestHouseTax()
+        public void TestEs01HouseTax()
         {
             HouseTax test1 = new HouseTax("Gotham", true, 200, 800000);
             HouseTax test2 = new HouseTax("Spingfield", false, 200, 150000);
@@ -30,7 +30,7 @@ namespace UnitTestBlocco5
         }
 
         [TestMethod]
-        public void TestBusTax()
+        public void TestEs01BusTax()
         {
             BusTax test1 = new BusTax(10, 712355, 15000);
             BusTax test2 = new BusTax(20, 367634, 30000);

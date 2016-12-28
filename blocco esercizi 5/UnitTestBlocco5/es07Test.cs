@@ -10,7 +10,7 @@ namespace UnitTestBlocco5
     public class es07Test
     {
         [TestMethod]
-        public void TestAnonymousDelegate()
+        public void TestEs07AnonymousDelegate()
         {
             Point[] points = new Point[] { new Point(2, 3), new Point(-6, 6), new Point(7, -4), new Point(2, 6) };
 
@@ -37,7 +37,7 @@ namespace UnitTestBlocco5
             else { return sum <= 0.0001; }
         }
         [TestMethod]
-        public void TestNamedStaticMethod()
+        public void TestEs07NamedStaticMethod()
         {
             Point[] points = new Point[] { new Point(2, 3), new Point(-6, 6), new Point(7, -4), new Point(2, 6) };
 
@@ -65,7 +65,7 @@ namespace UnitTestBlocco5
             } 
         }
     [TestMethod]
-        public void TestSort()
+        public void TestEs07Sort()
         {
             Point[] points = new Point[] { new Point(2, 3), new Point(-6, 6), new Point(7, -4), new Point(2, 6) };
 

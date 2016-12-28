@@ -10,7 +10,7 @@ namespace UnitTestBlocco5
     public class TestEs08Quotes
     {
         [TestMethod]
-        public void TestQuoteObserverIBM()
+        public void TestEs08QuoteObserverIBM()
         {
             ObservableQuote observableQuote = new ObservableQuote();
             ObserverIBM IBM = new ObserverIBM();
@@ -26,7 +26,7 @@ namespace UnitTestBlocco5
 
         }
         [TestMethod]
-        public void TestQuoteObserverDELL()
+        public void TestEs08QuoteObserverDELL()
         {
             ObservableQuote observableQuote = new ObservableQuote();
             ObserverDELL DELL = new ObserverDELL();

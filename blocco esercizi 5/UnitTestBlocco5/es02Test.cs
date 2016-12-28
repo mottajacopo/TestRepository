@@ -10,7 +10,7 @@ namespace UnitTestBlocco5
     public class TestEs02Die
     {
         [TestMethod]
-        public void TestSortArrayDice()
+        public void TestEs02SortArrayDice()
         {
             Die[] dice = new Die[] { new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die(), new Die()};
 

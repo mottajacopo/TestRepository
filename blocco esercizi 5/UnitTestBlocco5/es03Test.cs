@@ -8,7 +8,7 @@ namespace UnitTestBlocco5
     public class es03Test
     {
         [TestMethod]
-        public void TestTwoSixes()
+        public void TestEs03TwoSixes()
         {
             Die testDice = new Die();
             bool twoSixesEvent = false;

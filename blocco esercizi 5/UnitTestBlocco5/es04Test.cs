@@ -100,7 +100,7 @@ namespace UnitTestBlocco5
 
         }
         [TestMethod]
-        public void TestTriBoolTrueFalseOperator()
+        public void TestEs04TriBoolTrueFalseOperator()
         {
             TriBool t1 = false;
             TriBool t2 = true;

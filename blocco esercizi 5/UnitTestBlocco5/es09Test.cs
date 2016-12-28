@@ -65,7 +65,7 @@ namespace UnitTestBlocco5
         }
 
         [TestMethod]
-        public void TestCheckedOutItems()
+        public void TestEs09CheckedOutItems()
         {
             var checkedOutItems = from test in items
                                   where test.IsCheckedOut() == true
@@ -75,7 +75,7 @@ namespace UnitTestBlocco5
         }
 
         [TestMethod]
-        public void TestMediaItemsThatAreCheckedOut()
+        public void TestEs09MediaItemsThatAreCheckedOut()
         {
             var checkedOutMediaItems = from test in items
                                        where test is LibraryMediaItem
@@ -85,7 +85,7 @@ namespace UnitTestBlocco5
             Assert.AreEqual(1, checkedOutMediaItems.Count());
         }
         [TestMethod]
-        public void TestSelectTitlesOfLibraryMagazineObjects()
+        public void TestEs09SelectTitlesOfLibraryMagazineObjects()
         {
             
             var magazine =  (from test in items
@@ -96,7 +96,7 @@ namespace UnitTestBlocco5
         }
 
         [TestMethod]
-        public void TestCalculateLateFee()
+        public void TestEs09CalculateLateFee()
         {
             decimal[] expectedFees = { 3.5M, 3.5M, 21M, 21M, 7M, 7M, 10.5M, 10.5M, 3.5M, 3.5M };
 
@@ -112,7 +112,7 @@ namespace UnitTestBlocco5
         }
 
         [TestMethod]
-        public void TestBooksThatAreInTheListAndTheirLoanPeriods()
+        public void TestEs09BooksThatAreInTheListAndTheirLoanPeriods()
         {
             var libraryBook = from test in items
                               where test is LibraryBook
@@ -126,7 +126,7 @@ namespace UnitTestBlocco5
 
         }
         [TestMethod]
-        public void TestAddDaysToLoanPeriods()
+        public void TestEs09AddDaysToLoanPeriods()
         {
             var testBooks = from test in items
                         where test is LibraryBook

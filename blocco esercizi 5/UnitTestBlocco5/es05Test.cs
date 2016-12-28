@@ -11,7 +11,7 @@ namespace UnitTestBlocco5
     public class es05Test
     {
         [TestMethod]
-        public void TestEvent()
+        public void TestEs05Event()
         {
            
             Event newEvent = new Event();
