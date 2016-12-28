@@ -1,83 +1,77 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace es_08
 {
-        public class ObservableQuote : IObservable<Quote>
+    public class ObservableQuote : IObservable<Quote>
+    {
+        private List<IObserver<Quote>> observers;
+        private List<Quote> quotes;
+
+        public ObservableQuote()
         {
-            private List<IObserver<Quote>> observers = new List<IObserver<Quote>>();
-            private Quote quote;
-            public Quote Quote
+            observers = new List<IObserver<Quote>>();
+            quotes = new List<Quote>();
+        }
+
+        public IDisposable Subscribe(IObserver<Quote> observer)
+        {
+
+            if (!observers.Contains(observer))
             {
-                get
-                {
-                    return quote;
-                }
-                set
-                {
-                    quote = value;
-                    this.Notify(quote);
-                }
+                observers.Add(observer);
+
+                foreach (var item in quotes)
+                    observer.OnNext(item);
             }
+            return new Unsubscriber<Quote>(observers, observer);
+        }
 
-            private void Notify(Quote quote)
+        public void QuoteAdd(Quote quote, string society)
+        {
+
+            if (quote.Price > 0 && quote.Symbol == society)
             {
-                foreach (IObserver<Quote> observer in observers)
-                {
-                    if (quote.Symbol == null || quote.Price < 0)
-                    {
-                        observer.OnError(new ApplicationException("Bad Quote data"));
-                    }
-                    else
-                    {
-                        observer.OnNext(quote);
-                    }
-                }
+                foreach (var observer in observers)
+                    observer.OnNext(quote);
             }
-
-            private void Stop()
+            else
             {
-                foreach (IObserver<Quote> observer in observers)
-                {
-                    if (observers.Contains(observer))
-                    {
-                        observer.OnCompleted();
-                    }
-                }
-                observers.Clear();
-            }
-
-
-            public IDisposable Subscribe(IObserver<Quote> observer)
-            {
-                if (!observers.Contains(observer))
-                {
-                    observers.Add(observer);
-                }
-                return new Unsubscriber(observers, observer);
-            }
-
-            private class Unsubscriber : IDisposable
-            {
-                private List<IObserver<Quote>> observers;
-                private IObserver<Quote> observer;
-
-                public Unsubscriber(List<IObserver<Quote>> observers, IObserver<Quote> observer)
-                {
-                    this.observers = observers;
-                    this.observer = observer;
-                }
-                public void Dispose()
-                {
-                    if (observer != null && observers.Contains(observer))
-                    {
-                        observers.Remove(observer);
-                    }
-                }
+                foreach (var observer in observers)
+                    observer.OnError(new ArgumentOutOfRangeException());
             }
         }
-    }
 
+        public void QuoteAddList(List<Quote> quote, string value)
+        {
+            foreach (Quote item in quote)
+            {
+                this.QuoteAdd(item, value);
+            }
+        }
+        public void ClearAll()
+        {
+            foreach (var observer in observers)
+                observer.OnCompleted();
+
+            observers.Clear();
+        }
+    }
+    internal class Unsubscriber<Quote> : IDisposable
+    {
+        private List<IObserver<Quote>> observers;
+        private IObserver<Quote> observer;
+
+        internal Unsubscriber(List<IObserver<Quote>> observers, IObserver<Quote> observer)
+        {
+            this.observers = observers;
+            this.observer = observer;
+        }
+
+        public void Dispose()
+        {
+            if (observers.Contains(observer))
+                observers.Remove(observer);
+        }
+    }
+}
