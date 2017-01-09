@@ -107,7 +107,21 @@ namespace es_04
         {
             return t.value < 0;
         }
-
+        public override bool Equals(object o)
+        {
+            try
+            {
+                return (bool)(this.value == ((TriBool)o).value);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public override int GetHashCode()
+        {
+            return value;
+        }
         public override string ToString()
         {
             if (value == -1)

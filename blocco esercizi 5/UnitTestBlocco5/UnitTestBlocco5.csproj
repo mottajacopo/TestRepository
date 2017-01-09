@@ -86,11 +86,11 @@
       <Name>es 05</Name>
     </ProjectReference>
     <ProjectReference Include="..\es 06\es 06.csproj">
-      <Project>{014fcf34-8605-4ce0-af34-b02c22da48f9}</Project>
+      <Project>{56481cdb-60e1-4892-ab6e-21ec1ad04fa0}</Project>
       <Name>es 06</Name>
     </ProjectReference>
     <ProjectReference Include="..\es 07\es 07.csproj">
-      <Project>{725aa7b8-1064-4dd8-a3e2-8be8e736723a}</Project>
+      <Project>{dba6e628-110c-41f7-be0f-c852d7cb9a9c}</Project>
       <Name>es 07</Name>
     </ProjectReference>
     <ProjectReference Include="..\es 08\es 08.csproj">

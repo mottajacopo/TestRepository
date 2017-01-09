@@ -43,8 +43,8 @@ namespace es_06
                     {
                         throw new ApplicationException();
                     }
-                }           
-                else 
+                }
+                else
                 {
                     if (i >= 0 && i <= Math.Abs(from - to))
                     {
@@ -53,7 +53,7 @@ namespace es_06
                     else
                     {
                         throw new ApplicationException();
-                    }               
+                    }
                 }
             }
         }
